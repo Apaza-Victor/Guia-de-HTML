@@ -304,7 +304,7 @@ function initTabs() {
   });
 }
 
-/* --- Quiz Engine --- */
+/* --- Quiz Engine (Collapsible) --- */
 function initQuiz() {
   const quizEl = document.querySelector('.quiz');
   if (!quizEl) return;
@@ -327,64 +327,77 @@ function initQuiz() {
     { q: '¿Qué API permite detectar cuando un elemento entra o sale del viewport?', opts: ['Viewport API', 'Scroll API', 'Intersection Observer', 'Element API'], correct: 2 }
   ];
 
-  let current = 0;
-  let score = 0;
   let answered = new Array(questions.length).fill(null);
+  let score = 0;
 
-  function render() {
-    const q = questions[current];
-    const pct = ((current) / questions.length) * 100;
-    quizEl.innerHTML = `
-      <div class="quiz__progress">
-        <span><i class="fas fa-question-circle" style="color:var(--color-primary)"></i> Pregunta ${current + 1} de ${questions.length}</span>
-        <span class="quiz__score"><i class="fas fa-star"></i> Puntuación: ${score}/${questions.length}</span>
-      </div>
-      <div style="height:4px;background:var(--border-color);border-radius:4px;margin-bottom:20px;overflow:hidden;">
-        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--color-primary),var(--color-accent));border-radius:4px;transition:width 0.4s ease;"></div>
-      </div>
-      <div class="quiz__question">${q.q}</div>
-      <div class="quiz__options">
-        ${q.opts.map((opt, i) => {
-          let cls = 'quiz__option';
-          if (answered[current] !== null) {
-            if (i === q.correct) cls += ' correct';
-            else if (i === answered[current] && i !== q.correct) cls += ' incorrect';
-          }
-          return `<div class="${cls}" data-idx="${i}"><span style="font-weight:700;color:var(--color-primary);min-width:24px">${String.fromCharCode(65 + i)}.</span> ${opt}</div>`;
-        }).join('')}
-      </div>
-      <div class="quiz__nav">
-        ${current > 0 ? '<button class="quiz__prev"><i class="fas fa-arrow-left"></i> Anterior</button>' : ''}
-        <button class="primary quiz__next">${current < questions.length - 1 ? 'Siguiente <i class="fas fa-arrow-right"></i>' : 'Ver Resultado <i class="fas fa-check"></i>'}</button>
-      </div>
-    `;
+  function renderAll() {
+    let html = '<div class="quiz__header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:8px">';
+    html += '<span style="font-weight:600;color:var(--text-primary)"><i class="fas fa-question-circle" style="color:var(--color-primary)"></i> ' + questions.length + ' preguntas</span>';
+    html += '<span class="quiz__score" id="quizScoreLive" style="font-weight:600;color:var(--color-primary)"><i class="fas fa-star"></i> Puntuación: 0/' + questions.length + '</span>';
+    html += '</div>';
 
+    questions.forEach((q, idx) => {
+      const answeredAlready = answered[idx] !== null;
+      let statusIcon = '';
+      if (answeredAlready) {
+        statusIcon = answered[idx] === q.correct
+          ? ' <span style="color:#22c55e;font-size:.75rem"><i class="fas fa-check-circle"></i></span>'
+          : ' <span style="color:#ef4444;font-size:.75rem"><i class="fas fa-times-circle"></i></span>';
+      }
+
+      html += '<details class="details-collapse quiz__item" data-q="' + idx + '">';
+      html += '<summary style="font-weight:600;cursor:pointer;padding:10px 14px;border-radius:8px;background:var(--bg-surface);border:1px solid var(--border-color);margin-bottom:8px;list-style:none;display:flex;align-items:center;gap:8px;transition:all .2s">';
+      html += '<i class="fas fa-chevron-right" style="font-size:.7rem;color:var(--text-muted);transition:transform .2s"></i>';
+      html += '<span>Pregunta ' + (idx + 1) + ': ' + q.q + statusIcon + '</span>';
+      html += '</summary>';
+      html += '<div class="quiz__options" style="padding:8px 0 16px 24px">';
+      q.opts.forEach((opt, oi) => {
+        let cls = 'quiz__option';
+        let extra = '';
+        if (answeredAlready) {
+          if (oi === q.correct) { cls += ' correct'; }
+          else if (oi === answered[idx] && oi !== q.correct) { cls += ' incorrect'; }
+        }
+        html += '<div class="' + cls + '" data-q="' + idx + '" data-idx="' + oi + '"' + (answeredAlready ? ' style="pointer-events:none"' : '') + '>';
+        html += '<span style="font-weight:700;color:var(--color-primary);min-width:24px">' + String.fromCharCode(65 + oi) + '.</span> ' + opt;
+        html += '</div>';
+      });
+      html += '</div></details>';
+    });
+
+    html += '<div style="text-align:center;padding:16px 0"><button id="quizCheckBtn" class="primary" style="padding:12px 32px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));color:white;border:none;border-radius:var(--border-radius-sm);font-family:var(--font-body);font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(99,102,241,0.3)"><i class="fas fa-check"></i> Ver Resultado</button></div>';
+
+    quizEl.innerHTML = html;
+
+    // Click handlers for options
     quizEl.querySelectorAll('.quiz__option').forEach(opt => {
-      if (answered[current] !== null) return;
-      opt.addEventListener('click', () => {
-        const idx = parseInt(opt.getAttribute('data-idx'));
-        answered[current] = idx;
-        if (idx === q.correct) score++;
-        render();
+      opt.addEventListener('click', function() {
+        const qIdx = parseInt(this.getAttribute('data-q'));
+        const oIdx = parseInt(this.getAttribute('data-idx'));
+        if (answered[qIdx] !== null) return;
+        answered[qIdx] = oIdx;
+        score = answered.reduce((s, a, i) => a !== null && a === questions[i].correct ? s + 1 : s, 0);
+        const liveScore = document.getElementById('quizScoreLive');
+        if (liveScore) liveScore.innerHTML = '<i class="fas fa-star"></i> Puntuación: ' + score + '/' + questions.length;
+        renderAll();
       });
     });
 
-    quizEl.querySelector('.quiz__prev')?.addEventListener('click', () => {
-      if (current > 0) current--;
-      render();
-    });
-
-    quizEl.querySelector('.quiz__next')?.addEventListener('click', () => {
-      if (current < questions.length - 1) {
-        current++;
-        render();
-      } else {
-        renderResult();
-      }
-    });
+    // Check result button
+    const btn = document.getElementById('quizCheckBtn');
+    if (btn) {
+      btn.addEventListener('click', renderResult);
+    }
   }
 
   function renderResult() {
+    const answeredCount = answered.filter(a => a !== null).length;
+    if (answeredCount < questions.length) {
+      const unanswered = answered.map((a, i) => a === null ? i + 1 : null).filter(i => i !== null);
+      alert('Responde todas las preguntas. Faltan: ' + unanswered.join(', '));
+      return;
+    }
+    score = answered.reduce((s, a, i) => a === questions[i].correct ? s + 1 : s, 0);
     const pct = Math.round((score / questions.length) * 100);
     let msg = pct >= 80 ? '¡Excelente! Dominas HTML5.' :
               pct >= 60 ? '¡Buen trabajo! Sigue practicando.' :
@@ -400,14 +413,13 @@ function initQuiz() {
       </div>
     `;
     quizEl.querySelector('.quiz__next').addEventListener('click', () => {
-      current = 0;
       score = 0;
       answered = new Array(questions.length).fill(null);
-      render();
+      renderAll();
     });
   }
 
-  render();
+  renderAll();
 }
 
 /* --- Scroll Spy for Sidebar --- */
