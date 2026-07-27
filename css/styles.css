@@ -824,18 +824,18 @@ pre {
   position: relative;
 }
 
-pre .keyword { color: var(--syn-keyword); }
-pre .tag { color: var(--syn-tag); }
-pre .attr { color: var(--syn-attr); }
-pre .string { color: var(--syn-string); }
-pre .comment { color: var(--syn-comment); font-style: italic; }
-pre .doctype { color: var(--syn-doctype); }
-pre .entity { color: var(--syn-entity); }
-pre .number { color: var(--syn-number); }
-pre .function { color: var(--syn-function); }
-pre .property { color: var(--syn-property); }
-pre .value { color: var(--syn-value); }
-pre .operator { color: var(--syn-operator); }
+pre .keyword { color: var(--syn-keyword); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .tag { color: var(--syn-tag); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .attr { color: var(--syn-attr); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .string { color: var(--syn-string); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .comment { color: var(--syn-comment); font-style: italic; background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .doctype { color: var(--syn-doctype); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .entity { color: var(--syn-entity); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .number { color: var(--syn-number); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .function { color: var(--syn-function); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .property { color: var(--syn-property); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .value { color: var(--syn-value); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
+pre .operator { color: var(--syn-operator); background: none; padding: 0; border-radius: 0; font-weight: normal; font-size: inherit; display: inline; margin: 0; }
 
 code {
   font-family: var(--font-code);
