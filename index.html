@@ -215,16 +215,16 @@
   </div>
   <p>Toda pagina HTML sigue una estructura basica que incluye una declaracion de tipo de documento, la raiz del documento, la seccion de encabezado y el cuerpo con el contenido visible.</p>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"es"</span><span class="tag">&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;title&gt;</span>Mi primera pagina<span class="tag">&lt;/title&gt;</span>
+  <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span> <span class="comment">&lt;!-- Declara que el documento es HTML5 --&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"es"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Raiz del documento, lang define el idioma --&gt;</span>
+<span class="tag">&lt;head&gt;</span> <span class="comment">&lt;!-- Contiene metadatos, no se muestra en la pagina --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Codificacion de caracteres (acentos, eñes) --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Responsivo en movil --&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Mi primera pagina<span class="tag">&lt;/title&gt;</span> <span class="comment">&lt;!-- Titulo que aparece en la pestana del navegador --&gt;</span>
 <span class="tag">&lt;/head&gt;</span>
-<span class="tag">&lt;body&gt;</span>
-  <span class="tag">&lt;h1&gt;</span>Hola, mundo<span class="tag">&lt;/h1&gt;</span>
-  <span class="tag">&lt;p&gt;</span>Mi primera pagina web<span class://tag">&lt;/p&gt;</span>
+<span class="tag">&lt;body&gt;</span> <span class="comment">&lt;!-- Todo el contenido visible va aqui --&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Hola, mundo<span class="tag">&lt;/h1&gt;</span> <span class="comment">&lt;!-- Titulo principal (solo uno por pagina) --&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Mi primera pagina web<span class="tag">&lt;/p&gt;</span> <span class="comment">&lt;!-- Parrafo de texto --&gt;</span>
 <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span></code></pre>
 
@@ -280,36 +280,36 @@
 
   <h3>Estructura semantica completa</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;body&gt;</span>
-  <span class="tag">&lt;header&gt;</span>
-    <span class="tag">&lt;nav&gt;</span>
+  <pre><code><span class="tag">&lt;body&gt;</span> <span class="comment">&lt;!-- Contenedor principal del contenido visible --&gt;</span>
+  <span class="tag">&lt;header&gt;</span> <span class="comment">&lt;!-- Encabezado global del sitio --&gt;</span>
+    <span class="tag">&lt;nav&gt;</span> <span class="comment">&lt;!-- Barra de navegacion principal --&gt;</span>
       <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/"</span><span class="tag">&gt;</span>Inicio<span class="tag">&lt;/a&gt;</span>
       <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/blog"</span><span class="tag">&gt;</span>Blog<span class="tag">&lt;/a&gt;</span>
       <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/contacto"</span><span class="tag">&gt;</span>Contacto<span class="tag">&lt;/a&gt;</span>
     <span class="tag">&lt;/nav&gt;</span>
   <span class="tag">&lt;/header&gt;</span>
-  <span class="tag">&lt;main&gt;</span>
-    <span class="tag">&lt;article&gt;</span>
-      <span class="tag">&lt;header&gt;</span>
+  <span class="tag">&lt;main&gt;</span> <span class="comment">&lt;!-- Contenido principal (solo uno por pagina) --&gt;</span>
+    <span class="tag">&lt;article&gt;</span> <span class="comment">&lt;!-- Contenido independiente y autocontenido --&gt;</span>
+      <span class="tag">&lt;header&gt;</span> <span class="comment">&lt;!-- Encabezado del articulo --&gt;</span>
         <span class="tag">&lt;h1&gt;</span>Titulo del articulo<span class="tag">&lt;/h1&gt;</span>
-        <span class="tag">&lt;time</span> <span class="attr">datetime</span>=<span class="string">"2024-01-15"</span><span class="tag">&gt;</span>15 de enero, 2024<span class="tag">&lt;/time&gt;</span>
+        <span class="tag">&lt;time</span> <span class="attr">datetime</span>=<span class="string">"2024-01-15"</span><span class="tag">&gt;</span>15 de enero, 2024<span class="tag">&lt;/time&gt;</span> <span class="comment">&lt;!-- datetime: formato ISO para buscadores --&gt;</span>
       <span class="tag">&lt;/header&gt;</span>
-      <span class="tag">&lt;section&gt;</span>
+      <span class="tag">&lt;section&gt;</span> <span class="comment">&lt;!-- Seccion tematica dentro del articulo --&gt;</span>
         <span class="tag">&lt;h2&gt;</span>Introduccion<span class="tag">&lt;/h2&gt;</span>
         <span class="tag">&lt;p&gt;</span>Contenido del articulo...<span class="tag">&lt;/p&gt;</span>
       <span class="tag">&lt;/section&gt;</span>
-      <span class="tag">&lt;figure&gt;</span>
+      <span class="tag">&lt;figure&gt;</span> <span class="comment">&lt;!-- Contenido ilustrativo con leyenda --&gt;</span>
         <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"diagrama.png"</span> <span class="attr">alt</span>=<span class="string">"Diagrama"</span><span class="tag">&gt;</span>
-        <span class="tag">&lt;figcaption&gt;</span>Diagrama de arquitectura<span class="tag">&lt;/figcaption&gt;</span>
+        <span class="tag">&lt;figcaption&gt;</span>Diagrama de arquitectura<span class="tag">&lt;/figcaption&gt;</span> <span class="comment">&lt;!-- Leyenda de la imagen --&gt;</span>
       <span class="tag">&lt;/figure&gt;</span>
-      <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>Autor: Juan Perez<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span>
+      <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>Autor: Juan Perez<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span> <span class="comment">&lt;!-- Pie del articulo --&gt;</span>
     <span class="tag">&lt;/article&gt;</span>
-    <span class="tag">&lt;aside&gt;</span>
+    <span class="tag">&lt;aside&gt;</span> <span class="comment">&lt;!-- Contenido complementario (barra lateral) --&gt;</span>
       <span class="tag">&lt;h3&gt;</span>Articulos relacionados<span class="tag">&lt;/h3&gt;</span>
       <span class="tag">&lt;ul&gt;</span><span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#"</span><span class="tag">&gt;</span>Otro articulo<span class="tag">&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span>
     <span class="tag">&lt;/aside&gt;</span>
   <span class="tag">&lt;/main&gt;</span>
-  <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>&amp;copy; 2024 Mi Sitio<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span>
+  <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>&amp;copy; 2024 Mi Sitio<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span> <span class="comment">&lt;!-- Pie de pagina global --&gt;</span>
 <span class="tag">&lt;/body&gt;</span></code></pre>
 
   <div class="callout callout--warning">
@@ -419,41 +419,41 @@
   </div>
   <h3>Imagenes</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;</span>
+  <pre><code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Imagen basica: src=ruta, alt=texto alternativo, dimensiones --&gt;</span>
 
-<span class="comment">&lt;!-- Responsiva --&gt;</span>
+<span class="comment">&lt;!-- Imagen responsiva con multiples resoluciones --&gt;</span>
 <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span>
-     <span class="attr">srcset</span>=<span class="string">"foto-480.jpg 480w, foto-800.jpg 800w, foto-1200.jpg 1200w"</span>
-     <span class="attr">sizes</span>=<span class="string">"(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"</span>
-     <span class="attr">loading</span>=<span class="string">"lazy"</span><span class="tag">&gt;</span></code></pre>
+     <span class="attr">srcset</span>=<span class="string">"foto-480.jpg 480w, foto-800.jpg 800w, foto-1200.jpg 1200w"</span> <span class="comment">&lt;!-- Opciones de imagen por ancho --&gt;</span>
+     <span class="attr">sizes</span>=<span class="string">"(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"</span> <span class="comment">&lt;!-- Tamano segun viewport --&gt;</span>
+     <span class="attr">loading</span>=<span class="string">"lazy"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Carga diferida (mejora rendimiento) --&gt;</span></code></pre>
 
   <h3>Picture para imagenes adaptables</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;picture&gt;</span>
-  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.webp"</span> <span class="attr">type</span>=<span class="string">"image/webp"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.jpg"</span> <span class="attr">type</span>=<span class="string">"image/jpeg"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"imagen.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span>
+  <pre><code><span class="tag">&lt;picture&gt;</span> <span class="comment">&lt;!-- Contenedor para imagenes adaptables por formato --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.webp"</span> <span class="attr">type</span>=<span class="string">"image/webp"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Preferido: formato WebP (mas ligero) --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.jpg"</span> <span class="attr">type</span>=<span class="string">"image/jpeg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Fallback: formato JPEG --&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"imagen.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Imagen por defecto si no soporta picture --&gt;</span>
 <span class="tag">&lt;/picture&gt;</span></code></pre>
 
   <h3>Video</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subs.vtt"</span> <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Espanol"</span><span class="tag">&gt;</span>
-  Tu navegador no soporta video HTML5.
+  <pre><code><span class="tag">&lt;video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Video con controles del navegador --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subs.vtt"</span> <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Espanol"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Subtitulos en espanol --&gt;</span>
+  Tu navegador no soporta video HTML5. <span class="comment">&lt;!-- Mensaje de fallback --&gt;</span>
 <span class="tag">&lt;/video&gt;</span>
 
-<span class="comment">&lt;!-- Con multiples fuentes y autoplay --&gt;</span>
-<span class="tag">&lt;video</span> <span class="attr">autoplay</span> <span class="attr">muted</span> <span class="attr">loop</span> <span class="attr">playsinline</span> <span class="attr">poster</span>=<span class="string">"poster.jpg"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span>
+<span class="comment">&lt;!-- Video con multiples fuentes y autoplay --&gt;</span>
+<span class="tag">&lt;video</span> <span class="attr">autoplay</span> <span class="attr">muted</span> <span class="attr">loop</span> <span class="attr">playsinline</span> <span class="attr">poster</span>=<span class="string">"poster.jpg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- autoplay=reproducir, muted=sin sonido (requerido), loop=bucle, playsinline=en linea --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formato preferido: WebM --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Fallback: MP4 --&gt;</span>
 <span class="tag">&lt;/video&gt;</span></code></pre>
 
   <h3>Audio</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span><span class="tag">&gt;</span>
-  Tu navegador no soporta audio HTML5.
+  <pre><code><span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Reproductor de audio con controles --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formato MP3 (mayor compatibilidad) --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formato OGG (alternativa libre) --&gt;</span>
+  Tu navegador no soporta audio HTML5. <span class="comment">&lt;!-- Mensaje de fallback --&gt;</span>
 <span class="tag">&lt;/audio&gt;</span></code></pre>
 </section>
 
@@ -675,27 +675,27 @@
     <h2 class="section__title"><i class="fas fa-search"></i> Meta Tags y SEO</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;head&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;title&gt;</span>Mi Pagina - Titulo Descriptivo<span class="tag">&lt;/title&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Descripcion de 150-160 caracteres"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index, follow"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com/pagina"</span><span class="tag">&gt;</span>
+  <pre><code><span class="tag">&lt;head&gt;</span> <span class="comment">&lt;!-- Inicio del bloque de metadatos --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Define la codificacion de caracteres --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Diseno responsivo --&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Mi Pagina - Titulo Descriptivo<span class="tag">&lt;/title&gt;</span> <span class="comment">&lt;!-- Titulo para navegadores y buscadores --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Descripcion de 150-160 caracteres"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Descripcion para SEO --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index, follow"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Indica a los buscadores indexar y rastrear --&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com/pagina"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- URL canonica para evitar contenido duplicado --&gt;</span>
 
   <span class="comment">&lt;!-- Open Graph (redes sociales) --&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:title"</span> <span class="attr">content</span>=<span class="string">"Titulo"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:description"</span> <span class="attr">content</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:image"</span> <span class="attr">content</span>=<span class="string">"https://ejemplo.com/imagen.jpg"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:url"</span> <span class="attr">content</span>=<span class="string">"https://ejemplo.com"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:title"</span> <span class="attr">content</span>=<span class="string">"Titulo"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Titulo para compartir en redes --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:description"</span> <span class="attr">content</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Descripcion para compartir --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:image"</span> <span class="attr">content</span>=<span class="string">"https://ejemplo.com/imagen.jpg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Imagen de vista previa --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:url"</span> <span class="attr">content</span>=<span class="string">"https://ejemplo.com"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- URL canonica de la pagina --&gt;</span>
 
   <span class="comment">&lt;!-- Twitter Card --&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"twitter:card"</span> <span class="attr">content</span>=<span class="string">"summary_large_image"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"twitter:title"</span> <span class="attr">content</span>=<span class="string">"Titulo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"twitter:card"</span> <span class="attr">content</span>=<span class="string">"summary_large_image"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Tipo de tarjeta en Twitter --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"twitter:title"</span> <span class="attr">content</span>=<span class="string">"Titulo"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Titulo para Twitter --&gt;</span>
 
-  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#6366f1"</span><span class="tag">&gt;</span>
-<span class="tag">&lt;/head&gt;</span></code></pre>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Preconectar para cargar fuentes mas rapido --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#6366f1"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Color del tema en moviles --&gt;</span>
+<span class="tag">&lt;/head&gt;</span> <span class="comment">&lt;!-- Fin del bloque head --&gt;</span></code></pre>
 </section>
 
 <!-- SECCION 11: ETIQUETAS ADICIONALES -->
@@ -742,16 +742,16 @@
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="comment">// Guardar datos</span>
-localStorage.<span class="function">setItem</span>(<span class="string">'nombre'</span>, <span class="string">'Juan'</span>);
-localStorage.<span class="function">setItem</span>(<span class="string">'usuario'</span>, JSON.<span class="function">stringify</span>({ <span class="property">id</span>: <span class="number">1</span> }));
+localStorage.<span class="function">setItem</span>(<span class="string">'nombre'</span>, <span class="string">'Juan'</span>); <span class="comment">// Guarda un valor simple con su clave</span>
+localStorage.<span class="function">setItem</span>(<span class="string">'usuario'</span>, JSON.<span class="function">stringify</span>({ <span class="property">id</span>: <span class="number">1</span> })); <span class="comment">// Convierte objeto a JSON para guardarlo</span>
 
 <span class="comment">// Leer datos</span>
-<span class="keyword">const</span> nombre = localStorage.<span class="function">getItem</span>(<span class="string">'nombre'</span>);
-<span class="keyword">const</span> usuario = JSON.<span class="function">parse</span>(localStorage.<span class="function">getItem</span>(<span class="string">'usuario'</span>));
+<span class="keyword">const</span> nombre = localStorage.<span class="function">getItem</span>(<span class="string">'nombre'</span>); <span class="comment">// Obtiene el valor por su clave</span>
+<span class="keyword">const</span> usuario = JSON.<span class="function">parse</span>(localStorage.<span class="function">getItem</span>(<span class="string">'usuario'</span>)); <span class="comment">// Convierte JSON de vuelta a objeto</span>
 
 <span class="comment">// Eliminar y limpiar</span>
-localStorage.<span class="function">removeItem</span>(<span class="string">'nombre'</span>);
-localStorage.<span class="function">clear</span>();</code></pre>
+localStorage.<span class="function">removeItem</span>(<span class="string">'nombre'</span>); <span class="comment">// Elimina una clave especifica</span>
+localStorage.<span class="function">clear</span>(); <span class="comment">// Borra todos los datos almacenados</span></code></pre>
   <div class="callout callout--warning">
     <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
     <div class="callout__content">
@@ -791,16 +791,16 @@ localStorage.<span class="function">clear</span>();</code></pre>
     <h2 class="section__title"><i class="fas fa-map-marker-alt"></i> API de Geolocalizacion</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">if</span> (<span class="string">'geolocation'</span> <span class="keyword">in</span> navigator) {
-  navigator.geolocation.<span class="function">getCurrentPosition</span>(
-    (position) =&gt; {
-      <span class="keyword">const</span> { latitude, longitude } = position.coords;
-      console.<span class="function">log</span>(<span class="string">`Lat: ${latitude}, Lng: ${longitude}`</span>);
+  <pre><code><span class="keyword">if</span> (<span class="string">'geolocation'</span> <span class="keyword">in</span> navigator) { <span class="comment">// Verifica si el navegador soporta geolocalizacion</span>
+  navigator.geolocation.<span class="function">getCurrentPosition</span>( <span class="comment">// Solicita la posicion actual del usuario</span>
+    (position) =&gt; { <span class="comment">// Callback de exito con la posicion</span>
+      <span class="keyword">const</span> { latitude, longitude } = position.coords; <span class="comment">// Extrae latitud y longitud</span>
+      console.<span class="function">log</span>(<span class="string">`Lat: ${latitude}, Lng: ${longitude}`</span>); <span class="comment">// Muestra las coordenadas</span>
     },
-    (error) =&gt; {
-      console.<span class="function">error</span>(<span class="string">'Error:'</span>, error.message);
+    (error) =&gt; { <span class="comment">// Callback de error si falla la geolocalizacion</span>
+      console.<span class="function">error</span>(<span class="string">'Error:'</span>, error.message); <span class="comment">// Muestra el mensaje de error</span>
     },
-    { <span class="property">enableHighAccuracy</span>: <span class="keyword">true</span>, <span class="property">timeout</span>: <span class="number">10000</span> }
+    { <span class="property">enableHighAccuracy</span>: <span class="keyword">true</span>, <span class="property">timeout</span>: <span class="number">10000</span> } <span class="comment">// Opciones: alta precision, timeout de 10s</span>
   );
 }</code></pre>
 
@@ -825,42 +825,42 @@ localStorage.<span class="function">clear</span>();</code></pre>
     <h2 class="section__title"><i class="fas fa-palette"></i> Canvas API</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML + <i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;canvas</span> <span class="attr">id</span>=<span class="string">"miCanvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;&lt;/canvas&gt;</span>
+  <pre><code><span class="tag">&lt;canvas</span> <span class="attr">id</span>=<span class="string">"miCanvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;&lt;/canvas&gt;</span> <span class="comment">&lt;!-- Elemento canvas para dibujar --&gt;</span>
 
 <span class="tag">&lt;script&gt;</span>
-<span class="keyword">const</span> canvas = document.<span class="function">getElementById</span>(<span class="string">'miCanvas'</span>);
-<span class="keyword">const</span> ctx = canvas.<span class="function">getContext</span>(<span class="string">'2d'</span>);
+<span class="keyword">const</span> canvas = document.<span class="function">getElementById</span>(<span class="string">'miCanvas'</span>); <span class="comment">// Obtiene el elemento canvas del DOM</span>
+<span class="keyword">const</span> ctx = canvas.<span class="function">getContext</span>(<span class="string">'2d'</span>); <span class="comment">// Obtiene el contexto 2D para dibujar</span>
 
 <span class="comment">// Rectangulo</span>
-ctx.fillStyle = <span class="string">'#6366f1'</span>;
-ctx.<span class="function">fillRect</span>(<span class="number">50</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">100</span>);
+ctx.fillStyle = <span class="string">'#6366f1'</span>; <span class="comment">// Define el color de relleno</span>
+ctx.<span class="function">fillRect</span>(<span class="number">50</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">100</span>); <span class="comment">// Dibuja un rectangulo (x, y, ancho, alto)</span>
 
 <span class="comment">// Circulo</span>
-ctx.beginPath();
-ctx.<span class="function">arc</span>(<span class="number">400</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>);
-ctx.fillStyle = <span class="string">'#10b981'</span>;
-ctx.<span class="function">fill</span>();
+ctx.beginPath(); <span class="comment">// Inicia un nuevo trazo</span>
+ctx.<span class="function">arc</span>(<span class="number">400</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>); <span class="comment">// Dibuja un arco circular completo</span>
+ctx.fillStyle = <span class="string">'#10b981'</span>; <span class="comment">// Cambia el color a verde</span>
+ctx.<span class="function">fill</span>(); <span class="comment">// Rellena la forma dibujada</span>
 
 <span class="comment">// Texto</span>
-ctx.font = <span class="string">'bold 24px Inter'</span>;
-ctx.fillStyle = <span class="string">'#0f172a'</span>;
-ctx.<span class="function">fillText</span>(<span class="string">'Hola Canvas!'</span>, <span class="number">50</span>, <span class="number">400</span>);
+ctx.font = <span class="string">'bold 24px Inter'</span>; <span class="comment">// Define la fuente del texto</span>
+ctx.fillStyle = <span class="string">'#0f172a'</span>; <span class="comment">// Color del texto</span>
+ctx.<span class="function">fillText</span>(<span class="string">'Hola Canvas!'</span>, <span class="number">50</span>, <span class="number">400</span>); <span class="comment">// Escribe texto en el canvas</span>
 <span class="tag">&lt;/script&gt;</span></code></pre>
 
   <h3>Animacion con requestAnimationFrame</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">let</span> x = <span class="number">0</span>;
+  <pre><code><span class="keyword">let</span> x = <span class="number">0</span>; <span class="comment">// Posicion inicial del circulo en el eje X</span>
 <span class="keyword">function</span> <span class="function">animar</span>() {
-  ctx.<span class="function">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);
-  ctx.beginPath();
-  ctx.<span class="function">arc</span>(x, <span class="number">150</span>, <span class="number">30</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>);
-  ctx.fillStyle = <span class="string">'#6366f1'</span>;
-  ctx.<span class="function">fill</span>();
-  x += <span class="number">2</span>;
-  <span class="keyword">if</span> (x &gt; canvas.width) x = <span class="number">0</span>;
-  <span class="function">requestAnimationFrame</span>(animar);
+  ctx.<span class="function">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height); <span class="comment">// Limpia todo el canvas</span>
+  ctx.beginPath(); <span class="comment">// Inicia un nuevo trazo para el circulo</span>
+  ctx.<span class="function">arc</span>(x, <span class="number">150</span>, <span class="number">30</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>); <span class="comment">// Dibuja circulo en la posicion actual</span>
+  ctx.fillStyle = <span class="string">'#6366f1'</span>; <span class="comment">// Color morado para el circulo</span>
+  ctx.<span class="function">fill</span>(); <span class="comment">// Rellena el circulo</span>
+  x += <span class="number">2</span>; <span class="comment">// Mueve el circulo 2 pixeles a la derecha</span>
+  <span class="keyword">if</span> (x &gt; canvas.width) x = <span class="number">0</span>; <span class="comment">// Reinicia si sale del canvas</span>
+  <span class="function">requestAnimationFrame</span>(animar); <span class="comment">// Programa el siguiente frame de animacion</span>
 }
-<span class="function">animar</span>();</code></pre>
+<span class="function">animar</span>(); <span class="comment">// Inicia la animacion</span></code></pre>
 
   <h3>Demo: Canvas Interactivo</h3>
   <div class="demo-area">
@@ -883,17 +883,17 @@ ctx.<span class="function">fillText</span>(<span class="string">'Hola Canvas!'</
     <h2 class="section__title"><i class="fas fa-arrows-alt"></i> Drag and Drop</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">const</span> draggable = document.<span class="function">querySelector</span>(<span class="string">'.draggable'</span>);
-draggable.<span class="function">addEventListener</span>(<span class="string">'dragstart'</span>, (e) =&gt; {
-  e.dataTransfer.<span class="function">setData</span>(<span class="string">'text/plain'</span>, e.target.id);
+  <pre><code><span class="keyword">const</span> draggable = document.<span class="function">querySelector</span>(<span class="string">'.draggable'</span>); <span class="comment">// Selecciona el elemento arrastrable</span>
+draggable.<span class="function">addEventListener</span>(<span class="string">'dragstart'</span>, (e) =&gt; { <span class="comment">// Escucha el inicio del arrastre</span>
+  e.dataTransfer.<span class="function">setData</span>(<span class="string">'text/plain'</span>, e.target.id); <span class="comment">// Guarda el ID del elemento arrastrado</span>
 });
 
-<span class="keyword">const</span> dropzone = document.<span class="function">querySelector</span>(<span class="string">'.dropzone'</span>);
-dropzone.<span class="function">addEventListener</span>(<span class="string">'dragover'</span>, (e) =&gt; e.<span class="function">preventDefault</span>());
-dropzone.<span class="function">addEventListener</span>(<span class="string">'drop'</span>, (e) =&gt; {
-  e.<span class="function">preventDefault</span>();
-  <span class="keyword">const</span> id = e.dataTransfer.<span class="function">getData</span>(<span class="string">'text/plain'</span>);
-  dropzone.<span class="function">appendChild</span>(document.<span class="function">getElementById</span>(id));
+<span class="keyword">const</span> dropzone = document.<span class="function">querySelector</span>(<span class="string">'.dropzone'</span>); <span class="comment">// Selecciona la zona de destino</span>
+dropzone.<span class="function">addEventListener</span>(<span class="string">'dragover'</span>, (e) =&gt; e.<span class="function">preventDefault</span>()); <span class="comment">// Permite soltar elementos</span>
+dropzone.<span class="function">addEventListener</span>(<span class="string">'drop'</span>, (e) =&gt; { <span class="comment">// Maneja el evento de soltar</span>
+  e.<span class="function">preventDefault</span>(); <span class="comment">// Evita el comportamiento por defecto</span>
+  <span class="keyword">const</span> id = e.dataTransfer.<span class="function">getData</span>(<span class="string">'text/plain'</span>); <span class="comment">// Recupera el ID del elemento</span>
+  dropzone.<span class="function">appendChild</span>(document.<span class="function">getElementById</span>(id)); <span class="comment">// Mueve el elemento a la zona destino</span>
 });</code></pre>
 
   <h3>Demo: Drag and Drop Interactivo</h3>
@@ -929,10 +929,10 @@ dropzone.<span class="function">addEventListener</span>(<span class="string">'dr
   </div>
   <p>SVG (Scalable Vector Graphics) permite crear graficos vectoriales directamente en HTML. A diferencia de Canvas, SVG es independiente de la resolucion y se puede manipular con CSS y JavaScript.</p>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;svg</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 200 200"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;circle</span> <span class="attr">cx</span>=<span class="string">"100"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"80"</span> <span class="attr">fill</span>=<span class="string">"#6366f1"</span><span class="tag">/&gt;</span>
-  <span class="tag">&lt;rect</span> <span class="attr">x</span>=<span class="string">"20"</span> <span class="attr">y</span>=<span class="string">"150"</span> <span class="attr">width</span>=<span class="string">"160"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">rx</span>=<span class="string">"6"</span> <span class="attr">fill</span>=<span class="string">"#10b981"</span><span class="tag">/&gt;</span>
-  <span class="tag">&lt;text</span> <span class="attr">x</span>=<span class="string">"100"</span> <span class="attr">y</span>=<span class="string">"105"</span> <span class="attr">text-anchor</span>=<span class="string">"middle"</span> <span class="attr">fill</span>=<span class="string">"white"</span><span class="tag">&gt;</span>SVG<span class="tag">&lt;/text&gt;</span>
+  <pre><code><span class="tag">&lt;svg</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 200 200"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Contenedor SVG con area de dibujo --&gt;</span>
+  <span class="tag">&lt;circle</span> <span class="attr">cx</span>=<span class="string">"100"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"80"</span> <span class="attr">fill</span>=<span class="string">"#6366f1"</span><span class="tag">/&gt;</span> <span class="comment">&lt;!-- Circulo centrado de color morado --&gt;</span>
+  <span class="tag">&lt;rect</span> <span class="attr">x</span>=<span class="string">"20"</span> <span class="attr">y</span>=<span class="string">"150"</span> <span class="attr">width</span>=<span class="string">"160"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">rx</span>=<span class="string">"6"</span> <span class="attr">fill</span>=<span class="string">"#10b981"</span><span class="tag">/&gt;</span> <span class="comment">&lt;!-- Rectangulo redondeado verde --&gt;</span>
+  <span class="tag">&lt;text</span> <span class="attr">x</span>=<span class="string">"100"</span> <span class="attr">y</span>=<span class="string">"105"</span> <span class="attr">text-anchor</span>=<span class="string">"middle"</span> <span class="attr">fill</span>=<span class="string">"white"</span><span class="tag">&gt;</span>SVG<span class="tag">&lt;/text&gt;</span> <span class="comment">&lt;!-- Texto centrado en blanco --&gt;</span>
 <span class="tag">&lt;/svg&gt;</span></code></pre>
   <h3>SVG vs Canvas</h3>
   <div class="table-wrapper">
@@ -980,27 +980,27 @@ dropzone.<span class="function">addEventListener</span>(<span class="string">'dr
   <h3>Fetch API</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="comment">// GET basico</span>
-<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/datos'</span>);
-<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="function">json</span>();
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/datos'</span>); <span class="comment">// Realiza peticion GET a la API</span>
+<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="function">json</span>(); <span class="comment">// Convierte la respuesta a formato JSON</span>
 
 <span class="comment">// POST con opciones</span>
-<span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/usuarios'</span>, {
-  <span class="property">method</span>: <span class="string">'POST'</span>,
-  <span class="property">headers</span>: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> },
-  <span class="property">body</span>: JSON.<span class="function">stringify</span>({ <span class="property">nombre</span>: <span class="string">'Ana'</span>, <span class="property">email</span>: <span class="string">'ana@ej.com'</span> })
+<span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/usuarios'</span>, { <span class="comment">// Peticion POST con configuracion</span>
+  <span class="property">method</span>: <span class="string">'POST'</span>, <span class="comment">// Metodo HTTP para crear datos</span>
+  <span class="property">headers</span>: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> }, <span class="comment">// Indica que envia JSON</span>
+  <span class="property">body</span>: JSON.<span class="function">stringify</span>({ <span class="property">nombre</span>: <span class="string">'Ana'</span>, <span class="property">email</span>: <span class="string">'ana@ej.com'</span> }) <span class="comment">// Datos a enviar como JSON</span>
 });</code></pre>
 
   <h3>Web Workers</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="comment">// worker.js</span>
-self.<span class="function">onmessage</span> = (e) =&gt; {
-  self.<span class="function">postMessage</span>(e.data * <span class="number">2</span>);
+self.<span class="function">onmessage</span> = (e) =&gt; { <span class="comment">// Escucha mensajes del hilo principal</span>
+  self.<span class="function">postMessage</span>(e.data * <span class="number">2</span>); <span class="comment">// Devuelve el resultado multiplicado por 2</span>
 };
 
 <span class="comment">// Principal</span>
-<span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="function">Worker</span>(<span class="string">'worker.js'</span>);
-worker.<span class="function">postMessage</span>(<span class="number">21</span>);
-worker.<span class="function">onmessage</span> = (e) =&gt; console.<span class="function">log</span>(e.data); <span class="comment">// 42</span></code></pre>
+<span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="function">Worker</span>(<span class="string">'worker.js'</span>); <span class="comment">// Crea un hilo de ejecucion en segundo plano</span>
+worker.<span class="function">postMessage</span>(<span class="number">21</span>); <span class="comment">// Envía el valor 21 al worker</span>
+worker.<span class="function">onmessage</span> = (e) =&gt; console.<span class="function">log</span>(e.data); <span class="comment">// Recibe y muestra el resultado (42)</span></code></pre>
 
   <h3>Demo: Fetch API en Vivo</h3>
   <div class="demo-area">
@@ -1023,13 +1023,13 @@ worker.<span class="function">onmessage</span> = (e) =&gt; console.<span class="
     <h2 class="section__title"><i class="fas fa-plug"></i> WebSockets</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="function">WebSocket</span>(<span class="string">'wss://ejemplo.com/chat'</span>);
-socket.<span class="function">addEventListener</span>(<span class="string">'open'</span>, () =&gt; {
-  socket.<span class="function">send</span>(JSON.<span class="function">stringify</span>({ <span class="property">type</span>: <span class="string">'message'</span>, <span class="property">content</span>: <span class="string">'Hola!'</span> }));
+  <pre><code><span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="function">WebSocket</span>(<span class="string">'wss://ejemplo.com/chat'</span>); <span class="comment">// Abre conexion WebSocket segura</span>
+socket.<span class="function">addEventListener</span>(<span class="string">'open'</span>, () =&gt; { <span class="comment">// Escucha cuando se establece la conexion</span>
+  socket.<span class="function">send</span>(JSON.<span class="function">stringify</span>({ <span class="property">type</span>: <span class="string">'message'</span>, <span class="property">content</span>: <span class="string">'Hola!'</span> })); <span class="comment">// Envia un mensaje al servidor</span>
 });
-socket.<span class="function">addEventListener</span>(<span class="string">'message'</span>, (event) =&gt; {
-  <span class="keyword">const</span> data = JSON.<span class="function">parse</span>(event.data);
-  console.<span class="function">log</span>(<span class="string">'Recibido:'</span>, data);
+socket.<span class="function">addEventListener</span>(<span class="string">'message'</span>, (event) =&gt; { <span class="comment">// Escucha mensajes entrantes del servidor</span>
+  <span class="keyword">const</span> data = JSON.<span class="function">parse</span>(event.data); <span class="comment">// Convierte el JSON recibido a objeto</span>
+  console.<span class="function">log</span>(<span class="string">'Recibido:'</span>, data); <span class="comment">// Muestra los datos recibidos</span>
 });</code></pre>
 </section>
 
@@ -1042,18 +1042,18 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="comment">&lt;!-- aria-label --&gt;</span>
-<span class="tag">&lt;button</span> <span class="attr">aria-label</span>=<span class="string">"Cerrar menu"</span><span class="tag">&gt;</span>&amp;times;<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">aria-label</span>=<span class="string">"Cerrar menu"</span><span class="tag">&gt;</span>&amp;times;<span class="tag">&lt;/button&gt;</span> <span class="comment">&lt;!-- Label accesible para lectores de pantalla --&gt;</span>
 
 <span class="comment">&lt;!-- aria-labelledby --&gt;</span>
-<span class="tag">&lt;div</span> <span class="attr">aria-labelledby</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">aria-labelledby</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Vincula el div a un titulo existente --&gt;</span>
   <span class="tag">&lt;h2</span> <span class="attr">id</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span>Seccion<span class="tag">&lt;/h2&gt;</span>
-<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span> <span class="comment">&lt;!-- Fin del div con aria-labelledby --&gt;</span>
 
 <span class="comment">&lt;!-- aria-live --&gt;</span>
-<spanspan class="tag">&lt;div</span> <span class="attr">aria-live</span>=<span class="string">"polite"</span><span class="tag">&gt;</span>Contenido dinamico<span class="tag">&lt;/div&gt;</span>
+<spanspan class="tag">&lt;div</span> <span class="attr">aria-live</span>=<span class="string">"polite"</span><span class="tag">&gt;</span>Contenido dinamico<span class="tag">&lt;/div&gt;</span> <span class="comment">&lt;!-- Anuncia cambios a lectores de pantalla --&gt;</span>
 
 <span class="comment">&lt;!-- tabindex --&gt;</span>
-<span class="tag">&lt;input</span> <span class="attr">tabindex</span>=<span class="string">"0"</span><span class="tag">&gt;</span></code></pre>
+<span class="tag">&lt;input</span> <span class="attr">tabindex</span>=<span class="string">"0"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Permite navegacion por teclado con Tab --&gt;</span></code></pre>
 
   <h3>Demo: ARIA en Vivo</h3>
   <div class="demo-area">
@@ -1090,10 +1090,10 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
     <h2 class="section__title"><i class="fas fa-code"></i> Microdatos</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;div</span> <span class="attr">itemscope</span> <span class="attr">itemtype</span>=<span class="string">"https://schema.org/Person"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;h2</span> <span class="attr">itemprop</span>=<span class="string">"name"</span><span class="tag">&gt;</span>Ana Garcia<span class="tag">&lt;/h2&gt;</span>
-  <span class="tag">&lt;p&gt;</span>Trabajo: <span class="tag">&lt;span</span> <span class="attr">itemprop</span>=<span class="string">"jobTitle"</span><span class="tag">&gt;</span>Desarrolladora<span class="tag">&lt;/span&gt;&lt;/p&gt;</span>
-  <span class="tag">&lt;p&gt;</span>Email: <span class="tag">&lt;span</span> <span class="attr">itemprop</span>=<span class="string">"email"</span><span class="tag">&gt;</span>ana@ejemplo.com<span class="tag">&lt;/span&gt;&lt;/p&gt;</span>
+  <pre><code><span class="tag">&lt;div</span> <span class="attr">itemscope</span> <span class="attr">itemtype</span>=<span class="string">"https://schema.org/Person"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Define un microdato de tipo Persona --&gt;</span>
+  <span class="tag">&lt;h2</span> <span class="attr">itemprop</span>=<span class="string">"name"</span><span class="tag">&gt;</span>Ana Garcia<span class="tag">&lt;/h2&gt;</span> <span class="comment">&lt;!-- Propiedad nombre de la persona --&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Trabajo: <span class="tag">&lt;span</span> <span class="attr">itemprop</span>=<span class="string">"jobTitle"</span><span class="tag">&gt;</span>Desarrolladora<span class="tag">&lt;/span&gt;&lt;/p&gt;</span> <span class="comment">&lt;!-- Cargo o titulo laboral --&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Email: <span class="tag">&lt;span</span> <span class="attr">itemprop</span>=<span class="string">"email"</span><span class="tag">&gt;</span>ana@ejemplo.com<span class="tag">&lt;/span&gt;&lt;/p&gt;</span> <span class="comment">&lt;!-- Direccion de correo electronico --&gt;</span>
 <span class="tag">&lt;/div&gt;</span></code></pre>
 </section>
 
@@ -1105,17 +1105,17 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
     <h2 class="section__title"><i class="fas fa-chevron-circle-down"></i> Details, Summary y Dialog</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="tag">&lt;details&gt;</span>
-  <span class="tag">&lt;summary&gt;</span>Que es HTML5?<span class="tag">&lt;/summary&gt;</span>
-  <span class="tag">&lt;p&gt;</span>HTML5 es la quinta revision del lenguaje HTML.<span class="tag">&lt;/p&gt;</span>
+  <pre><code><span class="tag">&lt;details&gt;</span> <span class="comment">&lt;!-- Contenido desplegable/colapsable --&gt;</span>
+  <span class="tag">&lt;summary&gt;</span>Que es HTML5?<span class="tag">&lt;/summary&gt;</span> <span class="comment">&lt;!-- Texto visible que activa el toggle --&gt;</span>
+  <span class="tag">&lt;p&gt;</span>HTML5 es la quinta revision del lenguaje HTML.<span class="tag">&lt;/p&gt;</span> <span class="comment">&lt;!-- Contenido oculto hasta hacer clic --&gt;</span>
 <span class="tag">&lt;/details&gt;</span>
 
-<span class="tag">&lt;dialog</span> <span class="attr">id</span>=<span class="string">"modal"</span><span class="tag">&gt;</span>
-  <span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"dialog"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;dialog</span> <span class="attr">id</span>=<span class="string">"modal"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Elemento dialog nativo para modales --&gt;</span>
+  <span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"dialog"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formulario que cierra el dialog al enviar --&gt;</span>
     <span class="tag">&lt;h2&gt;</span>Confirmar<span class="tag">&lt;/h2&gt;</span>
     <span class="tag">&lt;p&gt;</span>Estas seguro?<span class="tag">&lt;/p&gt;</span>
-    <span class="tag">&lt;button</span> <span class="attr">value</span>=<span class="string">"cancel"</span><span class="tag">&gt;</span>No<span class="tag">&lt;/button&gt;</span>
-    <span class="tag">&lt;button</span> <span class="attr">value</span>=<span class="string">"confirm"</span><span class="tag">&gt;</span>Si<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">value</span>=<span class="string">"cancel"</span><span class="tag">&gt;</span>No<span class="tag">&lt;/button&gt;</span> <span class="comment">&lt;!-- Boton que cierra con valor cancel --&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">value</span>=<span class="string">"confirm"</span><span class="tag">&gt;</span>Si<span class="tag">&lt;/button&gt;</span> <span class="comment">&lt;!-- Boton que confirma con valor confirm --&gt;</span>
   <span class="tag">&lt;/form&gt;</span>
 <span class="tag">&lt;/dialog&gt;</span></code></pre>
 </section>
@@ -1128,17 +1128,17 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
     <h2 class="section__title"><i class="fas fa-eye"></i> Intersection Observer</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="function">IntersectionObserver</span>((entries) =&gt; {
-  entries.<span class="function">forEach</span>(entry =&gt; {
-    <span class="keyword">if</span> (entry.isIntersecting) {
-      entry.target.classList.<span class="function">add</span>(<span class="string">'visible'</span>);
-      observer.<span class="function">unobserve</span>(entry.target);
+  <pre><code><span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="function">IntersectionObserver</span>((entries) =&gt; { <span class="comment">// Crea un observador de interseccion</span>
+  entries.<span class="function">forEach</span>(entry =&gt; { <span class="comment">// Recorre cada elemento observado</span>
+    <span class="keyword">if</span> (entry.isIntersecting) { <span class="comment">// Verifica si el elemento es visible</span>
+      entry.target.classList.<span class="function">add</span>(<span class="string">'visible'</span>); <span class="comment">// Agrega la clase visible al elemento</span>
+      observer.<span class="function">unobserve</span>(entry.target); <span class="comment">// Deja de observar ese elemento</span>
     }
   });
-}, { <span class="property">threshold</span>: <span class="number">0.1</span>, <span class="property">rootMargin</span>: <span class="string">'0px 0px -50px 0px'</span> });
+}, { <span class="property">threshold</span>: <span class="number">0.1</span>, <span class="property">rootMargin</span>: <span class="string">'0px 0px -50px 0px'</span> }); <span class="comment">// 10% visible, margen inferior negativo</span>
 
 document.<span class="function">querySelectorAll</span>(<span class="string">'.animate-on-scroll'</span>).<span class="function">forEach</span>(el =&gt; {
-  observer.<span class="function">observe</span>(el);
+  observer.<span class="function">observe</span>(el); <span class="comment">// Observa cada elemento con la clase animate-on-scroll</span>
 });</code></pre>
 
   <h3>Demo: Scroll Detection</h3>
@@ -1163,10 +1163,10 @@ document.<span class="function">querySelectorAll</span>(<span class="string">'.a
     <h2 class="section__title"><i class="fas fa-cubes"></i> Template y Web Components</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">class</span> <span class="function">MiBoton</span> <span class="keyword">extends</span> HTMLElement {
+  <pre><code><span class="keyword">class</span> <span class="function">MiBoton</span> <span class="keyword">extends</span> HTMLElement { <span class="comment">// Define un Web Component heredando de HTMLElement</span>
   <span class="function">constructor</span>() {
-    <span class="keyword">super</span>();
-    <span class="keyword">const</span> shadow = <span class="keyword">this</span>.<span class="function">attachShadow</span>({ <span class="property">mode</span>: <span class="string">'open'</span> });
+    <span class="keyword">super</span>(); <span class="comment">// Llama al constructor del elemento padre</span>
+    <span class="keyword">const</span> shadow = <span class="keyword">this</span>.<span class="function">attachShadow</span>({ <span class="property">mode</span>: <span class="string">'open'</span> }); <span class="comment">// Crea un Shadow DOM encapsulado</span>
     shadow.innerHTML = <span class="string">`
       &lt;style&gt;
         button { padding: 8px 16px; background: #6366f1;
@@ -1174,10 +1174,10 @@ document.<span class="function">querySelectorAll</span>(<span class="string">'.a
         button:hover { background: #4f46e5; }
       &lt;/style&gt;
       &lt;button&gt;&lt;slot&gt;Click&lt;/slot&gt;&lt;/button&gt;
-    `</span>;
+    `</span>; <span class="comment">// Estilos y HTML encapsulados dentro del Shadow DOM</span>
   }
 }
-customElements.<span class="function">define</span>(<span class="string">'mi-boton'</span>, MiBoton);</code></pre>
+customElements.<span class="function">define</span>(<span class="string">'mi-boton'</span>, MiBoton); <span class="comment">// Registra el custom element en el navegador</span></code></pre>
   <p>Uso: <code>&lt;mi-boton&gt;Mi Texto&lt;/mi-boton&gt;</code></p>
 
   <h3>Demo: Web Component en Vivo</h3>
@@ -1205,31 +1205,31 @@ customElements.<span class="function">define</span>(<span class="string">'mi-bot
   </ul>
   <div class="code-header"><span class="code-header__lang">manifest.json</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code>{
-  <span class="property">"name"</span>: <span class="string">"Mi Guia HTML5"</span>,
-  <span class="property">"short_name"</span>: <span class="string">"GuiaHTML5"</span>,
-  <span class="property">"start_url"</span>: <span class="string">"/"</span>,
-  <span class="property">"display"</span>: <span class="string">"standalone"</span>,
-  <span class="property">"background_color"</span>: <span class="string">"#6366f1"</span>,
-  <span class="property">"theme_color"</span>: <span class="string">"#6366f1"</span>,
-  <span class="property">"icons"</span>: [
-    { <span class="property">"src"</span>: <span class="string">"icon-192.png"</span>, <span class="property">"sizes"</span>: <span class="string">"192x192"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> },
-    { <span class="property">"src"</span>: <span class="string">"icon-512.png"</span>, <span class="property">"sizes"</span>: <span class="string">"512x512"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> }
+  <span class="property">"name"</span>: <span class="string">"Mi Guia HTML5"</span>, <span class="comment">// Nombre completo de la aplicacion</span>
+  <span class="property">"short_name"</span>: <span class="string">"GuiaHTML5"</span>, <span class="comment">// Nombre corto para el icono de inicio</span>
+  <span class="property">"start_url"</span>: <span class="string">"/"</span>, <span class="comment">// URL que se abre al iniciar la PWA</span>
+  <span class="property">"display"</span>: <span class="string">"standalone"</span>, <span class="comment">// Se ejecuta como app nativa sin barra del navegador</span>
+  <span class="property">"background_color"</span>: <span class="string">"#6366f1"</span>, <span class="comment">// Color de fondo al cargar la app</span>
+  <span class="property">"theme_color"</span>: <span class="string">"#6366f1"</span>, <span class="comment">// Color de la barra de estado en moviles</span>
+  <span class="property">"icons"</span>: [ <span class="comment">// Iconos para diferentes tamanos de pantalla</span>
+    { <span class="property">"src"</span>: <span class="string">"icon-192.png"</span>, <span class="property">"sizes"</span>: <span class="string">"192x192"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> }, <span class="comment">// Icono para moviles</span>
+    { <span class="property">"src"</span>: <span class="string">"icon-512.png"</span>, <span class="property">"sizes"</span>: <span class="string">"512x512"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> } <span class="comment">// Icono para pantallas grandes</span>
   ]
 }</code></pre>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript (Service Worker)</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="comment">// sw.js</span>
-<span class="keyword">const</span> CACHE = <span class="string">'guia-html5-v1'</span>;
-<span class="keyword">const</span> ASSETS = [<span class="string">'/'</span>, <span class="string">'/css/styles.css'</span>, <span class="string">'/js/app.js'</span>];
+<span class="keyword">const</span> CACHE = <span class="string">'guia-html5-v1'</span>; <span class="comment">// Nombre de la cache para almacenar recursos</span>
+<span class="keyword">const</span> ASSETS = [<span class="string">'/'</span>, <span class="string">'/css/styles.css'</span>, <span class="string">'/js/app.js'</span>]; <span class="comment">// Recursos a cachear</span>
 
-self.<span class="function">addEventListener</span>(<span class="string">'install'</span>, (e) =&gt; {
-  e.<span class="function">waitUntil</span>(
-    caches.<span class="function">open</span>(CACHE).<span class="function">then</span>(cache =&gt; cache.<span class="function">addAll</span>(ASSETS))
+self.<span class="function">addEventListener</span>(<span class="string">'install'</span>, (e) =&gt; { <span class="comment">// Se ejecuta al instalar el service worker</span>
+  e.<span class="function">waitUntil</span>( <span class="comment">// Espera a que termine la cache antes de continuar</span>
+    caches.<span class="function">open</span>(CACHE).<span class="function">then</span>(cache =&gt; cache.<span class="function">addAll</span>(ASSETS)) <span class="comment">// Abre la cache y guarda todos los assets</span>
   );
 });
 
-self.<span class="function">addEventListener</span>(<span class="string">'fetch'</span>, (e) =&gt; {
-  e.<span class="function">respondWith</span>(
-    caches.<span class="function">match</span>(e.request).<span class="function">then</span>(r =&gt; r || <span class="function">fetch</span>(e.request))
+self.<span class="function">addEventListener</span>(<span class="string">'fetch'</span>, (e) =&gt; { <span class="comment">// Intercepta cada peticion de red</span>
+  e.<span class="function">respondWith</span>( <span class="comment">// Responde con el resultado de la cache o la red</span>
+    caches.<span class="function">match</span>(e.request).<span class="function">then</span>(r =&gt; r || <span class="function">fetch</span>(e.request)) <span class="comment">// Si esta en cache la usa, si no fetch</span>
   );
 });</code></pre>
 </section>
@@ -1244,67 +1244,67 @@ self.<span class="function">addEventListener</span>(<span class="string">'fetch'
   <h3>Selectores modernos</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="comment">/* Hijo directo */</span>
-<span class="tag">.padre</span> &gt; <span class="tag">.hijo</span> { <span class="property">color</span>: <span class="value">red</span>; }
+<span class="tag">.padre</span> &gt; <span class="tag">.hijo</span> { <span class="property">color</span>: <span class="value">red</span>; } <span class="comment">/* Selecciona hijos directos de .padre */</span>
 
 <span class="comment">/* Hermano siguiente */</span>
-<span class="tag">.a</span> + <span class="tag">.b</span> { <span class="property">margin-left</span>: <span class="value">10px</span>; }
+<span class="tag">.a</span> + <span class="tag">.b</span> { <span class="property">margin-left</span>: <span class="value">10px</span>; } <span class="comment">/* Selecciona .b solo si va justo despues de .a */</span>
 
 <span class="comment">/* Attribute selectors */</span>
-<span class="tag">a</span>[<span class="attr">href</span>^=<span class="string">"https"</span>] { <span class="property">color</span>: <span class="value">green</span>; }
-<span class="tag">input</span>[<span class="attr">type</span>$=<span class="string">"email"</span>] { <span class="property">border</span>: <span class="value">2px solid blue</span>; }
+<span class="tag">a</span>[<span class="attr">href</span>^=<span class="string">"https"</span>] { <span class="property">color</span>: <span class="value">green</span>; } <span class="comment">/* Enlaces que inician con https */</span>
+<span class="tag">input</span>[<span class="attr">type</span>$=<span class="string">"email"</span>] { <span class="property">border</span>: <span class="value">2px solid blue</span>; } <span class="comment">/* Inputs cuyo tipo termina en email */</span>
 
 <span class="comment">/* nth-child */</span>
-<span class="tag">li</span>:<span class="function">nth-child</span>(<span class="value">odd</span>) { <span class="property">background</span>: <span class="value">#f0f0f0</span>; }
+<span class="tag">li</span>:<span class="function">nth-child</span>(<span class="value">odd</span>) { <span class="property">background</span>: <span class="value">#f0f0f0</span>; } <span class="comment">/* Alterna color en filas impares */</span>
 
 <span class="comment">/* :not */</span>
-<span class="tag">p</span>:<span class="function">not</span>(.excluido) { <span class="property">font-size</span>: <span class="value">16px</span>; }</code></pre>
+<span class="tag">p</span>:<span class="function">not</span>(.excluido) { <span class="property">font-size</span>: <span class="value">16px</span>; } <span class="comment">/* Aplica estilos excepto a .excluido */</span></code></pre>
 
   <h3>Flexbox</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="tag">.container</span> {
-  <span class="property">display</span>: <span class="value">flex</span>;
-  <span class="property">justify-content</span>: <span class="value">space-between</span>;
-  <span class="property">align-items</span>: <span class="value">center</span>;
-  <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
-  <span class="property">gap</span>: <span class="value">16px</span>;
+  <span class="property">display</span>: <span class="value">flex</span>; <span class="comment">/* Activa Flexbox en el contenedor */</span>
+  <span class="property">justify-content</span>: <span class="value">space-between</span>; <span class="comment">/* Distribuye items con espacio entre ellos */</span>
+  <span class="property">align-items</span>: <span class="value">center</span>; <span class="comment">/* Centra items verticalmente */</span>
+  <span class="property">flex-wrap</span>: <span class="value">wrap</span>; <span class="comment">/* Permite que los items salten de linea */</span>
+  <span class="property">gap</span>: <span class="value">16px</span>; <span class="comment">/* Espacio entre items */</span>
 }
 <span class="tag">.item</span> {
-  <span class="property">flex</span>: <span class="value">1 1 300px</span>;
+  <span class="property">flex</span>: <span class="value">1 1 300px</span>; <span class="comment">/* Crece, encoge, ancho minimo de 300px */</span>
 }</code></pre>
 
   <h3>CSS Grid</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
   <pre><code><span class="tag">.grid</span> {
-  <span class="property">display</span>: <span class="value">grid</span>;
-  <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(300px, 1fr))</span>;
-  <span class="property">gap</span>: <span class="value">20px</span>;
+  <span class="property">display</span>: <span class="value">grid</span>; <span class="comment">/* Activa CSS Grid en el contenedor */</span>
+  <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(300px, 1fr))</span>; <span class="comment">/* Columnas responsivas automaticas */</span>
+  <span class="property">gap</span>: <span class="value">20px</span>; <span class="comment">/* Espacio entre celdas del grid */</span>
 }
 <span class="tag">.grid-item</span>:<span class="function">nth-child</span>(<span class="value">1</span>) {
-  <span class="property">grid-column</span>: <span class="value">span 2</span>;
+  <span class="property">grid-column</span>: <span class="value">span 2</span>; <span class="comment">/* El primer item ocupa 2 columnas */</span>
 }</code></pre>
 
   <h3>Animaciones</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">@keyframes</span> <span class="function">fadeInUp</span> {
-  <span class="tag">from</span> { <span class="property">opacity</span>: <span class="value">0</span>; <span class="property">transform</span>: <span class="value">translateY(20px)</span>; }
-  <span class="tag">to</span> { <span class="property">opacity</span>: <span class="value">1</span>; <span class="property">transform</span>: <span class="value">translateY(0)</span>; }
+  <pre><code><span class="keyword">@keyframes</span> <span class="function">fadeInUp</span> { <span class="comment">/* Define la animacion fadeInUp */</span>
+  <span class="tag">from</span> { <span class="property">opacity</span>: <span class="value">0</span>; <span class="property">transform</span>: <span class="value">translateY(20px)</span>; } <span class="comment">/* Estado inicial: invisible y abajo */</span>
+  <span class="tag">to</span> { <span class="property">opacity</span>: <span class="value">1</span>; <span class="property">transform</span>: <span class="value">translateY(0)</span>; } <span class="comment">/* Estado final: visible y en posicion */</span>
 }
 <span class="tag">.animate</span> {
-  <span class="property">animation</span>: <span class="value">fadeInUp 0.5s ease forwards</span>;
-  <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;
+  <span class="property">animation</span>: <span class="value">fadeInUp 0.5s ease forwards</span>; <span class="comment">/* Aplica la animacion de 0.5 segundos */</span>
+  <span class="property">transition</span>: <span class="value">all 0.3s ease</span>; <span class="comment">/* Transicion suave para cambios de estado */</span>
 }</code></pre>
 
   <h3>Custom Properties (Variables CSS)</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">:root</span> {
-  <span class="property">--color-primary</span>: <span class="value">#6366f1</span>;
-  <span class="property">--radius</span>: <span class="value">12px</span>;
-  <span class="property">--shadow</span>: <span class="value">0 4px 6px rgba(0,0,0,0.1)</span>;
+  <pre><code><span class="keyword">:root</span> { <span class="comment">/* Define variables CSS globales */</span>
+  <span class="property">--color-primary</span>: <span class="value">#6366f1</span>; <span class="comment">/* Color principal morado */</span>
+  <span class="property">--radius</span>: <span class="value">12px</span>; <span class="comment">/* Radio de borde redondeado */</span>
+  <span class="property">--shadow</span>: <span class="value">0 4px 6px rgba(0,0,0,0.1)</span>; <span class="comment">/* Sombra suave */</span>
 }
 <span class="tag">.card</span> {
-  <span class="property">background</span>: <span class="value">var(--color-primary)</span>;
-  <span class="property">border-radius</span>: <span class="value">var(--radius)</span>;
-  <span class="property">box-shadow</span>: <span class="value">var(--shadow)</span>;
+  <span class="property">background</span>: <span class="value">var(--color-primary)</span>; <span class="comment">/* Usa la variable de color */</span>
+  <span class="property">border-radius</span>: <span class="value">var(--radius)</span>; <span class="comment">/* Usa la variable de radio */</span>
+  <span class="property">box-shadow</span>: <span class="value">var(--shadow)</span>; <span class="comment">/* Usa la variable de sombra */</span>
 }</code></pre>
 </section>
 
@@ -1338,36 +1338,37 @@ self.<span class="function">addEventListener</span>(<span class="string">'fetch'
 
   <h3>Funciones</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="comment">// Funcion tradicional</span>
-<span class="keyword">function</span> <span class="function">sumar</span>(a, b) { <span class="keyword">return</span> a + b; }
+<pre><code><span class="comment">// Funcion tradicional</span>
+<span class="keyword">function</span> <span class="function">sumar</span>(a, b) { <span class="keyword">return</span> a + b; } <span class="comment">// Declara una funcion con parametros y retorno</span>
 
 <span class="comment">// Arrow function</span>
-<span class="keyword">const</span> <span class="function">sumar</span> = (a, b) =&gt; a + b;
+<span class="keyword">const</span> <span class="function">sumar</span> = (a, b) =&gt; a + b; <span class="comment">// Sintaxis abreviada de funcion en ES6</span>
 
 <span class="comment">// Async/await</span>
 <span class="keyword">async function</span> <span class="function">obtenerDatos</span>() {
-  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'/api/datos'</span>);
-  <span class="keyword">return</span> res.<span class="function">json</span>();
+  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'/api/datos'</span>); <span class="comment">// Espera la respuesta de la API</span>
+
+  <span class="keyword">return</span> res.<span class="function">json</span>(); <span class="comment">// Devuelve los datos en formato JSON</span>
 }</code></pre>
 
   <h3>Arrays</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code><span class="keyword">const</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+  <pre><code><span class="keyword">const</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]; <span class="comment">// Array de numeros para operaciones</span>
 
-nums.<span class="function">map</span>(n =&gt; n * <span class="number">2</span>);           <span class="comment">// [2,4,6,8,10]</span>
-nums.<span class="function">filter</span>(n =&gt; n &gt; <span class="number">3</span>);      <span class="comment">// [4,5]</span>
-nums.<span class="function">reduce</span>((a, b) =&gt; a + b, <span class="number">0</span>); <span class="comment">// 15</span>
-nums.<span class="function">find</span>(n =&gt; n &gt; <span class="number">2</span>);        <span class="comment">// 3</span>
-nums.<span class="function">some</span>(n =&gt; n &gt; <span class="number">4</span>);        <span class="comment">// true</span></code></pre>
+nums.<span class="function">map</span>(n =&gt; n * <span class="number">2</span>);           <span class="comment">// Transforma cada elemento: duplica los valores</span>
+nums.<span class="function">filter</span>(n =&gt; n &gt; <span class="number">3</span>);      <span class="comment">// Filtra: devuelve solo mayores a 3</span>
+nums.<span class="function">reduce</span>((a, b) =&gt; a + b, <span class="number">0</span>); <span class="comment">// Reduce: suma todos los elementos</span>
+nums.<span class="function">find</span>(n =&gt; n &gt; <span class="number">2</span>);        <span class="comment">// Busca: devuelve el primer elemento mayor a 2</span>
+nums.<span class="function">some</span>(n =&gt; n &gt; <span class="number">4</span>);        <span class="comment">// Verifica: true si algun elemento es mayor a 4</span></code></pre>
 
   <h3>DOM Manipulation</h3>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
-  <pre><code>document.<span class="function">querySelector</span>(<span class="string">'.clase'</span>);
-document.<span class="function">querySelectorAll</span>(<span class="string">'p'</span>);
-elemento.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {});
-elemento.classList.<span class="function">add</span>(<span class="string">'active'</span>);
-elemento.style.color = <span class="string">'red'</span>;
-elemento.innerHTML = <span class="string">'&lt;strong&gt;Nuevo&lt;/strong&gt;'</span>;</code></pre>
+  <pre><code>document.<span class="function">querySelector</span>(<span class="string">'.clase'</span>); <span class="comment">// Selecciona el primer elemento que coincida con el selector</span>
+document.<span class="function">querySelectorAll</span>(<span class="string">'p'</span>); <span class="comment">// Selecciona todos los elementos que coincidan</span>
+elemento.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {}); <span class="comment">// Registra un evento click en el elemento</span>
+elemento.classList.<span class="function">add</span>(<span class="string">'active'</span>); <span class="comment">// Agrega una clase CSS al elemento</span>
+elemento.style.color = <span class="string">'red'</span>; <span class="comment">// Cambia el estilo CSS directamente</span>
+elemento.innerHTML = <span class="string">'&lt;strong&gt;Nuevo&lt;/strong&gt;'</span>; <span class="comment">// Reemplaza el contenido HTML interno</span></code></pre>
 </section>
 
 <!-- SECCION 27: RECURSOS -->
