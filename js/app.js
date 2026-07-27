@@ -310,21 +310,21 @@ function initQuiz() {
   if (!quizEl) return;
 
   const questions = [
-    { q: '\u00BFQu\u00e9 etiqueta se usa para definir la estructura b\u00e1sica de un documento HTML5?', opts: ['<body>', '<html>', '<head>', '<meta>'], correct: 1 },
-    { q: '\u00BFCu\u00e1l es la diferencia principal entre <strong>&lt;section&gt;</strong> y <strong>&lt;div&gt;</strong>?', opts: ['<section> es v\u00e1lida en HTML4', '<section> representa un grupo tem\u00e1tico de contenido', '<div> solo se usa en CSS', 'No hay diferencia'], correct: 1 },
-    { q: '\u00BFQu\u00e9 tipo de contenido representa la etiqueta <strong>&lt;article&gt;</strong>?', opts: ['Contenido de soporte', 'Contenido导航', 'Contenido independiente y autocontenido', 'Contenido complementario'], correct: 2 },
-    { q: '\u00BFQu\u00e9 atributo se usa para hacer que un elemento sea editable en el navegador?', opts: ['contenteditable', 'editable', 'content-modifiable', 'spellcheck'], correct: 0 },
-    { q: 'La diferencia entre <strong>localStorage</strong> y <strong>sessionStorage</strong> es:', opts: ['localStorage es m\u00e1s r\u00e1pido', 'localStorage persiste, sessionStorage se borra al cerrar pesta\u00f1a', 'No hay diferencia', 'sessionStorage es m\u00e1s seguro'], correct: 1 },
-    { q: '\u00BFQu\u00e9 etiqueta se usa para representar contenido que est\u00e1 temporalmente oculto?', opts: ['<hidden>', '<template>', '<toggle>', '<unused>'], correct: 1 },
-    { q: 'Los <strong>Web Components</strong> se componen de:', opts: ['HTML + CSS s\u00f3lo', 'Custom Elements + Shadow DOM + HTML Templates', 'Custom Elements + React', 'Shadow DOM + jQuery'], correct: 1 },
-    { q: 'La API <strong>Geolocation</strong> se accede a trav\u00e9s de:', opts: ['window.geolocation', 'navigator.geolocation', 'document.geolocation', 'location.geolocation'], correct: 1 },
-    { q: '\u00BFQu\u00e9 permite hacer el m\u00e9todo <strong>fetch()</strong>?', opts: ['Hacer peticiones HTTP al servidor', 'Crear gr\u00e1ficos en Canvas', 'Manipular el DOM', 'Almacenar datos localmente'], correct: 0 },
-    { q: 'Las <strong>PWA</strong> (Progressive Web Apps) permiten:', opts: ['Solo crear p\u00e1ginas est\u00e1ticas', 'Funcionar offline, ser instaladas y acceder a APIs nativas', 'Reemplazar completamente a las apps nativas', 'Solo funcionar en Chrome'], correct: 1 },
-    { q: '\u00BFQu\u00e9 elemento se usa para contenido que se muestra como una nota al pie de p\u00e1gina?', opts: ['<bottom>', '<aside>', '<footer>', '<footnote>'], correct: 2 },
+    { q: '¿Qué etiqueta se usa para definir la estructura básica de un documento HTML5?', opts: ['<body>', '<html>', '<head>', '<meta>'], correct: 1 },
+    { q: '¿Cuál es la diferencia principal entre <strong>&lt;section&gt;</strong> y <strong>&lt;div&gt;</strong>?', opts: ['<section> es válida en HTML4', '<section> representa un grupo temático de contenido', '<div> solo se usa en CSS', 'No hay diferencia'], correct: 1 },
+    { q: '¿Qué tipo de contenido representa la etiqueta <strong>&lt;article&gt;</strong>?', opts: ['Contenido de soporte', 'Contenido de navegación', 'Contenido independiente y autocontenido', 'Contenido complementario'], correct: 2 },
+    { q: '¿Qué atributo se usa para hacer que un elemento sea editable en el navegador?', opts: ['contenteditable', 'editable', 'content-modifiable', 'spellcheck'], correct: 0 },
+    { q: 'La diferencia entre <strong>localStorage</strong> y <strong>sessionStorage</strong> es:', opts: ['localStorage es más rápido', 'localStorage persiste, sessionStorage se borra al cerrar pestaña', 'No hay diferencia', 'sessionStorage es más seguro'], correct: 1 },
+    { q: '¿Qué etiqueta se usa para representar contenido que está temporalmente oculto?', opts: ['<hidden>', '<template>', '<toggle>', '<unused>'], correct: 1 },
+    { q: 'Los <strong>Web Components</strong> se componen de:', opts: ['HTML + CSS sólo', 'Custom Elements + Shadow DOM + HTML Templates', 'Custom Elements + React', 'Shadow DOM + jQuery'], correct: 1 },
+    { q: 'La API <strong>Geolocation</strong> se accede a través de:', opts: ['window.geolocation', 'navigator.geolocation', 'document.geolocation', 'location.geolocation'], correct: 1 },
+    { q: '¿Qué permite hacer el método <strong>fetch()</strong>?', opts: ['Hacer peticiones HTTP al servidor', 'Crear gráficos en Canvas', 'Manipular el DOM', 'Almacenar datos localmente'], correct: 0 },
+    { q: 'Las <strong>PWA</strong> (Progressive Web Apps) permiten:', opts: ['Solo crear páginas estáticas', 'Funcionar offline, ser instaladas y acceder a APIs nativas', 'Reemplazar completamente a las apps nativas', 'Solo funcionar en Chrome'], correct: 1 },
+    { q: '¿Qué elemento se usa para contenido que se muestra como una nota al pie de página?', opts: ['<bottom>', '<aside>', '<footer>', '<footnote>'], correct: 2 },
     { q: 'El atributo <strong>crossorigin</strong> en <code>&lt;script&gt;</code> se usa para:', opts: ['Mejorar el rendimiento', 'Controlar solicitudes CORS al cargar el archivo', 'Hacer el script invisible', 'Permitir solo scripts internos'], correct: 1 },
-    { q: '\u00BFQu\u00e9 etiqueta permite definir m\u00faltiples fuentes de imagen adaptadas al dispositivo?', opts: ['<image>', '<picture>', '<responsive>', '<media>'], correct: 1 },
-    { q: 'La API <strong>Canvas</strong> se usa para:', opts: ['Crear formularios', 'Dibujar gr\u00e1ficos 2D/3D con JavaScript', 'Almacenar datos', 'Crear enlaces'], correct: 1 },
-    { q: '\u00BFQu\u00e9 API permite detectar cuando un elemento entra o sale del viewport?', opts: ['Viewport API', 'Scroll API', 'Intersection Observer', 'Element API'], correct: 2 }
+    { q: '¿Qué etiqueta permite definir múltiples fuentes de imagen adaptadas al dispositivo?', opts: ['<image>', '<picture>', '<responsive>', '<media>'], correct: 1 },
+    { q: 'La API <strong>Canvas</strong> se usa para:', opts: ['Crear formularios', 'Dibujar gráficos 2D/3D con JavaScript', 'Almacenar datos', 'Crear enlaces'], correct: 1 },
+    { q: '¿Qué API permite detectar cuando un elemento entra o sale del viewport?', opts: ['Viewport API', 'Scroll API', 'Intersection Observer', 'Element API'], correct: 2 }
   ];
 
   let current = 0;
@@ -337,7 +337,7 @@ function initQuiz() {
     quizEl.innerHTML = `
       <div class="quiz__progress">
         <span><i class="fas fa-question-circle" style="color:var(--color-primary)"></i> Pregunta ${current + 1} de ${questions.length}</span>
-        <span class="quiz__score"><i class="fas fa-star"></i> Puntuaci\u00f3n: ${score}/${questions.length}</span>
+        <span class="quiz__score"><i class="fas fa-star"></i> Puntuación: ${score}/${questions.length}</span>
       </div>
       <div style="height:4px;background:var(--border-color);border-radius:4px;margin-bottom:20px;overflow:hidden;">
         <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--color-primary),var(--color-accent));border-radius:4px;transition:width 0.4s ease;"></div>
@@ -386,14 +386,14 @@ function initQuiz() {
 
   function renderResult() {
     const pct = Math.round((score / questions.length) * 100);
-    let msg = pct >= 80 ? '\u00a1Excelente! Dominas HTML5.' :
-              pct >= 60 ? '\u00a1Buen trabajo! Sigue practicando.' :
-              pct >= 40 ? 'Puedes mejorar. Revisa las secciones.' : 'Te recomendamos repasar la gu\u00eda.';
+    let msg = pct >= 80 ? '¡Excelente! Dominas HTML5.' :
+              pct >= 60 ? '¡Buen trabajo! Sigue practicando.' :
+              pct >= 40 ? 'Puedes mejorar. Revisa las secciones.' : 'Te recomendamos repasar la guía.';
     let icon = pct >= 80 ? 'fa-trophy' : pct >= 60 ? 'fa-medal' : 'fa-book-open';
     quizEl.innerHTML = `
       <div style="text-align:center;padding:20px 0;">
         <div style="width:80px;height:80px;margin:0 auto 20px;background:linear-gradient(135deg,var(--color-primary-50),var(--color-primary-100));border-radius:50%;display:flex;align-items:center;justify-content:center"><i class="fas ${icon}" style="font-size:2rem;color:var(--color-primary)"></i></div>
-        <h3 style="margin-bottom:8px;">\u00a1Quiz Completado!</h3>
+        <h3 style="margin-bottom:8px;">¡Quiz Completado!</h3>
         <p style="font-size:1.75rem;font-weight:800;color:var(--color-primary);margin-bottom:4px;">${score}/${questions.length} (${pct}%)</p>
         <p style="color:var(--text-secondary);margin-bottom:24px;">${msg}</p>
         <button class="primary quiz__next" style="padding:12px 32px;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-dark));color:white;border:none;border-radius:var(--border-radius-sm);font-family:var(--font-body);font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(99,102,241,0.3);"><i class="fas fa-redo"></i> Reiniciar Quiz</button>
