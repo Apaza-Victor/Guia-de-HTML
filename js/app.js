@@ -509,18 +509,18 @@ function handleDemoForm(e) {
   var mensaje = document.getElementById('df-mensaje').value.trim();
   var res = document.getElementById('form-result');
   if (!nombre || nombre.length < 3) {
-    res.innerHTML = '<div style="color:#ef4444;background:rgba(239,68,68,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:8px"><i class="fas fa-exclamation-circle"></i> El nombre debe tener al menos 3 caracteres.</div>';
+    res.innerHTML = '<div class="form-result form-result--error"><i class="fas fa-exclamation-circle"></i> El nombre debe tener al menos 3 caracteres.</div>';
     res.style.display = 'block'; return;
   }
   if (!email || !email.includes('@') || !email.includes('.')) {
-    res.innerHTML = '<div style="color:#ef4444;background:rgba(239,68,68,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:8px"><i class="fas fa-exclamation-circle"></i> El email no tiene un formato valido.</div>';
+    res.innerHTML = '<div class="form-result form-result--error"><i class="fas fa-exclamation-circle"></i> El email no tiene un formato valido.</div>';
     res.style.display = 'block'; return;
   }
   if (!mensaje || mensaje.length < 10) {
-    res.innerHTML = '<div style="color:#ef4444;background:rgba(239,68,68,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:8px"><i class="fas fa-exclamation-circle"></i> El mensaje debe tener al menos 10 caracteres.</div>';
+    res.innerHTML = '<div class="form-result form-result--error"><i class="fas fa-exclamation-circle"></i> El mensaje debe tener al menos 10 caracteres.</div>';
     res.style.display = 'block'; return;
   }
-  res.innerHTML = '<div style="color:#22c55e;background:rgba(34,197,94,0.1);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:8px"><i class="fas fa-check-circle"></i> Formulario valido! Hola, <strong>' + nombre + '</strong>. (Simulado)</div>';
+  res.innerHTML = '<div class="form-result form-result--success"><i class="fas fa-check-circle"></i> Formulario valido! Hola, <strong>' + nombre + '</strong>. (Simulado)</div>';
   res.style.display = 'block';
   showToast('Formulario enviado con exito (simulado)');
 }
