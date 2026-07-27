@@ -430,7 +430,7 @@ img {
   min-height: 100vh;
 }
 
-/* --- Sidebar (Mobile) --- */
+/* --- Sidebar (Mobile only) --- */
 .sidebar {
   position: fixed;
   top: var(--header-height);
@@ -443,6 +443,14 @@ img {
   padding: 16px 0;
   z-index: 900;
   transition: transform var(--transition-slow);
+  transform: translateX(-100%);
+}
+
+@media (max-width: 1200px) {
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-xl);
+  }
 }
 
 .sidebar::-webkit-scrollbar {
@@ -1669,13 +1677,6 @@ blockquote p:last-child {
 }
 
 @media (max-width: 1024px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-  .sidebar.open {
-    transform: translateX(0);
-    box-shadow: var(--shadow-xl);
-  }
   .menu-toggle {
     display: flex;
   }
