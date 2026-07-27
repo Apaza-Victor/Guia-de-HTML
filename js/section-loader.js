@@ -13,14 +13,12 @@
 (function() {
   'use strict';
 
-  const SECTION_BASE = 'sections/';
-
   async function loadSection(placeholder) {
     const file = placeholder.getAttribute('data-section');
     if (!file) return;
 
     try {
-      const resp = await fetch(SECTION_BASE + file);
+      const resp = await fetch(file);
       if (!resp.ok) throw new Error('HTTP ' + resp.status);
       const html = await resp.text();
 
