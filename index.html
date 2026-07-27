@@ -1,0 +1,1502 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia completa y moderna de HTML5 - Aprende HTML desde cero con ejemplos praticos y recursos.">
+  <meta name="keywords" content="HTML5, guia HTML, desarrollo web, estructura HTML, semantica HTML5">
+  <title>Guia Completa de HTML5</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+
+<header class="header">
+  <button class="header__btn menu-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  <a href="#" class="header__logo">
+    <span class="header__logo-icon">H5</span>
+    <span>Guia HTML5</span>
+  </a>
+  <nav class="header__nav">
+    <div class="nav-item">
+      <button class="nav-link">Fundamentos <i class="fas fa-chevron-down"></i></button>
+      <div class="nav-dropdown">
+        <a href="#intro"><i class="fas fa-book-open"></i> Introduccion</a>
+        <a href="#estructura-basica"><i class="fas fa-sitemap"></i> Estructura Basica</a>
+        <a href="#semantica"><i class="fas fa-tags"></i> Semantica</a>
+        <a href="#tipografia"><i class="fas fa-font"></i> Tipografia</a>
+        <a href="#enlaces"><i class="fas fa-link"></i> Enlaces</a>
+        <a href="#multimedia"><i class="fas fa-photo-video"></i> Multimedia</a>
+        <a href="#listas"><i class="fas fa-list"></i> Listas</a>
+        <a href="#tablas"><i class="fas fa-table"></i> Tablas</a>
+        <a href="#formularios"><i class="fas fa-file-signature"></i> Formularios</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-link">Avanzado <i class="fas fa-chevron-down"></i></button>
+      <div class="nav-dropdown">
+        <a href="#atributos-globales"><i class="fas fa-sliders-h"></i> Atributos Globales</a>
+        <a href="#meta-seo"><i class="fas fa-search"></i> Meta Tags y SEO</a>
+        <a href="#etiquetas-adicionales"><i class="fas fa-file-code"></i> Etiquetas Extra</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-link">APIs <i class="fas fa-chevron-down"></i></button>
+      <div class="nav-dropdown">
+        <a href="#web-storage"><i class="fas fa-database"></i> Web Storage</a>
+        <a href="#geolocation"><i class="fas fa-map-marker-alt"></i> Geolocation</a>
+        <a href="#canvas"><i class="fas fa-palette"></i> Canvas</a>
+        <a href="#drag-drop"><i class="fas fa-arrows-alt"></i> Drag and Drop</a>
+        <a href="#svg"><i class="fas fa-shapes"></i> SVG</a>
+        <a href="#web-workers"><i class="fas fa-server"></i> Web Workers y Fetch</a>
+        <a href="#websockets"><i class="fas fa-plug"></i> WebSockets</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-link">Modern Web <i class="fas fa-chevron-down"></i></button>
+      <div class="nav-dropdown">
+        <a href="#accesibilidad"><i class="fas fa-universal-access"></i> Accesibilidad ARIA</a>
+        <a href="#microdatos"><i class="fas fa-code"></i> Microdatos</a>
+        <a href="#web-components"><i class="fas fa-cubes"></i> Web Components</a>
+        <a href="#pwa"><i class="fas fa-mobile-alt"></i> PWA</a>
+        <a href="#intersection-observer"><i class="fas fa-eye"></i> Intersection Observer</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <button class="nav-link">Extras <i class="fas fa-chevron-down"></i></button>
+      <div class="nav-dropdown">
+        <a href="#css3"><i class="fab fa-css3-alt"></i> CSS3</a>
+        <a href="#javascript-basico"><i class="fab fa-js-square"></i> JavaScript Basico</a>
+        <a href="#recursos"><i class="fas fa-book"></i> Recursos</a>
+        <a href="#glosario"><i class="fas fa-clipboard-list"></i> Glosario</a>
+        <a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a>
+      </div>
+    </div>
+  </nav>
+  <div class="header__search">
+    <span class="header__search-icon"><i class="fas fa-search"></i></span>
+    <input type="text" id="search-input" placeholder="Buscar secciones..." autocomplete="off">
+    <span class="header__search-kbd">Ctrl+K</span>
+    <div class="search-results"></div>
+  </div>
+  <div class="header__actions">
+    <button class="header__btn" id="theme-toggle" title="Cambiar tema"><i class="fas fa-moon"></i></button>
+  </div>
+</header>
+
+<div class="sidebar-overlay"></div>
+
+<div class="layout">
+
+<nav class="sidebar">
+  <div class="sidebar__section">
+    <div class="sidebar__section-title">Introduccion</div>
+    <a href="#intro" class="sidebar__link active"><span class="sidebar__link-icon"><i class="fas fa-book-open"></i></span> Introduccion</a>
+    <a href="#estructura-basica" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-sitemap"></i></span> Estructura Basica</a>
+  </div>
+  <div class="sidebar__section">
+    <div class="sidebar__section-title">Fundamentos</div>
+    <a href="#semantica" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-tags"></i></span> Semantica</a>
+    <a href="#tipografia" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-font"></i></span> Tipografia</a>
+    <a href="#enlaces" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-link"></i></span> Enlaces</a>
+    <a href="#multimedia" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-photo-video"></i></span> Multimedia</a>
+    <a href="#listas" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-list"></i></span> Listas</a>
+    <a href="#tablas" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-table"></i></span> Tablas</a>
+    <a href="#formularios" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-file-signature"></i></span> Formularios</a>
+  </div>
+  <div class="sidebar__section">
+    <div class="sidebar__section-title">Avanzado</div>
+    <a href="#atributos-globales" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-sliders-h"></i></span> Atributos Globales</a>
+    <a href="#meta-seo" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-search"></i></span> Meta Tags y SEO</a>
+    <a href="#etiquetas-adicionales" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-file-code"></i></span> Etiquetas Extra</a>
+  </div>
+  <div class="sidebar__section">
+    <div class="sidebar__section-title">APIs de JavaScript</div>
+    <a href="#web-storage" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-database"></i></span> Web Storage</a>
+    <a href="#geolocation" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-map-marker-alt"></i></span> Geolocalizacion</a>
+    <a href="#canvas" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-palette"></i></span> Canvas</a>
+    <a href="#drag-drop" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-arrows-alt"></i></span> Drag and Drop</a>
+    <a href="#svg" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-shapes"></i></span> SVG</a>
+    <a href="#web-workers" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-server"></i></span> Web Workers y Fetch</a>
+    <a href="#websockets" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-plug"></i></span> WebSockets</a>
+  </div>
+  <div class="sidebar__section">
+    <div class="sidebar__section-title">Modern Web</div>
+    <a href="#accesibilidad" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-universal-access"></i></span> Accesibilidad ARIA</a>
+    <a href="#microdatos" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-code"></i></span> Microdatos</a>
+    <a href="#web-components" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-cubes"></i></span> Web Components</a>
+    <a href="#pwa" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-mobile-alt"></i></span> PWA</a>
+    <a href="#intersection-observer" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-eye"></i></span> Intersection Observer</a>
+  </div>
+  <div class="sidebar__section">
+    <div class="sidebar__section-title">Extras</div>
+    <a href="#css3" class="sidebar__link"><span class="sidebar__link-icon"><i class="fab fa-css3-alt"></i></span> CSS3</a>
+    <a href="#javascript-basico" class="sidebar__link"><span class="sidebar__link-icon"><i class="fab fa-js-square"></i></span> JavaScript Basico</a>
+    <a href="#recursos" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-book"></i></span> Recursos Web <span class="sidebar__badge">63</span></a>
+    <a href="#glosario" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-clipboard-list"></i></span> Glosario</a>
+  </div>
+</nav>
+
+<main class="main">
+
+<section class="hero">
+  <div class="hero__shapes">
+    <div class="hero__shape"></div>
+    <div class="hero__shape"></div>
+    <div class="hero__shape"></div>
+    <div class="hero__shape"></div>
+  </div>
+  <div class="hero__content">
+    <span class="hero__badge"><i class="fas fa-star"></i> Guia Actualizada 2024</span>
+    <h1 class="hero__title">Guia Completa de HTML5</h1>
+    <p class="hero__subtitle">Aprende HTML desde cero hasta nivel avanzado con ejemplos praticos, demos interactivas y recursos seleccionados para dominar el desarrollo web moderno.</p>
+    <div class="hero__stats">
+      <div class="hero__stat"><div class="hero__stat-value">26+</div><div class="hero__stat-label">Secciones</div></div>
+      <div class="hero__stat"><div class="hero__stat-value">100+</div><div class="hero__stat-label">Ejemplos</div></div>
+      <div class="hero__stat"><div class="hero__stat-value">63</div><div class="hero__stat-label">Recursos</div></div>
+      <div class="hero__stat"><div class="hero__stat-value">15</div><div class="hero__stat-label">Ejercicios</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="content">
+
+<!-- SECCION 00: INTRODUCCION -->
+<section class="section" id="intro">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-book-open"></i> Seccion 00</span>
+    <h2 class="section__title"><i class="fas fa-book-open"></i> Introduccion a HTML5</h2>
+  </div>
+  <p>HTML (HyperText Markup Language) es el lenguaje de marcado estandar para crear paginas web. Define la estructura y el contenido de una pagina web mediante el uso de elementos (etiquetas) que representan diferentes tipos de contenido.</p>
+  <h3>Que es HTML5?</h3>
+  <p>HTML5 es la quinta revision importante del lenguaje HTML. Es la version mas reciente y estandar, que introduce nuevas funcionalidades, elementos semanticos y APIs que permiten crear aplicaciones web mas potentes y accesibles.</p>
+  <h3>Caracteristicas principales</h3>
+  <ul>
+    <li><strong>Elementos semanticos</strong>: Etiquetas que describen su significado (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>)</li>
+    <li><strong>Multimedia integrada</strong>: Soporte nativo para audio (<code>&lt;audio&gt;</code>) y video (<code>&lt;video&gt;</code>)</li>
+    <li><strong>Canvas y SVG</strong>: Para graficos y animaciones</li>
+    <li><strong>APIs del navegador</strong>: Geolocalizacion, Almacenamiento local, Drag &amp; Drop, Web Workers, etc.</li>
+    <li><strong>Formularios mejorados</strong>: Nuevos tipos de input y validacion</li>
+    <li><strong>Soporte offline</strong>: Service Workers y Cache API</li>
+    <li><strong>Mejoras en accesibilidad</strong>: ARIA roles y atributos</li>
+  </ul>
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-lightbulb"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Por que aprender HTML?</div>
+      <p class="callout__text">HTML es la base de todo sitio web. Sin importar que framework o tecnologia uses, HTML siempre sera necesario para estructurar el contenido en la web.</p>
+    </div>
+  </div>
+  <h3>Historia de HTML</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Version</th><th>Ano</th><th>Caracteristicas principales</th></tr></thead>
+      <tbody>
+        <tr><td>HTML 1.0</td><td>1991</td><td>Primer estandar basico</td></tr>
+        <tr><td>HTML 2.0</td><td>1995</td><td>Formularios basicos</td></tr>
+        <tr><td>HTML 3.2</td><td>1997</td><td>Tablas, applets</td></tr>
+        <tr><td>HTML 4.01</td><td>1999</td><td>CSS integrado, scripts</td></tr>
+        <tr><td>HTML5</td><td>2014</td><td>Semantica, multimedia, APIs</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECCION 01: ESTRUCTURA BASICA -->
+<section class="section" id="estructura-basica">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-sitemap"></i> Seccion 01</span>`r`n    <h2 class="section__title"><i class="fas fa-sitemap"></i> Estructura Basica de HTML</h2>
+  </div>
+  <p>Toda pagina HTML sigue una estructura basica que incluye una declaracion de tipo de documento, la raiz del documento, la seccion de encabezado y el cuerpo con el contenido visible.</p>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"es"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Mi primera pagina<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Hola, mundo<span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Mi primera pagina web<span class://tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+
+  <h3>Explicacion de cada parte</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Descripcion</th><th>Obligatoria</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declara el tipo de documento (HTML5)</td><td>Si</td></tr>
+        <tr><td><code>&lt;html lang="es"&gt;</code></td><td>Raiz del documento con idioma</td><td>Si</td></tr>
+        <tr><td><code>&lt;head&gt;</code></td><td>Metadatos, titulos, enlaces a CSS</td><td>Si</td></tr>
+        <tr><td><code>&lt;meta charset&gt;</code></td><td>Codificacion de caracteres</td><td>Si</td></tr>
+        <tr><td><code>&lt;meta viewport&gt;</code></td><td>Escalado en dispositivos moviles</td><td>Recomendado</td></tr>
+        <tr><td><code>&lt;title&gt;</code></td><td>Titulo de la pagina (pestana)</td><td>Si</td></tr>
+        <tr><td><code>&lt;body&gt;</code></td><td>Todo el contenido visible</td><td>Si</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Atributos en HTML</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Atributo de valor --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span><span class="tag">&gt;</span>Enlace<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Atributo booleano --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">disabled</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Datos personalizados --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">data-user-id</span>=<span class="string">"12345"</span> <span class="attr">data-role</span>=<span class="string">"admin"</span><span class="tag">&gt;</span>Usuario<span class="tag">&lt;/div&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 02: SEMANTICA -->
+<section class="section" id="semantica">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-tags"></i> Seccion 02</span>`r`n    <h2 class="section__title"><i class="fas fa-tags"></i> HTML Semantico</h2>
+  </div>
+  <p>HTML5 introdujo elementos semanticos que describen el significado del contenido que contienen, en lugar de solo definir su apariencia. Esto mejora la accesibilidad, el SEO y la mantenibilidad del codigo.</p>
+  <h3>Etiquetas semanticas principales</h3>
+  <div class="grid grid-2">
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;header&gt;</div><p>Contenido introductorio o de navegacion.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-thumbtack"></i></span> &lt;nav&gt;</div><p>Enlaces de navegacion principales.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;main&gt;</div><p>Contenido principal. Solo uno por pagina.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;article&gt;</div><p>Contenido independiente y autocontenido.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;section&gt;</div><p>Agrupa contenido tematico.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;aside&gt;</div><p>Contenido complementario (sidebar).</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-pen-fancy"></i></span> &lt;footer&gt;</div><p>Pie de pagina.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-clock"></i></span> &lt;time&gt;</div><p>Fecha o hora especifica.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-image"></i></span> &lt;figure&gt;/&lt;figcaption&gt;</div><p>Contenido ilustrativo con leyenda.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-list-alt"></i></span> &lt;details&gt;/&lt;summary&gt;</div><p>Contenido colapsable.</p></div>
+  </div>
+
+  <h3>Estructura semantica completa</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;nav&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/"</span><span class="tag">&gt;</span>Inicio<span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/blog"</span><span class="tag">&gt;</span>Blog<span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/contacto"</span><span class="tag">&gt;</span>Contacto<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
+  <span class="tag">&lt;/header&gt;</span>
+  <span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;article&gt;</span>
+      <span class="tag">&lt;header&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Titulo del articulo<span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;time</span> <span class="attr">datetime</span>=<span class="string">"2024-01-15"</span><span class="tag">&gt;</span>15 de enero, 2024<span class="tag">&lt;/time&gt;</span>
+      <span class="tag">&lt;/header&gt;</span>
+      <span class="tag">&lt;section&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Introduccion<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Contenido del articulo...<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/section&gt;</span>
+      <span class="tag">&lt;figure&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"diagrama.png"</span> <span class="attr">alt</span>=<span class="string">"Diagrama"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;figcaption&gt;</span>Diagrama de arquitectura<span class="tag">&lt;/figcaption&gt;</span>
+      <span class="tag">&lt;/figure&gt;</span>
+      <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>Autor: Juan Perez<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span>
+    <span class="tag">&lt;/article&gt;</span>
+    <span class="tag">&lt;aside&gt;</span>
+      <span class="tag">&lt;h3&gt;</span>Articulos relacionados<span class="tag">&lt;/h3&gt;</span>
+      <span class="tag">&lt;ul&gt;</span><span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#"</span><span class="tag">&gt;</span>Otro articulo<span class="tag">&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span>
+    <span class="tag">&lt;/aside&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>&amp;copy; 2024 Mi Sitio<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span>
+<span class="tag">&lt;/body&gt;</span></code></pre>
+
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">No abuses de las etiquetas semanticas</div>
+      <p class="callout__text">Cada etiqueta tiene un proposito especifico. Usa <code>&lt;section&gt;</code> para contenido tematico, no como sustituto de <code>&lt;div&gt;</code>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION 03: TIPOGRAFIA -->
+<section class="section" id="tipografia">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-font"></i> Seccion 03</span>`r`n    <h2 class="section__title"><i class="fas fa-font"></i> Tipografia y Entidades HTML</h2>
+  </div>
+  <h3>Etiquetas de texto</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Proposito</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;h1&gt; a &lt;h6&gt;</code></td><td>Encabezados</td></tr>
+        <tr><td><code>&lt;p&gt;</code></td><td>Parrafo</td></tr>
+        <tr><td><code>&lt;strong&gt;</code></td><td>Importancia fuerte (negrita semantica)</td></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Enfasis (cursiva semantica)</td></tr>
+        <tr><td><code>&lt;mark&gt;</code></td><td>Texto resaltado</td></tr>
+        <tr><td><code>&lt;small&gt;</code></td><td>Texto secundario</td></tr>
+        <tr><td><code>&lt;del&gt;</code></td><td>Texto eliminado</td></tr>
+        <tr><td><code>&lt;ins&gt;</code></td><td>Texto insertado</td></tr>
+        <tr><td><code>&lt;sub&gt;</code></td><td>Subindice</td></tr>
+        <tr><td><code>&lt;sup&gt;</code></td><td>Superindice</td></tr>
+        <tr><td><code>&lt;code&gt;</code></td><td>Codigo en linea</td></tr>
+        <tr><td><code>&lt;pre&gt;</code></td><td>Texto preformateado</td></tr>
+        <tr><td><code>&lt;blockquote&gt;</code></td><td>Cita en bloque</td></tr>
+        <tr><td><code>&lt;q&gt;</code></td><td>Cita en linea</td></tr>
+        <tr><td><code>&lt;abbr&gt;</code></td><td>Abreviatura</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Entidades HTML</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Codigo</th><th>Resultado</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>&amp;lt;</code></td><td>&lt;</td><td>Menor que</td></tr>
+        <tr><td><code>&amp;gt;</code></td><td>&gt;</td><td>Mayor que</td></tr>
+        <tr><td><code>&amp;amp;</code></td><td>&amp;</td><td>Ampersand</td></tr>
+        <tr><td><code>&amp;quot;</code></td><td>"</td><td>Comillas dobles</td></tr>
+        <tr><td><code>&amp;nbsp;</code></td><td>&nbsp;</td><td>Espacio no rompible</td></tr>
+        <tr><td><code>&amp;copy;</code></td><td>&copy;</td><td>Copyright</td></tr>
+        <tr><td><code>&amp;deg;</code></td><td>&deg;</td><td>Grado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: Editor Tipografico</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Selecciona texto y pulsa un boton para formatearlo</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+      <button onclick="wrapTypo('strong')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><strong>B</strong> strong</button>
+      <button onclick="wrapTypo('em')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><em>I</em> em</button>
+      <button onclick="wrapTypo('mark')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem">M mark</button>
+      <button onclick="wrapTypo('del')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><del>D</del> del</button>
+      <button onclick="wrapTypo('code')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><code>c</code> code</button>
+      <button onclick="clearTypo()" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem">Limpiar</button>
+    </div>
+    <div id="typoEditor" contenteditable="true" style="min-height:60px;border:1px dashed var(--color-primary);border-radius:8px;padding:12px;font-size:.9rem;color:var(--text-primary);outline:none;line-height:1.8">Selecciona este texto y pulsa un boton para formatearlo</div>
+  </div>
+</section>
+
+<!-- SECCION 04: ENLACES -->
+<section class="section" id="enlaces">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-link"></i> Seccion 04</span>`r`n    <h2 class="section__title"><i class="fas fa-link"></i> Enlaces y Navegacion</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Enlace basico --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com"</span><span class="tag">&gt;</span>Visitar ejemplo<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Nueva pestana --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span> <span class="attr">rel</span>=<span class="string">"noopener noreferrer"</span><span class="tag">&gt;</span>Nuevo tab<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Enlace a seccion --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#seccion-contacto"</span><span class="tag">&gt;</span>Ir a contacto<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Correo --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"mailto:info@ejemplo.com?subject=Hola"</span><span class="tag">&gt;</span>Email<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Descargar --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"doc.pdf"</span> <span class="attr">download</span>=<span class="string">"guia.pdf"</span><span class="tag">&gt;</span>Descargar PDF<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Telefono --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"tel:+34600123456"</span><span class="tag">&gt;</span>Llamar<span class="tag">&lt;/a&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 05: MULTIMEDIA -->
+<section class="section" id="multimedia">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-photo-video"></i> Seccion 05</span>`r`n    <h2 class="section__title"><i class="fas fa-photo-video"></i> Multimedia</h2>
+  </div>
+  <h3>Imagenes</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Responsiva --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span>
+     <span class="attr">srcset</span>=<span class="string">"foto-480.jpg 480w, foto-800.jpg 800w, foto-1200.jpg 1200w"</span>
+     <span class="attr">sizes</span>=<span class="string">"(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"</span>
+     <span class="attr">loading</span>=<span class="string">"lazy"</span><span class="tag">&gt;</span></code></pre>
+
+  <h3>Picture para imagenes adaptables</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;picture&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.webp"</span> <span class="attr">type</span>=<span class="string">"image/webp"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.jpg"</span> <span class="attr">type</span>=<span class="string">"image/jpeg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"imagen.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/picture&gt;</span></code></pre>
+
+  <h3>Video</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subs.vtt"</span> <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Espanol"</span><span class="tag">&gt;</span>
+  Tu navegador no soporta video HTML5.
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="comment">&lt;!-- Con multiples fuentes y autoplay --&gt;</span>
+<span class="tag">&lt;video</span> <span class="attr">autoplay</span> <span class="attr">muted</span> <span class="attr">loop</span> <span class="attr">playsinline</span> <span class="attr">poster</span>=<span class="string">"poster.jpg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/video&gt;</span></code></pre>
+
+  <h3>Audio</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span><span class="tag">&gt;</span>
+  Tu navegador no soporta audio HTML5.
+<span class="tag">&lt;/audio&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 06: LISTAS -->
+<section class="section" id="listas">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-list"></i> Seccion 06</span>`r`n    <h2 class="section__title"><i class="fas fa-list"></i> Listas</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Lista ordenada --&gt;</span>
+<span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Primer paso<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Segundo paso<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span>
+
+<span class="comment">&lt;!-- Lista no ordenada --&gt;</span>
+<span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Elemento A<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Elemento B<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+
+<span class="comment">&lt;!-- Lista de definicion --&gt;</span>
+<span class="tag">&lt;dl&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>HTML<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>HyperText Markup Language<span class="tag">&lt;/dd&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>CSS<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>Cascading Style Sheets<span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 07: TABLAS -->
+<section class="section" id="tablas">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-table"></i> Seccion 07</span>`r`n    <h2 class="section__title"><i class="fas fa-table"></i> Tablas</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;table&gt;</span>
+  <span class="tag">&lt;caption&gt;</span>Tabla de ejemplo<span class="tag">&lt;/caption&gt;</span>
+  <span class="tag">&lt;thead&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">scope</span>=<span class="string">"col"</span><span class="tag">&gt;</span>Nombre<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">scope</span>=<span class="string">"col"</span><span class="tag">&gt;</span>Edad<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/thead&gt;</span>
+  <span class="tag">&lt;tbody&gt;</span>
+    <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;td&gt;</span>Ana<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;td&gt;</span>28<span class="tag">&lt;/td&gt;&lt;/tr&gt;</span>
+    <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;td&gt;</span>Carlos<span class="tag">&lt;/td&gt;</span><span class="tag">&lt;td&gt;</span>35<span class="tag">&lt;/td&gt;&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tbody&gt;</span>
+  <span class="tag">&lt;tfoot&gt;</span>
+    <span class="tag">&lt;tr&gt;</span><span class="tag">&lt;td</span> <span class="attr">colspan</span>=<span class="string">"2"</span><span class="tag">&gt;</span>Total: 2 registros<span class="tag">&lt;/td&gt;&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tfoot&gt;</span>
+<span class="tag">&lt;/table&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 08: FORMULARIOS -->
+<section class="section" id="formularios">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-file-signature"></i> Seccion 08</span>`r`n    <h2 class="section__title"><i class="fas fa-file-signature"></i> Formularios</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="string">"/enviar"</span> <span class="attr">method</span>=<span class="string">"POST"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="string">"nombre"</span><span class="tag">&gt;</span>Nombre:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"nombre"</span> <span class="attr">name</span>=<span class="string">"nombre"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>Enviar<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></code></pre>
+
+  <h3>Tipos de input en HTML5</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Tipo</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>text</code></td><td>Texto plano</td></tr>
+        <tr><td><code>email</code></td><td>Validacion de email</td></tr>
+        <tr><td><code>password</code></td><td>Contrasena</td></tr>
+        <tr><td><code>number</code></td><td>Solo numeros</td></tr>
+        <tr><td><code>tel</code></td><td>Telefono</td></tr>
+        <tr><td><code>url</code></td><td>URL valida</td></tr>
+        <tr><td><code>search</code></td><td>Busqueda</td></tr>
+        <tr><td><code>date</code></td><td>Selector de fecha</td></tr>
+        <tr><td><code>time</code></td><td>Selector de hora</td></tr>
+        <tr><td><code>datetime-local</code></td><td>Fecha y hora</td></tr>
+        <tr><td><code>range</code></td><td>Slider numerico</td></tr>
+        <tr><td><code>color</code></td><td>Selector de color</td></tr>
+        <tr><td><code>file</code></td><td>Subir archivos</td></tr>
+        <tr><td><code>checkbox</code></td><td>Casilla de verificacion</td></tr>
+        <tr><td><code>radio</code></td><td>Boton de opcion</td></tr>
+        <tr><td><code>hidden</code></td><td>Campo oculto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Validacion y elementos extra</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Required y Pattern --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"3"</span> <span class="attr">maxlength</span>=<span class="string">"50"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">pattern</span>=<span class="string">"[A-Za-z]{3,}"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Select --&gt;</span>
+<span class="tag">&lt;select</span> <span class="attr">name</span>=<span class="string">"pais"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"es"</span><span class="tag">&gt;</span>Espana<span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"mx"</span><span class="tag">&gt;</span>Mexico<span class="tag">&lt;/option&gt;</span>
+<span class="tag">&lt;/select&gt;</span>
+
+<span class="comment">&lt;!-- Textarea --&gt;</span>
+<span class="tag">&lt;textarea</span> <span class="attr">rows</span>=<span class="string">"5"</span> <span class="attr">cols</span>=<span class="string">"40"</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+
+<span class="comment">&lt;!-- Datalist --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">list</span>=<span class="string">"lenguajes"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;datalist</span> <span class="attr">id</span>=<span class="string">"lenguajes"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"HTML"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"CSS"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"JavaScript"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/datalist&gt;</span>
+
+<span class="comment">&lt;!-- Progress y Meter --&gt;</span>
+<span class="tag">&lt;progress</span> <span class="attr">value</span>=<span class="string">"70"</span> <span class="attr">max</span>=<span class="string">"100"</span><span class="tag">&gt;</span>70%<span class="tag">&lt;/progress&gt;</span>
+<span class="tag">&lt;meter</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">value</span>=<span class="string">"65"</span><span class="tag">&gt;</span>65<span class="tag">&lt;/meter&gt;</span></code></pre>
+
+  <h3>Demo: Formulario con Validacion</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Formulario completo con validacion</div>
+    <form id="demoForm" novalidate onsubmit="handleDemoForm(event)" style="text-align:left;max-width:520px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Nombre *</label>
+          <input type="text" id="df-nombre" placeholder="Ana Garcia" required minlength="3" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Email *</label>
+          <input type="email" id="df-email" placeholder="ana@ejemplo.com" required style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Edad (18-99)</label>
+          <input type="number" id="df-edad" min="18" max="99" placeholder="25" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Ciudad</label>
+          <input type="text" id="df-ciudad" list="listaCiudades" placeholder="Escribe una ciudad..." style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+          <datalist id="listaCiudades"><option value="Lima"><option value="Madrid"><option value="Ciudad de Mexico"><option value="Buenos Aires"><option value="Bogota"></datalist>
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Color favorito</label>
+          <div style="display:flex;align-items:center;gap:8px">
+            <input type="color" id="df-color" value="#6366f1" oninput="document.getElementById('df-color-val').textContent=this.value" style="width:40px;height:36px;border:none;cursor:pointer">
+            <span id="df-color-val" style="font-size:.85rem;color:var(--text-secondary)">#6366f1</span>
+          </div>
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Experiencia: <span id="df-nivel-val">50</span>%</label>
+          <input type="range" id="df-nivel" min="0" max="100" value="50" oninput="document.getElementById('df-nivel-val').textContent=this.value" style="width:100%">
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Mensaje * (min. 10 caracteres)</label>
+        <textarea id="df-mensaje" rows="3" placeholder="Escribe tu mensaje aqui..." minlength="10" required style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body);resize:vertical"></textarea>
+      </div>
+      <button type="submit" style="margin-top:12px;padding:10px 24px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-weight:600">Enviar formulario</button>
+      <div id="form-result" style="margin-top:12px;font-size:.9rem;display:none"></div>
+    </form>
+  </div>
+</section>
+
+<!-- SECCION 09: ATRIBUTOS GLOBALES -->
+<section class="section" id="atributos-globales">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-sliders-h"></i> Seccion 09</span>`r`n    <h2 class="section__title"><i class="fas fa-sliders-h"></i> Atributos Globales</h2>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Atributo</th><th>Descripcion</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>Identificador unico</td><td><code>&lt;div id="main"&gt;</code></td></tr>
+        <tr><td><code>class</code></td><td>Clases CSS</td><td><code>&lt;p class="text bold"&gt;</code></td></tr>
+        <tr><td><code>style</code></td><td>CSS inline</td><td><code>&lt;div style="color:red"&gt;</code></td></tr>
+        <tr><td><code>title</code></td><td>Tooltip</td><td><code>&lt;abbr title="..."&gt;</code></td></tr>
+        <tr><td><code>hidden</code></td><td>Oculta el elemento</td><td><code>&lt;div hidden&gt;</code></td></tr>
+        <tr><td><code>tabindex</code></td><td>Orden de tabulacion</td><td><code>&lt;input tabindex="1"&gt;</code></td></tr>
+        <tr><td><code>contenteditable</code></td><td>Contenido editable</td><td><code>&lt;p contenteditable&gt;</code></td></tr>
+        <tr><td><code>draggable</code></td><td>Elemento arrastrable</td><td><code>&lt;div draggable&gt;</code></td></tr>
+        <tr><td><code>lang</code></td><td>Idioma</td><td><code>&lt;p lang="es"&gt;</code></td></tr>
+        <tr><td><code>data-*</code></td><td>Datos personalizados</td><td><code>&lt;div data-id="5"&gt;</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: contenteditable</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo: Haz clic y edita este texto</div>
+    <p contenteditable="true" style="padding:12px;border:2px dashed var(--border-color);border-radius:8px;min-height:60px;outline:none;">Este texto es editable. Haz clic aqui y modificalo directamente en el navegador.</p>
+  </div>
+
+  <h3>Demo: Atributos data-*</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Producto con datos embebidos</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:10px;padding:12px 16px">
+        <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px">Auriculares Pro</div>
+        <div style="color:var(--color-primary);font-weight:700">$99.90</div>
+        <button onclick="showDataAttr(this)" data-product-id="42" data-price="99.90" data-category="electronica" style="margin-top:8px;padding:6px 14px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-size:.85rem">Ver data-*</button>
+      </div>
+    </div>
+    <div id="dataAttrOutput" style="margin-top:12px;font-family:var(--font-code);font-size:.8rem;color:var(--color-success);background:var(--bg-code);padding:10px 14px;border-radius:6px;display:none;white-space:pre"></div>
+  </div>
+</section>
+
+<!-- SECCION 10: META TAGS Y SEO -->
+<section class="section" id="meta-seo">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-search"></i> Seccion 10</span>`r`n    <h2 class="section__title"><i class="fas fa-search"></i> Meta Tags y SEO</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Mi Pagina - Titulo Descriptivo<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"Descripcion de 150-160 caracteres"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"robots"</span> <span class="attr">content</span>=<span class="string">"index, follow"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"canonical"</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com/pagina"</span><span class="tag">&gt;</span>
+
+  <span class="comment">&lt;!-- Open Graph (redes sociales) --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:title"</span> <span class="attr">content</span>=<span class="string">"Titulo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:description"</span> <span class="attr">content</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:image"</span> <span class="attr">content</span>=<span class="string">"https://ejemplo.com/imagen.jpg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">property</span>=<span class="string">"og:url"</span> <span class="attr">content</span>=<span class="string">"https://ejemplo.com"</span><span class="tag">&gt;</span>
+
+  <span class="comment">&lt;!-- Twitter Card --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"twitter:card"</span> <span class="attr">content</span>=<span class="string">"summary_large_image"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"twitter:title"</span> <span class="attr">content</span>=<span class="string">"Titulo"</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#6366f1"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 11: ETIQUETAS ADICIONALES -->
+<section class="section" id="etiquetas-adicionales">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-file-code"></i> Seccion 11</span>`r`n    <h2 class="section__title"><i class="fas fa-file-code"></i> Etiquetas Adicionales</h2>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;main&gt;</code></td><td>Contenido principal</td></tr>
+        <tr><td><code>&lt;template&gt;</code></td><td>Contenido no renderizado hasta activarlo con JS</td></tr>
+        <tr><td><code>&lt;slot&gt;</code></td><td>Punto de insercion en Web Components</td></tr>
+        <tr><td><code>&lt;summary&gt;</code></td><td>Resumen de &lt;details&gt;</td></tr>
+        <tr><td><code>&lt;output&gt;</code></td><td>Resultado de un calculo</td></tr>
+        <tr><td><code>&lt;progress&gt;</code></td><td>Barra de progreso</td></tr>
+        <tr><td><code>&lt;meter&gt;</code></td><td>Medicion escalar</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECCION 12: WEB STORAGE -->
+<section class="section" id="web-storage">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-database"></i> Seccion 12</span>`r`n    <h2 class="section__title"><i class="fas fa-database"></i> Web Storage API</h2>
+  </div>
+  <h3>localStorage vs sessionStorage</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>localStorage</th><th>sessionStorage</th></tr></thead>
+      <tbody>
+        <tr><td>Persistencia</td><td>Permanente hasta borrarlo</td><td>Se borra al cerrar pestana</td></tr>
+        <tr><td>Alcance</td><td>Mismo dominio</td><td>Mismo dominio + pestana</td></tr>
+        <tr><td>Capacidad</td><td>~5-10 MB</td><td>~5-10 MB</td></tr>
+        <tr><td>Compartido</td><td>Si (entre pestanas)</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Guardar datos</span>
+localStorage.<span class="function">setItem</span>(<span class="string">'nombre'</span>, <span class="string">'Juan'</span>);
+localStorage.<span class="function">setItem</span>(<span class="string">'usuario'</span>, JSON.<span class="function">stringify</span>({ <span class="property">id</span>: <span class="number">1</span> }));
+
+<span class="comment">// Leer datos</span>
+<span class="keyword">const</span> nombre = localStorage.<span class="function">getItem</span>(<span class="string">'nombre'</span>);
+<span class="keyword">const</span> usuario = JSON.<span class="function">parse</span>(localStorage.<span class="function">getItem</span>(<span class="string">'usuario'</span>));
+
+<span class="comment">// Eliminar y limpiar</span>
+localStorage.<span class="function">removeItem</span>(<span class="string">'nombre'</span>);
+localStorage.<span class="function">clear</span>();</code></pre>
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Seguridad</div>
+      <p class="callout__text">Nunca almacenes informacion sensible como contrasenas en localStorage. Los datos son accesibles por cualquier script en la pagina.</p>
+    </div>
+  </div>
+
+  <h3>Demo: Probador de localStorage</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Guarda, obtiene y elimina datos</div>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:10px;margin-bottom:12px">
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Clave</label>
+        <input type="text" id="storage-key" value="nombre" placeholder="miClave" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+      </div>
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Valor</label>
+        <input type="text" id="storage-value" value="HTML5 Master Guide" placeholder="miValor" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button onclick="storageSet()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem">Guardar</button>
+      <button onclick="storageGet()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Obtener</button>
+      <button onclick="storageRemove()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Eliminar</button>
+      <button onclick="storageList()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Listar todo</button>
+    </div>
+    <div id="storage-output" style="margin-top:12px;font-family:var(--font-code);font-size:.8rem;color:var(--color-success);background:var(--bg-code);padding:12px;border-radius:6px;white-space:pre;min-height:40px">// Resultado aparecera aqui</div>
+  </div>
+</section>
+
+<!-- SECCION 13: GEOLOCALIZACION -->
+<section class="section" id="geolocation">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-map-marker-alt"></i> Seccion 13</span>`r`n    <h2 class="section__title"><i class="fas fa-map-marker-alt"></i> API de Geolocalizacion</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">if</span> (<span class="string">'geolocation'</span> <span class="keyword">in</span> navigator) {
+  navigator.geolocation.<span class="function">getCurrentPosition</span>(
+    (position) =&gt; {
+      <span class="keyword">const</span> { latitude, longitude } = position.coords;
+      console.<span class="function">log</span>(<span class="string">`Lat: ${latitude}, Lng: ${longitude}`</span>);
+    },
+    (error) =&gt; {
+      console.<span class="function">error</span>(<span class="string">'Error:'</span>, error.message);
+    },
+    { <span class="property">enableHighAccuracy</span>: <span class="keyword">true</span>, <span class="property">timeout</span>: <span class="number">10000</span> }
+  );
+}</code></pre>
+
+  <h3>Demo: Obtener Ubicacion Real</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Geolocalizacion en tiempo real</div>
+    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">El navegador pedira tu permiso. Solo se usa para esta demo.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button onclick="getGeoLocation()" id="geoBtn" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem"><i class="fas fa-location-crosshairs"></i> Obtener mis coordenadas</button>
+      <button onclick="clearGeo()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Limpiar</button>
+    </div>
+    <div id="geo-output" style="margin-top:12px;font-family:var(--font-code);font-size:.8rem;color:var(--color-success);background:var(--bg-code);padding:12px;border-radius:6px;white-space:pre;min-height:40px">// Haz clic para obtener tu ubicacion</div>
+    <a id="geoMapsLink" href="#" target="_blank" rel="noopener" style="display:none;margin-top:12px;color:var(--color-primary);font-size:.85rem;font-weight:600">Ver en Google Maps</a>
+  </div>
+</section>
+
+<!-- SECCION 14: CANVAS -->
+<section class="section" id="canvas">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-palette"></i> Seccion 14</span>`r`n    <h2 class="section__title"><i class="fas fa-palette"></i> Canvas API</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML + <i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;canvas</span> <span class="attr">id</span>=<span class="string">"miCanvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;&lt;/canvas&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="keyword">const</span> canvas = document.<span class="function">getElementById</span>(<span class="string">'miCanvas'</span>);
+<span class="keyword">const</span> ctx = canvas.<span class="function">getContext</span>(<span class="string">'2d'</span>);
+
+<span class="comment">// Rectangulo</span>
+ctx.fillStyle = <span class="string">'#6366f1'</span>;
+ctx.<span class="function">fillRect</span>(<span class="number">50</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">100</span>);
+
+<span class="comment">// Circulo</span>
+ctx.beginPath();
+ctx.<span class="function">arc</span>(<span class="number">400</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>);
+ctx.fillStyle = <span class="string">'#10b981'</span>;
+ctx.<span class="function">fill</span>();
+
+<span class="comment">// Texto</span>
+ctx.font = <span class="string">'bold 24px Inter'</span>;
+ctx.fillStyle = <span class="string">'#0f172a'</span>;
+ctx.<span class="function">fillText</span>(<span class="string">'Hola Canvas!'</span>, <span class="number">50</span>, <span class="number">400</span>);
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+  <h3>Animacion con requestAnimationFrame</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">let</span> x = <span class="number">0</span>;
+<span class="keyword">function</span> <span class="function">animar</span>() {
+  ctx.<span class="function">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.<span class="function">arc</span>(x, <span class="number">150</span>, <span class="number">30</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>);
+  ctx.fillStyle = <span class="string">'#6366f1'</span>;
+  ctx.<span class="function">fill</span>();
+  x += <span class="number">2</span>;
+  <span class="keyword">if</span> (x &gt; canvas.width) x = <span class="number">0</span>;
+  <span class="function">requestAnimationFrame</span>(animar);
+}
+<span class="function">animar</span>();</code></pre>
+
+  <h3>Demo: Canvas Interactivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Canvas renderizado en tiempo real</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <button onclick="drawCanvas()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem">Redibujar</button>
+      <button onclick="animateCanvas()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Animar</button>
+      <button onclick="stopCanvasAnim()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Detener</button>
+      <button onclick="exportCanvas()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Descargar PNG</button>
+    </div>
+    <canvas id="myCanvas" width="500" height="200" style="width:100%;max-width:500px;border-radius:8px;background:#0b0f1a"></canvas>
+  </div>
+</section>
+
+<!-- SECCION 15: DRAG AND DROP -->
+<section class="section" id="drag-drop">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-arrows-alt"></i> Seccion 15</span>`r`n    <h2 class="section__title"><i class="fas fa-arrows-alt"></i> Drag and Drop</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> draggable = document.<span class="function">querySelector</span>(<span class="string">'.draggable'</span>);
+draggable.<span class="function">addEventListener</span>(<span class="string">'dragstart'</span>, (e) =&gt; {
+  e.dataTransfer.<span class="function">setData</span>(<span class="string">'text/plain'</span>, e.target.id);
+});
+
+<span class="keyword">const</span> dropzone = document.<span class="function">querySelector</span>(<span class="string">'.dropzone'</span>);
+dropzone.<span class="function">addEventListener</span>(<span class="string">'dragover'</span>, (e) =&gt; e.<span class="function">preventDefault</span>());
+dropzone.<span class="function">addEventListener</span>(<span class="string">'drop'</span>, (e) =&gt; {
+  e.<span class="function">preventDefault</span>();
+  <span class="keyword">const</span> id = e.dataTransfer.<span class="function">getData</span>(<span class="string">'text/plain'</span>);
+  dropzone.<span class="function">appendChild</span>(document.<span class="function">getElementById</span>(id));
+});</code></pre>
+
+  <h3>Demo: Drag and Drop Interactivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Arrastra las etiquetas entre zonas</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div>
+        <p style="font-size:.8rem;font-weight:700;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase">Zona Origen</p>
+        <div id="dropZone1" ondragover="ddAllowDrop(event)" ondrop="ddDrop(event)" style="min-height:120px;border:2px dashed var(--border-color);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;transition:border-color .2s">
+          <div class="drag-item" draggable="true" id="d1" ondragstart="ddDrag(event)" style="padding:8px 16px;background:var(--color-primary);color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">HTML5</div>
+          <div class="drag-item" draggable="true" id="d2" ondragstart="ddDrag(event)" style="padding:8px 16px;background:#8b5cf6;color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">CSS3</div>
+          <div class="drag-item" draggable="true" id="d3" ondragstart="ddDrag(event)" style="padding:8px 16px;background:#f59e0b;color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">JavaScript</div>
+          <div class="drag-item" draggable="true" id="d4" ondragstart="ddDrag(event)" style="padding:8px 16px;background:#06b6d4;color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">Canvas</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.8rem;font-weight:700;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase">Zona Destino</p>
+        <div id="dropZone2" ondragover="ddAllowDrop(event)" ondrop="ddDrop(event)" style="min-height:120px;border:2px dashed var(--border-color);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;transition:border-color .2s">
+          <span style="font-size:.85rem;color:var(--text-muted);align-self:center;margin:auto">Suelta aqui</span>
+        </div>
+      </div>
+    </div>
+    <button onclick="resetDragDrop()" style="margin-top:12px;padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Reiniciar</button>
+  </div>
+</section>
+
+<!-- SECCION 16: SVG -->
+<section class="section" id="svg">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-shapes"></i> Seccion 16</span>`r`n    <h2 class="section__title"><i class="fas fa-shapes"></i> SVG</h2>
+  </div>
+  <p>SVG (Scalable Vector Graphics) permite crear graficos vectoriales directamente en HTML. A diferencia de Canvas, SVG es independiente de la resolucion y se puede manipular con CSS y JavaScript.</p>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;svg</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 200 200"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;circle</span> <span class="attr">cx</span>=<span class="string">"100"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"80"</span> <span class="attr">fill</span>=<span class="string">"#6366f1"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;rect</span> <span class="attr">x</span>=<span class="string">"20"</span> <span class="attr">y</span>=<span class="string">"150"</span> <span class="attr">width</span>=<span class="string">"160"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">rx</span>=<span class="string">"6"</span> <span class="attr">fill</span>=<span class="string">"#10b981"</span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;text</span> <span class="attr">x</span>=<span class="string">"100"</span> <span class="attr">y</span>=<span class="string">"105"</span> <span class="attr">text-anchor</span>=<span class="string">"middle"</span> <span class="attr">fill</span>=<span class="string">"white"</span><span class="tag">&gt;</span>SVG<span class="tag">&lt;/text&gt;</span>
+<span class="tag">&lt;/svg&gt;</span></code></pre>
+  <h3>SVG vs Canvas</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>SVG</th><th>Canvas</th></tr></thead>
+      <tbody>
+        <tr><td>Formato</td><td>Vectorial (XML)</td><td>Pixeles</td></tr>
+        <tr><td>Escalado</td><td>Perfecto sin perder calidad</td><td>Se pixela</td></tr>
+        <tr><td>Interaccion DOM</td><td>Si</td><td>No</td></tr>
+        <tr><td>Rendimiento</td><td>Menor con muchos elementos</td><td>Mayor para miles de elementos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: SVG Color Picker</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Cambia el color del SVG en tiempo real</div>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
+      <svg id="demoSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="140" height="140" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,0.4));transition:filter .3s">
+        <path id="svgStar" d="M50 8 L63 35 L93 35 L68 57 L78 84 L50 68 L22 84 L32 57 L7 35 L37 35 Z" fill="#6366f1" stroke="#a78bfa" stroke-width="2" style="transition:fill .4s,stroke .4s"/>
+        <circle cx="50" cy="50" r="20" fill="rgba(255,255,255,0.92)"/>
+        <text x="50" y="55" text-anchor="middle" font-size="13" font-weight="800" fill="#6366f1" font-family="sans-serif">H5</text>
+      </svg>
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button onclick="setSvgColor('#6366f1','#a78bfa')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#6366f1;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#06b6d4','#67e8f9')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#06b6d4;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#f59e0b','#fcd34d')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#f59e0b;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#ef4444','#fca5a5')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#ef4444;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#22c55e','#86efac')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#22c55e;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+        </div>
+        <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Cambia el atributo <code>fill</code> via JS:<br><code id="svgColorCode" style="font-size:.75rem;color:var(--color-primary)">setAttribute('fill', '#6366f1')</code></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION 17: WEB WORKERS Y FETCH -->
+<section class="section" id="web-workers">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-server"></i> Seccion 17</span>`r`n    <h2 class="section__title"><i class="fas fa-server"></i> Web Workers y Fetch API</h2>
+  </div>
+  <h3>Fetch API</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// GET basico</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/datos'</span>);
+<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="function">json</span>();
+
+<span class="comment">// POST con opciones</span>
+<span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/usuarios'</span>, {
+  <span class="property">method</span>: <span class="string">'POST'</span>,
+  <span class="property">headers</span>: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> },
+  <span class="property">body</span>: JSON.<span class="function">stringify</span>({ <span class="property">nombre</span>: <span class="string">'Ana'</span>, <span class="property">email</span>: <span class="string">'ana@ej.com'</span> })
+});</code></pre>
+
+  <h3>Web Workers</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// worker.js</span>
+self.<span class="function">onmessage</span> = (e) =&gt; {
+  self.<span class="function">postMessage</span>(e.data * <span class="number">2</span>);
+};
+
+<span class="comment">// Principal</span>
+<span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="function">Worker</span>(<span class="string">'worker.js'</span>);
+worker.<span class="function">postMessage</span>(<span class="number">21</span>);
+worker.<span class="function">onmessage</span> = (e) =&gt; console.<span class="function">log</span>(e.data); <span class="comment">// 42</span></code></pre>
+
+  <h3>Demo: Fetch API en Vivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Peticion real a API publica (JSONPlaceholder)</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <button onclick="fetchUsers()" id="fetchBtn" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem"><i class="fas fa-users"></i> Cargar usuarios</button>
+      <button onclick="fetchPosts()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Cargar posts</button>
+      <button onclick="clearFetch()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Limpiar</button>
+    </div>
+    <div id="fetchStatus" style="font-size:.85rem;color:var(--text-muted);margin-bottom:8px"></div>
+    <div id="fetchResults" style="max-height:280px;overflow-y:auto"></div>
+  </div>
+</section>
+
+<!-- SECCION 18: WEBSOCKETS -->
+<section class="section" id="websockets">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-plug"></i> Seccion 18</span>`r`n    <h2 class="section__title"><i class="fas fa-plug"></i> WebSockets</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="function">WebSocket</span>(<span class="string">'wss://ejemplo.com/chat'</span>);
+socket.<span class="function">addEventListener</span>(<span class="string">'open'</span>, () =&gt; {
+  socket.<span class="function">send</span>(JSON.<span class="function">stringify</span>({ <span class="property">type</span>: <span class="string">'message'</span>, <span class="property">content</span>: <span class="string">'Hola!'</span> }));
+});
+socket.<span class="function">addEventListener</span>(<span class="string">'message'</span>, (event) =&gt; {
+  <span class="keyword">const</span> data = JSON.<span class="function">parse</span>(event.data);
+  console.<span class="function">log</span>(<span class="string">'Recibido:'</span>, data);
+});</code></pre>
+</section>
+
+<!-- SECCION 19: ACCESIBILIDAD -->
+<section class="section" id="accesibilidad">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-universal-access"></i> Seccion 19</span>`r`n    <h2 class="section__title"><i class="fas fa-universal-access"></i> Accesibilidad y ARIA</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- aria-label --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">aria-label</span>=<span class="string">"Cerrar menu"</span><span class="tag">&gt;</span>&amp;times;<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- aria-labelledby --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">aria-labelledby</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h2</span> <span class="attr">id</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span>Seccion<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- aria-live --&gt;</span>
+<spanspan class="tag">&lt;div</span> <span class="attr">aria-live</span>=<span class="string">"polite"</span><span class="tag">&gt;</span>Contenido dinamico<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- tabindex --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">tabindex</span>=<span class="string">"0"</span><span class="tag">&gt;</span></code></pre>
+
+  <h3>Demo: ARIA en Vivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Navegacion con teclado y ARIA</div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">Boton con aria-label descriptivo:</p>
+        <button onclick="alert('Foco y ARIA funcionando!')" aria-label="Reproducir video: Introduccion a HTML5, duracion 2:35 minutos" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer"><i class="fas fa-play-circle"></i> Reproducir video</button>
+      </div>
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">Panel expandible con aria-expanded:</p>
+        <button id="ariaExpandBtn" aria-expanded="false" aria-controls="ariaPanel" onclick="toggleAriaPanel()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer">Descripcion de ARIA</button>
+        <div id="ariaPanel" hidden style="margin-top:8px;padding:12px;background:var(--bg-surface-hover);border-radius:8px;font-size:.9rem;color:var(--text-secondary)">ARIA es un conjunto de atributos que anadan semantica accesible al HTML cuando los elementos nativos no son suficientes. Permite a los lectores de pantalla comunicar el estado e interactividad de la interfaz.</div>
+      </div>
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">Zona aria-live (anuncia cambios automaticamente):</p>
+        <div aria-live="polite" aria-atomic="true" id="ariaLiveZone" style="min-height:36px;padding:8px 12px;background:var(--bg-surface-hover);border-radius:8px;font-size:.9rem;color:var(--text-secondary);border:1px dashed var(--border-color)">El lector de pantalla anunciara los cambios aqui</div>
+        <button onclick="triggerLiveRegion()" style="margin-top:8px;padding:6px 14px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-size:.85rem">Activar demo aria-live</button>
+      </div>
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">role="alert" (anuncio inmediato):</p>
+        <button onclick="triggerAlertDemo()" style="padding:8px 16px;border:none;border-radius:6px;background:#ef4444;color:white;cursor:pointer">Probar role="alert"</button>
+        <div role="alert" id="ariaAlertZone" aria-live="assertive" style="margin-top:8px;min-height:20px;font-size:.9rem;color:#ef4444;font-weight:600"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION 20: MICRODATOS -->
+<section class="section" id="microdatos">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-code"></i> Seccion 20</span>`r`n    <h2 class="section__title"><i class="fas fa-code"></i> Microdatos</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;div</span> <span class="attr">itemscope</span> <span class="attr">itemtype</span>=<span class="string">"https://schema.org/Person"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h2</span> <span class="attr">itemprop</span>=<span class="string">"name"</span><span class="tag">&gt;</span>Ana Garcia<span class="tag">&lt;/h2&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Trabajo: <span class="tag">&lt;span</span> <span class="attr">itemprop</span>=<span class="string">"jobTitle"</span><span class="tag">&gt;</span>Desarrolladora<span class="tag">&lt;/span&gt;&lt;/p&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Email: <span class="tag">&lt;span</span> <span class="attr">itemprop</span>=<span class="string">"email"</span><span class="tag">&gt;</span>ana@ejemplo.com<span class="tag">&lt;/span&gt;&lt;/p&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 21: DETAILS/SUMMARY/DIALOG -->
+<section class="section" id="details-summary">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-chevron-circle-down"></i> Seccion 21</span>`r`n    <h2 class="section__title"><i class="fas fa-chevron-circle-down"></i> Details, Summary y Dialog</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;details&gt;</span>
+  <span class="tag">&lt;summary&gt;</span>Que es HTML5?<span class="tag">&lt;/summary&gt;</span>
+  <span class="tag">&lt;p&gt;</span>HTML5 es la quinta revision del lenguaje HTML.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/details&gt;</span>
+
+<span class="tag">&lt;dialog</span> <span class="attr">id</span>=<span class="string">"modal"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;form</span> <span class="attr">method</span>=<span class="string">"dialog"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;h2&gt;</span>Confirmar<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Estas seguro?<span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">value</span>=<span class="string">"cancel"</span><span class="tag">&gt;</span>No<span class="tag">&lt;/button&gt;</span>
+    <span class="tag">&lt;button</span> <span class="attr">value</span>=<span class="string">"confirm"</span><span class="tag">&gt;</span>Si<span class="tag">&lt;/button&gt;</span>
+  <span class="tag">&lt;/form&gt;</span>
+<span class="tag">&lt;/dialog&gt;</span></code></pre>
+</section>
+
+<!-- SECCION 22: INTERSECTION OBSERVER -->
+<section class="section" id="intersection-observer">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-eye"></i> Seccion 22</span>`r`n    <h2 class="section__title"><i class="fas fa-eye"></i> Intersection Observer</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="function">IntersectionObserver</span>((entries) =&gt; {
+  entries.<span class="function">forEach</span>(entry =&gt; {
+    <span class="keyword">if</span> (entry.isIntersecting) {
+      entry.target.classList.<span class="function">add</span>(<span class="string">'visible'</span>);
+      observer.<span class="function">unobserve</span>(entry.target);
+    }
+  });
+}, { <span class="property">threshold</span>: <span class="number">0.1</span>, <span class="property">rootMargin</span>: <span class="string">'0px 0px -50px 0px'</span> });
+
+document.<span class="function">querySelectorAll</span>(<span class="string">'.animate-on-scroll'</span>).<span class="function">forEach</span>(el =&gt; {
+  observer.<span class="function">observe</span>(el);
+});</code></pre>
+
+  <h3>Demo: Scroll Detection</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Desplazate dentro del recuadro</div>
+    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">Cada tarjeta se ilumina cuando entra en el viewport.</p>
+    <div id="scrollDemoContainer" style="height:200px;overflow-y:auto;border:1px solid var(--border-color);border-radius:8px;padding:12px">
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 1 - HTML5</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 2 - CSS3</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 3 - JavaScript</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 4 - Canvas</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 5 - Web APIs</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION 23: WEB COMPONENTS -->
+<section class="section" id="web-components">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-cubes"></i> Seccion 23</span>`r`n    <h2 class="section__title"><i class="fas fa-cubes"></i> Template y Web Components</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">class</span> <span class="function">MiBoton</span> <span class="keyword">extends</span> HTMLElement {
+  <span class="function">constructor</span>() {
+    <span class="keyword">super</span>();
+    <span class="keyword">const</span> shadow = <span class="keyword">this</span>.<span class="function">attachShadow</span>({ <span class="property">mode</span>: <span class="string">'open'</span> });
+    shadow.innerHTML = <span class="string">`
+      &lt;style&gt;
+        button { padding: 8px 16px; background: #6366f1;
+                 color: white; border: none; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #4f46e5; }
+      &lt;/style&gt;
+      &lt;button&gt;&lt;slot&gt;Click&lt;/slot&gt;&lt;/button&gt;
+    `</span>;
+  }
+}
+customElements.<span class="function">define</span>(<span class="string">'mi-boton'</span>, MiBoton);</code></pre>
+  <p>Uso: <code>&lt;mi-boton&gt;Mi Texto&lt;/mi-boton&gt;</code></p>
+
+  <h3>Demo: Web Component en Vivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Custom Element con Shadow DOM</div>
+    <mi-boton>Click me!</mi-boton>
+    <mi-boton style="--btn-color:#10b981">Verde</mi-boton>
+    <mi-boton style="--btn-color:#f59e0b">Amarillo</mi-boton>
+  </div>
+</section>
+
+<!-- SECCION 24: PWA -->
+<section class="section" id="pwa">
+  <div class="section__header">
+    <span class="section__number">Seccion 24</span>
+    <h2 class="section__title">Progressive Web Apps (PWA)</h2>
+  </div>
+  <p>Las PWA son aplicaciones web que funcionan como apps nativas: offline, instalables, con acceso a APIs del dispositivo.</p>
+  <h3>Elementos esenciales de una PWA</h3>
+  <ul>
+    <li><strong>manifest.json</strong>: Metadatos de la app (nombre, iconos, colores)</li>
+    <li><strong>Service Worker</strong>: Script que intercepta peticiones y cachea recursos</li>
+    <li><strong>HTTPS</strong>: Obligatorio para Service Workers</li>
+    <li><strong>Iconos</strong>: Para la pantalla de inicio</li>
+  </ul>
+  <div class="code-header"><span class="code-header__lang">manifest.json</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code>{
+  <span class="property">"name"</span>: <span class="string">"Mi Guia HTML5"</span>,
+  <span class="property">"short_name"</span>: <span class="string">"GuiaHTML5"</span>,
+  <span class="property">"start_url"</span>: <span class="string">"/"</span>,
+  <span class="property">"display"</span>: <span class="string">"standalone"</span>,
+  <span class="property">"background_color"</span>: <span class="string">"#6366f1"</span>,
+  <span class="property">"theme_color"</span>: <span class="string">"#6366f1"</span>,
+  <span class="property">"icons"</span>: [
+    { <span class="property">"src"</span>: <span class="string">"icon-192.png"</span>, <span class="property">"sizes"</span>: <span class="string">"192x192"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> },
+    { <span class="property">"src"</span>: <span class="string">"icon-512.png"</span>, <span class="property">"sizes"</span>: <span class="string">"512x512"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> }
+  ]
+}</code></pre>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript (Service Worker)</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// sw.js</span>
+<span class="keyword">const</span> CACHE = <span class="string">'guia-html5-v1'</span>;
+<span class="keyword">const</span> ASSETS = [<span class="string">'/'</span>, <span class="string">'/css/styles.css'</span>, <span class="string">'/js/app.js'</span>];
+
+self.<span class="function">addEventListener</span>(<span class="string">'install'</span>, (e) =&gt; {
+  e.<span class="function">waitUntil</span>(
+    caches.<span class="function">open</span>(CACHE).<span class="function">then</span>(cache =&gt; cache.<span class="function">addAll</span>(ASSETS))
+  );
+});
+
+self.<span class="function">addEventListener</span>(<span class="string">'fetch'</span>, (e) =&gt; {
+  e.<span class="function">respondWith</span>(
+    caches.<span class="function">match</span>(e.request).<span class="function">then</span>(r =&gt; r || <span class="function">fetch</span>(e.request))
+  );
+});</code></pre>
+</section>
+
+<!-- SECCION 25: CSS3 -->
+<section class="section" id="css3">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fab fa-css3-alt"></i> Seccion 25</span>`r`n    <h2 class="section__title"><i class="fab fa-css3-alt"></i> CSS3</h2>
+  </div>
+  <h3>Selectores modernos</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">/* Hijo directo */</span>
+<span class="tag">.padre</span> &gt; <span class="tag">.hijo</span> { <span class="property">color</span>: <span class="value">red</span>; }
+
+<span class="comment">/* Hermano siguiente */</span>
+<span class="tag">.a</span> + <span class="tag">.b</span> { <span class="property">margin-left</span>: <span class="value">10px</span>; }
+
+<span class="comment">/* Attribute selectors */</span>
+<span class="tag">a</span>[<span class="attr">href</span>^=<span class="string">"https"</span>] { <span class="property">color</span>: <span class="value">green</span>; }
+<span class="tag">input</span>[<span class="attr">type</span>$=<span class="string">"email"</span>] { <span class="property">border</span>: <span class="value">2px solid blue</span>; }
+
+<span class="comment">/* nth-child */</span>
+<span class="tag">li</span>:<span class="function">nth-child</span>(<span class="value">odd</span>) { <span class="property">background</span>: <span class="value">#f0f0f0</span>; }
+
+<span class="comment">/* :not */</span>
+<span class="tag">p</span>:<span class="function">not</span>(.excluido) { <span class="property">font-size</span>: <span class="value">16px</span>; }</code></pre>
+
+  <h3>Flexbox</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">.container</span> {
+  <span class="property">display</span>: <span class="value">flex</span>;
+  <span class="property">justify-content</span>: <span class="value">space-between</span>;
+  <span class="property">align-items</span>: <span class="value">center</span>;
+  <span class="property">flex-wrap</span>: <span class="value">wrap</span>;
+  <span class="property">gap</span>: <span class="value">16px</span>;
+}
+<span class="tag">.item</span> {
+  <span class="property">flex</span>: <span class="value">1 1 300px</span>;
+}</code></pre>
+
+  <h3>CSS Grid</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">.grid</span> {
+  <span class="property">display</span>: <span class="value">grid</span>;
+  <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(300px, 1fr))</span>;
+  <span class="property">gap</span>: <span class="value">20px</span>;
+}
+<span class="tag">.grid-item</span>:<span class="function">nth-child</span>(<span class="value">1</span>) {
+  <span class="property">grid-column</span>: <span class="value">span 2</span>;
+}</code></pre>
+
+  <h3>Animaciones</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">@keyframes</span> <span class="function">fadeInUp</span> {
+  <span class="tag">from</span> { <span class="property">opacity</span>: <span class="value">0</span>; <span class="property">transform</span>: <span class="value">translateY(20px)</span>; }
+  <span class="tag">to</span> { <span class="property">opacity</span>: <span class="value">1</span>; <span class="property">transform</span>: <span class="value">translateY(0)</span>; }
+}
+<span class="tag">.animate</span> {
+  <span class="property">animation</span>: <span class="value">fadeInUp 0.5s ease forwards</span>;
+  <span class="property">transition</span>: <span class="value">all 0.3s ease</span>;
+}</code></pre>
+
+  <h3>Custom Properties (Variables CSS)</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">:root</span> {
+  <span class="property">--color-primary</span>: <span class="value">#6366f1</span>;
+  <span class="property">--radius</span>: <span class="value">12px</span>;
+  <span class="property">--shadow</span>: <span class="value">0 4px 6px rgba(0,0,0,0.1)</span>;
+}
+<span class="tag">.card</span> {
+  <span class="property">background</span>: <span class="value">var(--color-primary)</span>;
+  <span class="property">border-radius</span>: <span class="value">var(--radius)</span>;
+  <span class="property">box-shadow</span>: <span class="value">var(--shadow)</span>;
+}</code></pre>
+</section>
+
+<!-- SECCION 26: JAVASCRIPT BASICO -->
+<section class="section" id="javascript-basico">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fab fa-js-square"></i> Seccion 26</span>`r`n    <h2 class="section__title"><i class="fab fa-js-square"></i> JavaScript Basico</h2>
+  </div>
+  <h3>Variables</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">let</span> nombre = <span class="string">'Ana'</span>;     <span class="comment">// Mutable, scope de bloque</span>
+<span class="keyword">const</span> PI = <span class="number">3.14159</span>;     <span class="comment">// Inmutable</span>
+<span class="keyword">var</span> vieja = <span class="string">'no usar'</span>; <span class="comment">// Evitar (scope global)</span></code></pre>
+
+  <h3>Tipos de datos</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Tipo</th><th>Ejemplo</th><th>Operador</th></tr></thead>
+      <tbody>
+        <tr><td>String</td><td><code>"hola"</code></td><td><code>typeof s === "string"</code></td></tr>
+        <tr><td>Number</td><td><code>42, 3.14</code></td><td><code>typeof n === "number"</code></td></tr>
+        <tr><td>Boolean</td><td><code>true, false</code></td><td><code>typeof b === "boolean"</code></td></tr>
+        <tr><td>Undefined</td><td><code>undefined</code></td><td><code>typeof u === "undefined"</code></td></tr>
+        <tr><td>Null</td><td><code>null</code></td><td><code>val === null</code></td></tr>
+        <tr><td>Object</td><td><code>{}</code>, <code>[]</code></td><td><code>typeof o === "object"</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Funciones</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Funcion tradicional</span>
+<span class="keyword">function</span> <span class="function">sumar</span>(a, b) { <span class="keyword">return</span> a + b; }
+
+<span class="comment">// Arrow function</span>
+<span class="keyword">const</span> <span class="function">sumar</span> = (a, b) =&gt; a + b;
+
+<span class="comment">// Async/await</span>
+<span class="keyword">async function</span> <span class="function">obtenerDatos</span>() {
+  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'/api/datos'</span>);
+  <span class="keyword">return</span> res.<span class="function">json</span>();
+}</code></pre>
+
+  <h3>Arrays</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> nums = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];
+
+nums.<span class="function">map</span>(n =&gt; n * <span class="number">2</span>);           <span class="comment">// [2,4,6,8,10]</span>
+nums.<span class="function">filter</span>(n =&gt; n &gt; <span class="number">3</span>);      <span class="comment">// [4,5]</span>
+nums.<span class="function">reduce</span>((a, b) =&gt; a + b, <span class="number">0</span>); <span class="comment">// 15</span>
+nums.<span class="function">find</span>(n =&gt; n &gt; <span class="number">2</span>);        <span class="comment">// 3</span>
+nums.<span class="function">some</span>(n =&gt; n &gt; <span class="number">4</span>);        <span class="comment">// true</span></code></pre>
+
+  <h3>DOM Manipulation</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code>document.<span class="function">querySelector</span>(<span class="string">'.clase'</span>);
+document.<span class="function">querySelectorAll</span>(<span class="string">'p'</span>);
+elemento.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {});
+elemento.classList.<span class="function">add</span>(<span class="string">'active'</span>);
+elemento.style.color = <span class="string">'red'</span>;
+elemento.innerHTML = <span class="string">'&lt;strong&gt;Nuevo&lt;/strong&gt;'</span>;</code></pre>
+</section>
+
+<!-- SECCION 27: RECURSOS -->
+<section class="section" id="recursos">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-book"></i> Recursos</span>`r`n    <h2 class="section__title"><i class="fas fa-book"></i> Recursos Web para Desarrolladores</h2>
+    <p class="section__subtitle">63 recursos organizados en 8 categorias</p>
+  </div>
+
+  <h3><i class="fas fa-book"></i> Documentacion</h3>
+  <div class="grid grid-3">
+    <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book"></i></div><div class="resource-card__title">MDN Web Docs</div><div class="resource-card__desc">La referencia mas completa para HTML, CSS y JS. Mantenida por Mozilla.</div></a>
+    <a href="https://caniuse.com" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-chart-line"></i></div><div class="resource-card__title">Can I Use</div><div class="resource-card__desc">Compatibilidad de features en todos los navegadores actuales.</div></a>
+    <a href="https://devdocs.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-laptop-code"></i></div><div class="resource-card__title">DevDocs.io</div><div class="resource-card__desc">Documentacion offline unificada de mas de 100 tecnologias.</div></a>
+    <a href="https://www.w3schools.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-graduation-cap"></i></div><div class="resource-card__title">W3Schools</div><div class="resource-card__desc">Tutoriales interactivos con editor integrado.</div></a>
+    <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-file-alt"></i></div><div class="resource-card__title">WHATWG HTML Spec</div><div class="resource-card__desc">La especificacion oficial de HTML vivo.</div></a>
+    <a href="https://cssreference.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-palette"></i></div><div class="resource-card__title">CSS Reference</div><div class="resource-card__desc">Referencia visual de todas las propiedades CSS.</div></a>
+    <a href="https://htmlreference.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-file-code"></i></div><div class="resource-card__title">HTML Reference</div><div class="resource-card__desc">Referencia visual completa de todos los elementos HTML5.</div></a>
+  </div>
+
+  <h3><i class="fas fa-globe-americas"></i> En Espanol</h3>
+  <div class="grid grid-3">
+    <a href="https://lenguajehtml.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book-reader"></i></div><div class="resource-card__title">LenguajeHTML.com</div><div class="resource-card__desc">HTML en espanol por Manz. Chuletas PDF y bootcamp gratuito.</div></a>
+    <a href="https://lenguajecss.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-palette"></i></div><div class="resource-card__title">LenguajeCSS.com</div><div class="resource-card__desc">CSS en espanol. Chuletas PDF, Flexbox, Grid y mas.</div></a>
+    <a href="https://lenguajejs.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-cogs"></i></div><div class="resource-card__title">LenguajeJS.com</div><div class="resource-card__desc">JavaScript en espanol desde cero hasta avanzado.</div></a>
+    <a href="https://es.javascript.info/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book-reader"></i></div><div class="resource-card__title">JavaScript.info (ES)</div><div class="resource-card__desc">Tutorial moderno de JS traducido al espanol.</div></a>
+    <a href="https://www.freecodecamp.org/espanol/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-graduation-cap"></i></div><div class="resource-card__title">freeCodeCamp Espanol</div><div class="resource-card__desc">Cursos gratuitos con proyectos y certificaciones.</div></a>
+    <a href="https://roadmap.sh/frontend" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-map"></i></div><div class="resource-card__title">Roadmap.sh</div><div class="resource-card__desc">Hojas de ruta visuales para Frontend, Backend, DevOps.</div></a>
+    <a href="https://www.youtube.com/@mouredev" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-play-circle"></i></div><div class="resource-card__title">MoureDev (YouTube)</div><div class="resource-card__desc">Tutoriales de Python, Kotlin, Swift y desarrollo backend.</div></a>
+    <a href="https://midu.dev/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-play-circle"></i></div><div class="resource-card__title">Midudev</div><div class="resource-card__desc">JavaScript, React y desarrollo web moderno en espanol.</div></a>
+  </div>
+
+  <h3><i class="fas fa-clipboard-list"></i> Cheat Sheets</h3>
+  <div class="grid grid-3">
+    <a href="https://lenguajehtml.com/html/cheatsheets/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-file-code"></i></div><div class="resource-card__title">CheatSheet HTML5 (ES)</div><div class="resource-card__desc">Chuleta oficial de HTML5 en espanol. PDF descargable.</div></a>
+    <a href="https://lenguajecss.com/css/cheatsheets/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-palette"></i></div><div class="resource-card__title">CheatSheet CSS (ES)</div><div class="resource-card__desc">Chuleta de CSS en espanol. Todas las propiedades.</div></a>
+    <a href="https://lenguajejs.com/javascript/cheatsheets/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-cogs"></i></div><div class="resource-card__title">CheatSheet JavaScript (ES)</div><div class="resource-card__desc">Referencia rapida de JavaScript y ES6+.</div></a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Cheatsheet" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book"></i></div><div class="resource-card__title">HTML Cheatsheet - MDN</div><div class="resource-card__desc">Snippets rapidos de las tareas mas comunes en HTML.</div></a>
+    <a href="https://grid.malven.co/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-thumbtack"></i></div><div class="resource-card__title">Grid &amp; Flexbox Cheatsheet</div><div class="resource-card__desc">Referencia visual interactiva de Grid y Flexbox.</div></a>
+    <a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-bolt"></i></div><div class="resource-card__title">Emmet Cheat Sheet</div><div class="resource-card__desc">Abreviaciones Emmet para escribir HTML 10x mas rapido.</div></a>
+  </div>
+
+  <h3><i class="fas fa-gamepad"></i> Practicar / Playgrounds</h3>
+  <div class="grid grid-3">
+    <a href="https://codepen.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-pen-fancy"></i></div><div class="resource-card__title">CodePen</div><div class="resource-card__desc">Playground online con vista previa en tiempo real.</div></a>
+    <a href="https://jsfiddle.net/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-laptop-code"></i></div><div class="resource-card__title">JSFiddle</div><div class="resource-card__desc">Playground simple y rapido para compartir snippets.</div></a>
+    <a href="https://codesandbox.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-laptop-code"></i></div><div class="resource-card__title">CodeSandbox</div><div class="resource-card__desc">Entorno de desarrollo cloud completo.</div></a>
+    <a href="https://flexboxfroggy.com/#es" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-frog"></i></div><div class="resource-card__title">Flexbox Froggy</div><div class="resource-card__desc">Aprende Flexbox jugando. 24 niveles interactivos.</div></a>
+    <a href="https://cssgridgarden.com/#es" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-seedling"></i></div><div class="resource-card__title">CSS Grid Garden</div><div class="resource-card__desc">Aprende Grid cultivando un jardin. 28 ejercicios.</div></a>
+    <a href="https://cssbattle.dev/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-trophy"></i></div><div class="resource-card__title">CSS Battle</div><div class="resource-card__desc">Competitivo: recrea disenos con minimo CSS.</div></a>
+  </div>
+
+  <h3><i class="fas fa-tools"></i> Herramientas</h3>
+  <div class="grid grid-3">
+    <a href="https://validator.w3.org/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-check-circle"></i></div><div class="resource-card__title">W3C HTML Validator</div><div class="resource-card__desc">Validador oficial del W3C para detectar errores.</div></a>
+    <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-rocket"></i></div><div class="resource-card__title">PageSpeed Insights</div><div class="resource-card__desc">Mide rendimiento, accesibilidad y SEO con Lighthouse.</div></a>
+    <a href="https://cssgrid-generator.netlify.app/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-thumbtack"></i></div><div class="resource-card__title">CSS Grid Generator</div><div class="resource-card__desc">Genera layouts CSS Grid visualmente.</div></a>
+    <a href="https://coolors.co/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-palette"></i></div><div class="resource-card__title">Coolors.co</div><div class="resource-card__desc">Generador de paletas de colores. Pulsa espacio para generar.</div></a>
+    <a href="https://squoosh.app/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-camera"></i></div><div class="resource-card__title">Squoosh</div><div class="resource-card__desc">Optimiza imagenes online con WebP, AVIF y mas.</div></a>
+    <a href="https://fontawesome.com/icons" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-lightbulb"></i></div><div class="resource-card__title">Font Awesome</div><div class="resource-card__desc">Biblioteca de iconos vectoriales mas usada del mundo.</div></a>
+    <a href="https://cssgradient.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-wind"></i></div><div class="resource-card__title">CSS Gradient Generator</div><div class="resource-card__desc">Generador visual de gradientes CSS.</div></a>
+    <a href="https://webaim.org/resources/contrastchecker/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-universal-access"></i></div><div class="resource-card__title">Contrast Checker</div><div class="resource-card__desc">Comprueba contraste segun WCAG 2.1.</div></a>
+  </div>
+
+  <h3><i class="fas fa-users"></i> Comunidad</h3>
+  <div class="grid grid-3">
+    <a href="https://www.reddit.com/r/webdev/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-comments"></i></div><div class="resource-card__title">r/webdev &amp; r/html5</div><div class="resource-card__desc">Comunidades Reddit de desarrollo web.</div></a>
+    <a href="https://dev.to/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-pen-fancy"></i></div><div class="resource-card__title">DEV.to</div><div class="resource-card__desc">Plataforma de articulos y tutoriales para devs.</div></a>
+    <a href="https://stackoverflow.com/questions/tagged/html5" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-question-circle"></i></div><div class="resource-card__title">Stack Overflow</div><div class="resource-card__desc">El Q&amp;A de programacion mas grande del mundo.</div></a>
+    <a href="https://github.com/topics/html5" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-laptop-code"></i></div><div class="resource-card__title">GitHub Topics - HTML</div><div class="resource-card__desc">Explora repositorios open-source de HTML5.</div></a>
+  </div>
+
+  <h3><i class="fas fa-trophy"></i> Retos y Practica</h3>
+  <div class="grid grid-3">
+    <a href="https://www.frontendmentor.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-palette"></i></div><div class="resource-card__title">Frontend Mentor</div><div class="resource-card__desc">Retos de diseno reales con archivos Figma y starter code.</div></a>
+    <a href="https://javascript30.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-bolt"></i></div><div class="resource-card__title">JavaScript 30</div><div class="resource-card__desc">30 proyectos en 30 dias con Vanilla JS. Por Wes Bos.</div></a>
+    <a href="https://www.theodinproject.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book-reader"></i></div><div class="resource-card__title">The Odin Project</div><div class="resource-card__desc">Ruta de aprendizaje full-stack gratuita con proyectos reales.</div></a>
+    <a href="https://devchallenges.io/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-trophy"></i></div><div class="resource-card__title">DevChallenges</div><div class="resource-card__desc">Retos de programacion para portfolio.</div></a>
+    <a href="https://www.codewars.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-crosshairs"></i></div><div class="resource-card__title">Codewars</div><div class="resource-card__desc">Plataforma gamificada para practicar +20 lenguajes.</div></a>
+  </div>
+
+  <h3><i class="fas fa-laptop-code"></i> GitHub Open Source</h3>
+  <div class="grid grid-3">
+    <a href="https://github.com/sindresorhus/awesome" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-star"></i></div><div class="resource-card__title">awesome</div><div class="resource-card__desc">El repositorio mas famoso de GitHub. Lista curada de listas. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>220k</div></a>
+    <a href="https://github.com/freeCodeCamp/freeCodeCamp" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-graduation-cap"></i></div><div class="resource-card__title">freeCodeCamp</div><div class="resource-card__desc">400+ horas de curriculo de desarrollo web gratuito. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>410k</div></a>
+    <a href="https://github.com/kamranahmedse/developer-roadmap" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-map"></i></div><div class="resource-card__title">developer-roadmap</div><div class="resource-card__desc">Hojas de ruta interactivas para Frontend, Backend, DevOps. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>310k</div></a>
+    <a href="https://github.com/jwasham/coding-interview-university" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book-reader"></i></div><div class="resource-card__title">coding-interview-university</div><div class="resource-card__desc">Plan de estudios completo para entrevistas tecnicas. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>310k</div></a>
+    <a href="https://github.com/EbookFoundation/free-programming-books" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book-reader"></i></div><div class="resource-card__title">free-programming-books</div><div class="resource-card__desc">Mas de 3,000 libros de programacion gratuitos. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>350k</div></a>
+    <a href="https://github.com/30-seconds/30-seconds-of-code" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-bolt"></i></div><div class="resource-card__title">30-seconds-of-code</div><div class="resource-card__desc">Snippets de JS, CSS, Python explicados en 30 segundos. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>120k</div></a>
+    <a href="https://github.com/h5bp/html5-boilerplate" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-file-code"></i></div><div class="resource-card__title">html5-boilerplate</div><div class="resource-card__desc">La plantilla HTML5 mas popular del mundo. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>56k</div></a>
+    <a href="https://github.com/getify/You-Dont-Know-JS" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-book-reader"></i></div><div class="resource-card__title">You-Dont-Know-JS</div><div class="resource-card__desc">Serie de libros sobre JavaScript en profundidad. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>180k</div></a>
+    <a href="https://github.com/LeCoupa/awesome-cheatsheets" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-clipboard-list"></i></div><div class="resource-card__title">awesome-cheatsheets</div><div class="resource-card__desc">Cheatsheets para todo tipo de lenguajes y frameworks. <i class="fas fa-star" style="color:var(--color-warning,#facc15);font-size:.75rem"></i>40k</div></a>
+  </div>
+
+  <h3><i class="fas fa-desktop"></i> Programacion (SQL, Python, etc.)</h3>
+  <div class="grid grid-3">
+    <a href="https://sqlzoo.net/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-database"></i></div><div class="resource-card__title">SQLZoo</div><div class="resource-card__desc">Tutoriales interactivos de SQL en el navegador.</div></a>
+    <a href="https://sqlbolt.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-database"></i></div><div class="resource-card__title">SQLBolt</div><div class="resource-card__desc">20 lecciones interactivas de SQL desde cero.</div></a>
+    <a href="https://docs.python.org/es/3/tutorial/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fab fa-python"></i></div><div class="resource-card__title">Python.org Tutorial</div><div class="resource-card__desc">Tutorial oficial de Python en espanol.</div></a>
+    <a href="https://www.sololearn.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-mobile-alt"></i></div><div class="resource-card__title">SoloLearn</div><div class="resource-card__desc">Aprende Python, JS, Java, C++, SQL y mas en movil.</div></a>
+    <a href="https://es.khanacademy.org/computing/programming" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-graduation-cap"></i></div><div class="resource-card__title">Khan Academy</div><div class="resource-card__desc">Cursos gratuitos de SQL, Python, HTML/CSS.</div></a>
+    <a href="https://www.hackerrank.com/domains/sql" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-trophy"></i></div><div class="resource-card__title">HackerRank</div><div class="resource-card__desc">Retos en SQL, Python, JS, Java, C++. Certificados.</div></a>
+    <a href="https://leetcode.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-lightbulb"></i></div><div class="resource-card__title">LeetCode</div><div class="resource-card__desc">La plataforma #1 para entrevistas tecnicas. 3,000+ problemas.</div></a>
+    <a href="https://www.mysqltutorial.org/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-database"></i></div><div class="resource-card__title">MySQL Tutorial</div><div class="resource-card__desc">Tutorial completo de MySQL paso a paso.</div></a>
+    <a href="https://www.postgresqltutorial.com/" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-database"></i></div><div class="resource-card__title">PostgreSQL Tutorial</div><div class="resource-card__desc">Guia completa de PostgreSQL.</div></a>
+    <a href="https://www.codecademy.com/catalog/language/sql" target="_blank" rel="noopener" class="resource-card"><div class="resource-card__icon"><i class="fas fa-laptop-code"></i></div><div class="resource-card__title">Codecademy</div><div class="resource-card__desc">Plataforma interactiva para Python, JS, SQL, Ruby, Go.</div></a>
+  </div>
+
+  <div class="callout callout--info" style="margin-top:24px">
+    <span class="callout__icon"><i class="fas fa-chart-line"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">63 Recursos &middot; 8 Categorias &middot; 12 en Espanol &middot; 100% Gratuitos</div>
+      <p class="callout__text">Todos los recursos listados son gratuitos o tienen planes gratuitos generosos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION 28: GLOSARIO -->
+<section class="section" id="glosario">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-clipboard-list"></i> Glosario</span>`r`n    <h2 class="section__title"><i class="fas fa-clipboard-list"></i> Glosario de Terminos</h2>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Termino</th><th>Definicion</th></tr></thead>
+      <tbody>
+        <tr><td><strong>API</strong></td><td>Application Programming Interface - Interfaz para comunicar aplicaciones</td></tr>
+        <tr><td><strong>ARIA</strong></td><td>Accessible Rich Internet Applications - Atributos de accesibilidad</td></tr>
+        <tr><td><strong>Canvas</strong></td><td>Elemento HTML para dibujar graficos 2D/3D con JavaScript</td></tr>
+        <tr><td><strong>CSS</strong></td><td>Cascading Style Sheets - Lenguaje de estilos para la web</td></tr>
+        <tr><td><strong>DOM</strong></td><td>Document Object Model - Representacion en arbol del documento HTML</td></tr>
+        <tr><td><strong>Fetch</strong></td><td>API moderna para realizar peticiones HTTP</td></tr>
+        <tr><td><strong>Flexbox</strong></td><td>Modelo de diseño CSS para layouts unidimensionales</td></tr>
+        <tr><td><strong>Grid</strong></td><td>Modelo de diseño CSS para layouts bidimensionales</td></tr>
+        <tr><td><strong>HTML5</strong></td><td>Quinta revision del lenguaje HTML estandar</td></tr>
+        <tr><td><strong>HTTPS</strong></td><td>Protocolo seguro de transferencia de hipertexto</td></tr>
+        <tr><td><strong>JavaScript</strong></td><td>Lenguaje de programacion para la web</td></tr>
+        <tr><td><strong>JSON</strong></td><td>JavaScript Object Notation - Formato de intercambio de datos</td></tr>
+        <tr><td><strong>JWT</strong></td><td>JSON Web Token - Token de autenticacion</td></tr>
+        <tr><td><strong>Lazy Loading</strong></td><td>Carga diferida de recursos pesados</td></tr>
+        <tr><td><strong>Microdatos</strong></td><td>Datos estructurados para SEO</td></tr>
+        <tr><td><strong>PWA</strong></td><td>Progressive Web App - Aplicacion web progresiva</td></tr>
+        <tr><td><strong>REST</strong></td><td>Representational State Transfer - Arquitectura de APIs</td></tr>
+        <tr><td><strong>SDK</strong></td><td>Software Development Kit - Kit de desarrollo</td></tr>
+        <tr><td><strong>SEO</strong></td><td>Search Engine Optimization - Optimizacion para buscadores</td></tr>
+        <tr><td><strong>Service Worker</strong></td><td>Script que intercepta peticiones de red</td></tr>
+        <tr><td><strong>Shadow DOM</strong></td><td>DOM encapsulado para Web Components</td></tr>
+        <tr><td><strong>SVG</strong></td><td>Scalable Vector Graphics - Graficos vectoriales escalables</td></tr>
+        <tr><td><strong>URI/URL</strong></td><td>Uniform Resource Identifier/Locator - Identificador/localizador de recursos</td></tr>
+        <tr><td><strong>WebSocket</strong></td><td>Protocolo de comunicacion bidireccional en tiempo real</td></tr>
+        <tr><td><strong>Web Worker</strong></td><td>Hilo de ejecucion en segundo plano</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>`r`n    <span class="section__number"><i class="fas fa-question-circle"></i> Interactivo</span>`r`n    <h2 class="section__title"><i class="fas fa-question-circle"></i> Quiz de HTML5</h2>
+    <p class="section__subtitle">Pon a prueba tus conocimientos</p>
+  </div>
+  <div class="quiz"></div>
+</section>
+
+</div><!-- .content -->
+
+<!-- Back to Top -->
+<button class="back-to-top" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+
+<!-- Footer -->
+<footer class="footer">
+  <p><strong>Guia Completa de HTML5</strong> &mdash; Recursos para el aprendizaje de desarrollo web</p>
+  <p style="margin-top:8px">Creada con <i class="fas fa-heart" style="color:#ef4444"></i> para la comunidad de desarrolladores</p>
+</footer>
+
+</main>
+</div><!-- .layout -->
+
+<script src="js/app.js"></script>
+</body>
+</html>
