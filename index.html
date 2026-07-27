@@ -30,9 +30,11 @@
         <a href="#tipografia"><i class="fas fa-font"></i> Tipografia</a>
         <a href="#enlaces"><i class="fas fa-link"></i> Enlaces</a>
         <a href="#multimedia"><i class="fas fa-photo-video"></i> Multimedia</a>
+        <a href="#iframes"><i class="fas fa-window-maximize"></i> Iframes y Embed</a>
         <a href="#listas"><i class="fas fa-list"></i> Listas</a>
         <a href="#tablas"><i class="fas fa-table"></i> Tablas</a>
         <a href="#formularios"><i class="fas fa-file-signature"></i> Formularios</a>
+        <a href="#formularios-avanzados"><i class="fas fa-file-signature"></i> Formularios Avanzados</a>
       </div>
     </div>
     <div class="nav-item">
@@ -41,6 +43,7 @@
         <a href="#atributos-globales"><i class="fas fa-sliders-h"></i> Atributos Globales</a>
         <a href="#meta-seo"><i class="fas fa-search"></i> Meta Tags y SEO</a>
         <a href="#etiquetas-adicionales"><i class="fas fa-file-code"></i> Etiquetas Extra</a>
+        <a href="#seguridad"><i class="fas fa-shield-alt"></i> Seguridad HTML</a>
       </div>
     </div>
     <div class="nav-item">
@@ -53,6 +56,14 @@
         <a href="#svg"><i class="fas fa-shapes"></i> SVG</a>
         <a href="#web-workers"><i class="fas fa-server"></i> Web Workers y Fetch</a>
         <a href="#websockets"><i class="fas fa-plug"></i> WebSockets</a>
+        <a href="#clipboard-api"><i class="fas fa-clipboard"></i> Clipboard API</a>
+        <a href="#web-share"><i class="fas fa-share-alt"></i> Web Share API</a>
+        <a href="#notification-api"><i class="fas fa-bell"></i> Notifications</a>
+        <a href="#fullscreen-api"><i class="fas fa-expand-arrows-alt"></i> Fullscreen</a>
+        <a href="#wake-lock"><i class="fas fa-mobile-alt"></i> Wake Lock</a>
+        <a href="#history-api"><i class="fas fa-history"></i> History API</a>
+        <a href="#indexeddb"><i class="fas fa-database"></i> IndexedDB</a>
+        <a href="#observers"><i class="fas fa-eye"></i> Observers</a>
       </div>
     </div>
     <div class="nav-item">
@@ -62,6 +73,10 @@
         <a href="#microdatos"><i class="fas fa-code"></i> Microdatos</a>
         <a href="#web-components"><i class="fas fa-cubes"></i> Web Components</a>
         <a href="#pwa"><i class="fas fa-mobile-alt"></i> PWA</a>
+        <a href="#service-workers"><i class="fas fa-cogs"></i> Service Workers</a>
+        <a href="#multimedia-avanzado"><i class="fas fa-closed-captioning"></i> Multimedia Avanzado</a>
+        <a href="#web-fonts"><i class="fas fa-font"></i> Web Fonts</a>
+        <a href="#performance"><i class="fas fa-tachometer-alt"></i> Performance</a>
         <a href="#intersection-observer"><i class="fas fa-eye"></i> Intersection Observer</a>
       </div>
     </div>
@@ -70,6 +85,10 @@
       <div class="nav-dropdown">
         <a href="#css3"><i class="fab fa-css3-alt"></i> CSS3</a>
         <a href="#javascript-basico"><i class="fab fa-js-square"></i> JavaScript Basico</a>
+        <a href="#html-living"><i class="fas fa-scroll"></i> HTML Living Standard</a>
+        <a href="#touch-events"><i class="fas fa-hand-pointer"></i> Touch y Pointer Events</a>
+        <a href="#html-mobile"><i class="fas fa-mobile-alt"></i> HTML en Moviles</a>
+        <a href="#devtools"><i class="fas fa-tools"></i> Herramientas</a>
         <a href="#recursos"><i class="fas fa-book"></i> Recursos</a>
         <a href="#glosario"><i class="fas fa-clipboard-list"></i> Glosario</a>
         <a href="#quiz"><i class="fas fa-question-circle"></i> Quiz</a>
@@ -103,25 +122,36 @@
     <a href="#tipografia" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-font"></i></span> Tipografia</a>
     <a href="#enlaces" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-link"></i></span> Enlaces</a>
     <a href="#multimedia" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-photo-video"></i></span> Multimedia</a>
+    <a href="#iframes" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-window-maximize"></i></span> Iframes y Embed</a>
     <a href="#listas" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-list"></i></span> Listas</a>
     <a href="#tablas" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-table"></i></span> Tablas</a>
     <a href="#formularios" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-file-signature"></i></span> Formularios</a>
+    <a href="#formularios-avanzados" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-file-signature"></i></span> Formularios Avanzados</a>
   </div>
   <div class="sidebar__section">
     <div class="sidebar__section-title">Avanzado</div>
     <a href="#atributos-globales" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-sliders-h"></i></span> Atributos Globales</a>
     <a href="#meta-seo" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-search"></i></span> Meta Tags y SEO</a>
     <a href="#etiquetas-adicionales" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-file-code"></i></span> Etiquetas Extra</a>
+    <a href="#seguridad" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-shield-alt"></i></span> Seguridad HTML</a>
   </div>
   <div class="sidebar__section">
     <div class="sidebar__section-title">APIs de JavaScript</div>
     <a href="#web-storage" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-database"></i></span> Web Storage</a>
-    <a href="#geolocation" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-map-marker-alt"></i></span> Geolocalización</a>
+    <a href="#geolocation" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-map-marker-alt"></i></span> Geolocalizacion</a>
     <a href="#canvas" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-palette"></i></span> Canvas</a>
     <a href="#drag-drop" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-arrows-alt"></i></span> Drag and Drop</a>
     <a href="#svg" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-shapes"></i></span> SVG</a>
     <a href="#web-workers" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-server"></i></span> Web Workers y Fetch</a>
     <a href="#websockets" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-plug"></i></span> WebSockets</a>
+    <a href="#clipboard-api" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-clipboard"></i></span> Clipboard API</a>
+    <a href="#web-share" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-share-alt"></i></span> Web Share API</a>
+    <a href="#notification-api" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-bell"></i></span> Notifications</a>
+    <a href="#fullscreen-api" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-expand-arrows-alt"></i></span> Fullscreen</a>
+    <a href="#wake-lock" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-mobile-alt"></i></span> Wake Lock</a>
+    <a href="#history-api" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-history"></i></span> History API</a>
+    <a href="#indexeddb" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-database"></i></span> IndexedDB</a>
+    <a href="#observers" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-eye"></i></span> Observers</a>
   </div>
   <div class="sidebar__section">
     <div class="sidebar__section-title">Modern Web</div>
@@ -129,12 +159,20 @@
     <a href="#microdatos" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-code"></i></span> Microdatos</a>
     <a href="#web-components" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-cubes"></i></span> Web Components</a>
     <a href="#pwa" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-mobile-alt"></i></span> PWA</a>
+    <a href="#service-workers" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-cogs"></i></span> Service Workers</a>
+    <a href="#multimedia-avanzado" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-closed-captioning"></i></span> Multimedia Avanzado</a>
+    <a href="#web-fonts" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-font"></i></span> Web Fonts</a>
+    <a href="#performance" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-tachometer-alt"></i></span> Performance</a>
     <a href="#intersection-observer" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-eye"></i></span> Intersection Observer</a>
   </div>
   <div class="sidebar__section">
     <div class="sidebar__section-title">Extras</div>
     <a href="#css3" class="sidebar__link"><span class="sidebar__link-icon"><i class="fab fa-css3-alt"></i></span> CSS3</a>
     <a href="#javascript-basico" class="sidebar__link"><span class="sidebar__link-icon"><i class="fab fa-js-square"></i></span> JavaScript Basico</a>
+    <a href="#html-living" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-scroll"></i></span> HTML Living Standard</a>
+    <a href="#touch-events" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-hand-pointer"></i></span> Touch y Pointer Events</a>
+    <a href="#html-mobile" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-mobile-alt"></i></span> HTML en Moviles</a>
+    <a href="#devtools" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-tools"></i></span> Herramientas</a>
     <a href="#recursos" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-book"></i></span> Recursos Web <span class="sidebar__badge">63</span></a>
     <a href="#glosario" class="sidebar__link"><span class="sidebar__link-icon"><i class="fas fa-clipboard-list"></i></span> Glosario</a>
   </div>
@@ -154,10 +192,10 @@
     <h1 class="hero__title">Guia Completa de HTML5</h1>
     <p class="hero__subtitle">Aprende HTML desde cero hasta nivel avanzado con ejemplos prácticos, demos interactivas y recursos seleccionados para dominar el desarrollo web moderno.</p>
     <div class="hero__stats">
-      <div class="hero__stat"><div class="hero__stat-value">26+</div><div class="hero__stat-label">Secciones</div></div>
-      <div class="hero__stat"><div class="hero__stat-value">100+</div><div class="hero__stat-label">Ejemplos</div></div>
+      <div class="hero__stat"><div class="hero__stat-value">49</div><div class="hero__stat-label">Secciones</div></div>
+      <div class="hero__stat"><div class="hero__stat-value">150+</div><div class="hero__stat-label">Ejemplos</div></div>
       <div class="hero__stat"><div class="hero__stat-value">63</div><div class="hero__stat-label">Recursos</div></div>
-      <div class="hero__stat"><div class="hero__stat-value">15</div><div class="hero__stat-label">Ejercicios</div></div>
+      <div class="hero__stat"><div class="hero__stat-value">18</div><div class="hero__stat-label">Demos</div></div>
     </div>
   </div>
 </section>
@@ -457,11 +495,95 @@
 <span class="tag">&lt;/audio&gt;</span></code></pre>
 </section>
 
+<!-- SECCION 06: IFRAMES Y EMBED -->
+<section class="section" id="iframes">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-window-maximize"></i> Seccion 06</span>
+    <h2 class="section__title"><i class="fas fa-window-maximize"></i> Iframes, Embed y Object</h2>
+    <p class="section__subtitle">Incorpora contenido externo en tus paginas</p>
+  </div>
+  <p>Las etiquetas <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code> y <code>&lt;object&gt;</code> permiten incrustar contenido de otras fuentes directamente en tu pagina web, como videos, mapas, PDFs o paginas externas.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Iframe basico: embebe otra pagina web --&gt;</span>
+<span class="tag">&lt;iframe</span>
+  <span class="attr">src</span>=<span class="string">"https://www.ejemplo.com"</span>
+  <span class="attr">width</span>=<span class="string">"800"</span>
+  <span class="attr">height</span>=<span class="string">"450"</span>
+  <span class="attr">title</span>=<span class="string">"Descripcion del contenido embebido"</span>
+  <span class="attr">loading</span>=<span class="string">"lazy"</span>
+  <span class="attr">sandbox</span>=<span class="string">"allow-scripts allow-same-origin"</span>
+  <span class="attr">referrerpolicy</span>=<span class="string">"no-referrer"</span>
+<span class="tag">&gt;&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- Iframe responsivo con contenedor --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">style</span>=<span class="string">"position:relative;padding-bottom:56.25%;height:0;overflow:hidden"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;iframe</span>
+    <span class="attr">src</span>=<span class="string">"https://www.youtube.com/embed/VIDEO_ID"</span>
+    <span class="attr">style</span>=<span class="string">"position:absolute;top:0;left:0;width:100%;height:100%;border:0"</span>
+    <span class="attr">allowfullscreen</span>
+    <span class="attr">loading</span>=<span class="string">"lazy"</span>
+    <span class="attr">title</span>=<span class="string">"Video de YouTube"</span>
+  <span class="tag">&gt;&lt;/iframe&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Embed: contenido embebido (PDF, plugin) --&gt;</span>
+<span class="tag">&lt;embed</span>
+  <span class="attr">src</span>=<span class="string">"documento.pdf"</span>
+  <span class="attr">type</span>=<span class="string">"application/pdf"</span>
+  <span class="attr">width</span>=<span class="string">"100%"</span>
+  <span class="attr">height</span>=<span class="string">"600px"</span>
+<span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Object: contenido alternativo con fallback --&gt;</span>
+<span class="tag">&lt;object</span>
+  <span class="attr">data</span>=<span class="string">"animacion.svg"</span>
+  <span class="attr">type</span>=<span class="string">"image/svg+xml"</span>
+  <span class="attr">width</span>=<span class="string">"400"</span>
+  <span class="attr">height</span>=<span class="string">"300"</span>
+<span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"fallback.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/object&gt;</span></code></pre>
+
+  <h3>Atributos importantes de iframe</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Atributo</th><th>Descripcion</th><th>Valor recomendado</th></tr></thead>
+      <tbody>
+        <tr><td><code>src</code></td><td>URL del contenido a embeber</td><td>URL completa</td></tr>
+        <tr><td><code>title</code></td><td>Descripcion accesible del contenido (obligatorio)</td><td>Texto descriptivo</td></tr>
+        <tr><td><code>loading</code></td><td>Carga diferida del iframe</td><td><code>lazy</code></td></tr>
+        <tr><td><code>sandbox</code></td><td>Restringe funcionalidades por seguridad</td><td><code>allow-scripts</code></td></tr>
+        <tr><td><code>allow</code></td><td>Permite features especificas (cámara, micrófono)</td><td><code>camera; microphone</code></td></tr>
+        <tr><td><code>referrerpolicy</code></td><td>Controla la información enviada al servidor</td><td><code>no-referrer</code></td></tr>
+        <tr><td><code>allowfullscreen</code></td><td>Permite pantalla completa</td><td>Atributo booleano</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-shield-alt"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Seguridad en Iframes</div>
+      <p class="callout__text">Siempre usa el atributo <code>sandbox</code> para restringir lo que el contenido embebido puede hacer. Sin <code>sandbox</code>, un iframe malicioso puede ejecutar scripts, acceder a cookies y redirigir al usuario.</p>
+    </div>
+  </div>
+
+  <h3>Demo: Iframe Responsivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Video de YouTube responsivo (ratio 16:9)</div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:1px solid var(--border-color)">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy" title="Video de ejemplo en YouTube"></iframe>
+    </div>
+  </div>
+</section>
+
 <!-- SECCION 06: LISTAS -->
 <section class="section" id="listas">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-list"></i> Seccion 06</span>
+    <span class="section__number"><i class="fas fa-list"></i> Seccion 07</span>
     <h2 class="section__title"><i class="fas fa-list"></i> Listas</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -490,7 +612,7 @@
 <section class="section" id="tablas">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-table"></i> Seccion 07</span>
+    <span class="section__number"><i class="fas fa-table"></i> Seccion 08</span>
     <h2 class="section__title"><i class="fas fa-table"></i> Tablas</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -516,7 +638,7 @@
 <section class="section" id="formularios">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-file-signature"></i> Seccion 08</span>
+    <span class="section__number"><i class="fas fa-file-signature"></i> Seccion 09</span>
     <h2 class="section__title"><i class="fas fa-file-signature"></i> Formularios</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -622,11 +744,99 @@
   </div>
 </section>
 
+<!-- SECCION 10: FORMULARIOS AVANZADOS -->
+<section class="section" id="formularios-avanzados">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-file-signature"></i> Seccion 10</span>
+    <h2 class="section__title"><i class="fas fa-file-signature"></i> Formularios Avanzados</h2>
+    <p class="section__subtitle">Validación nativa, FormData y Constraint Validation API</p>
+  </div>
+  <p>Más allá de los tipos de input básicos, HTML5 ofrece una API completa de validación nativa que elimina la necesidad de librerías externas para muchos casos comunes.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML + JS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Constraint Validation API --&gt;</span>
+<span class="tag">&lt;form</span> <span class="attr">id</span>=<span class="string">"miFormulario"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"5"</span> <span class="attr">pattern</span>=<span class="string">"[a-z]+@[a-z]+\.[a-z]{2,}"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">maxlength</span>=<span class="string">"50"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>Enviar<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+
+<span class="comment">&lt;!-- JavaScript: Validacion personalizada --&gt;</span>
+<span class="keyword">const</span> form = document.<span class="function">querySelector</span>(<span class="string">'#miFormulario'</span>);
+<span class="keyword">const</span> email = form.<span class="function">querySelector</span>(<span class="string">'input[type="email"]'</span>);
+
+<span class="comment">// Validar al enviar</span>
+form.<span class="function">addEventListener</span>(<span class="string">'submit'</span>, (e) =&gt; {
+  e.<span class="function">preventDefault</span>();
+  <span class="keyword">if</span> (!form.<span class="function">checkValidity</span>()) {
+    <span class="comment">// Muestra los mensajes de error nativos del navegador</span>
+    form.<span class="function">reportValidity</span>();
+    <span class="keyword">return</span>;
+  }
+  <span class="comment">// Crear FormData automaticamente desde el formulario</span>
+  <span class="keyword">const</span> datos = <span class="keyword">new</span> <span class="function">FormData</span>(form);
+  <span class="keyword">for</span> (<span class="keyword">const</span> [clave, valor] <span class="keyword">of</span> datos) {
+    console.<span class="function">log</span>(<span class="string">`${clave}: ${valor}`</span>);
+  }
+});
+
+<span class="comment">// Personalizar mensaje de error</span>
+email.<span class="function">addEventListener</span>(<span class="string">'input'</span>, () =&gt; {
+  <span class="keyword">if</span> (email.<span class="function">validity</span>.typeMismatch) {
+    email.<span class="function">setCustomValidity</span>(<span class="string">'Ingresa un email valido (ejemplo@dominio.com)'</span>);
+  } <span class="keyword">else</span> {
+    email.<span class="function">setCustomValidity</span>(<span class="string">''</span>); <span class="comment">// Limpiar error personalizado</span>
+  }
+});</code></pre>
+
+  <h3>Propiedades de Constraint Validation</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Propiedad</th><th>Descripcion</th><th>Retorna</th></tr></thead>
+      <tbody>
+        <tr><td><code>validity.valid</code></td><td>True si el campo cumple todas las validaciones</td><td>Boolean</td></tr>
+        <tr><td><code>validity.valueMissing</code></td><td>Campo requerido vacío</td><td>Boolean</td></tr>
+        <tr><td><code>validity.typeMismatch</code></td><td>El tipo no coincide (email, url, number)</td><td>Boolean</td></tr>
+        <tr><td><code>validity.patternMismatch</code></td><td>El valor no coincide con el pattern</td><td>Boolean</td></tr>
+        <tr><td><code>validity.tooShort</code></td><td>Mínimo de caracteres no alcanzado</td><td>Boolean</td></tr>
+        <tr><td><code>validity.tooLong</code></td><td>Máximo de caracteres excedido</td><td>Boolean</td></tr>
+        <tr><td><code>validity.rangeUnderflow</code></td><td>Valor menor que el mínimo</td><td>Boolean</td></tr>
+        <tr><td><code>validity.rangeOverflow</code></td><td>Valor mayor que el máximo</td><td>Boolean</td></tr>
+        <tr><td><code>checkValidity()</code></td><td>Valida y muestra errores nativos si falla</td><td>Boolean</td></tr>
+        <tr><td><code>reportValidity()</code></td><td>Valida y muestra popup de error al usuario</td><td>Boolean</td></tr>
+        <tr><td><code>setCustomValidity(msg)</code></td><td>Establece un mensaje de error personalizado</td><td>void</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: Validación en Tiempo Real</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Formulario con validación nativa</div>
+    <form id="demoForm" style="display:flex;flex-direction:column;gap:12px;max-width:400px">
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text-primary)">Email (requerido):</label>
+        <input type="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="ejemplo@correo.com" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;box-sizing:border-box">
+      </div>
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text-primary)">Nombre (3-30 caracteres):</label>
+        <input type="text" required minlength="3" maxlength="30" placeholder="Tu nombre" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;box-sizing:border-box">
+      </div>
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text-primary)">Edad (18-120):</label>
+        <input type="number" required min="18" max="120" placeholder="25" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;box-sizing:border-box">
+      </div>
+      <button type="submit" style="padding:10px 20px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600">Validar y Enviar</button>
+      <div id="formResult" style="padding:10px;border-radius:6px;font-size:.9rem;display:none"></div>
+    </form>
+  </div>
+</section>
+
 <!-- SECCION 09: ATRIBUTOS GLOBALES -->
 <section class="section" id="atributos-globales">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-sliders-h"></i> Seccion 09</span>
+    <span class="section__number"><i class="fas fa-sliders-h"></i> Seccion 11</span>
     <h2 class="section__title"><i class="fas fa-sliders-h"></i> Atributos Globales</h2>
   </div>
   <div class="table-wrapper">
@@ -671,7 +881,7 @@
 <section class="section" id="meta-seo">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-search"></i> Seccion 10</span>
+    <span class="section__number"><i class="fas fa-search"></i> Seccion 12</span>
     <h2 class="section__title"><i class="fas fa-search"></i> Meta Tags y SEO</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -702,7 +912,7 @@
 <section class="section" id="etiquetas-adicionales">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-file-code"></i> Seccion 11</span>
+    <span class="section__number"><i class="fas fa-file-code"></i> Seccion 13</span>
     <h2 class="section__title"><i class="fas fa-file-code"></i> Etiquetas Adicionales</h2>
   </div>
   <div class="table-wrapper">
@@ -721,11 +931,78 @@
   </div>
 </section>
 
+<!-- SECCION 14: SEGURIDAD HTML -->
+<section class="section" id="seguridad">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-shield-alt"></i> Seccion 14</span>
+    <h2 class="section__title"><i class="fas fa-shield-alt"></i> Seguridad HTML</h2>
+    <p class="section__subtitle">Protege tu sitio con atributos y meta tags de seguridad</p>
+  </div>
+  <p>HTML5 ofrece varios atributos y configuraciones para proteger tu sitio web contra ataques comunes como XSS (Cross-Site Scripting), clickjacking y inyección de código malicioso.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Content Security Policy (CSP) via meta tag --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span>
+  <span class="attr">content</span>=<span class="string">"default-src 'self'; script-src 'self' https://cdn.ejemplo.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Iframe sandbox: restringe funcionalidades --&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attr">src</span>=<span class="string">"externo.html"</span>
+  <span class="attr">sandbox</span>=<span class="string">"allow-forms allow-scripts"</span>
+<span class="tag">&gt;&lt;/iframe&gt;</span>
+<span class="comment">&lt;!-- Sin sandbox: todo permitido | allow-scripts: permite JS | allow-same-origin: mantiene origen --&gt;</span>
+
+<span class="comment">&lt;!-- Links externos seguros --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com"</span>
+  <span class="attr">target</span>=<span class="string">"_blank"</span>
+  <span class="attr">rel</span>=<span class="string">"noopener noreferrer"</span><span class="tag">&gt;</span>Enlace externo<span class="tag">&lt;/a&gt;</span>
+<span class="comment">&lt;!-- noopener: impide que la pagina abierta acceda a window.opener --&gt;</span>
+<span class="comment">&lt;!-- noreferrer: no envia informacion del referer --&gt;</span>
+
+<span class="comment">&lt;!-- Subresource Integrity (SRI) --&gt;</span>
+<span class="tag">&lt;script</span>
+  <span class="attr">src</span>=<span class="string">"https://cdn.ejemplo.com/libreria.js"</span>
+  <span class="attr">integrity</span>=<span class="string">"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"</span>
+  <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="comment">&lt;!-- Verifica que el archivo no fue modificado en el CDN --&gt;</span>
+
+<span class="comment">&lt;!-- Meta tag: prevenir sniffing de tipos --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-Content-Type-Options"</span> <span class="attr">content</span>=<span class="string">"nosniff"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Prevenir framing (clickjacking) --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-Frame-Options"</span> <span class="attr">content</span>=<span class="string">"DENY"</span><span class="tag">&gt;</span></code></pre>
+
+  <h3>Vulnerabilidades y Protecciones</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Amenaza</th><th>Proteccion HTML</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><strong>XSS</strong></td><td>CSP + escape de contenido</td><td>Evita inyeccion de scripts maliciosos</td></tr>
+        <tr><td><strong>Clickjacking</strong></td><td>X-Frame-Options</td><td>Impide que tu sitio sea embebido en iframes maliciosos</td></tr>
+        <tr><td><strong>Tabnabbing</strong></td><td><code>rel="noopener"</code></td><td>Impide que links en target=_blank manipulen la pagina original</td></tr>
+        <tr><td><strong>Tampering CDN</strong></td><td>SRI (integrity)</td><td>Verifica que archivos externos no fueron modificados</td></tr>
+        <tr><td><strong>MIME sniffing</strong></td><td>X-Content-Type-Options</td><td>Impide que el navegador interprete archivos como otro tipo</td></tr>
+        <tr><td><strong>Data leakage</strong></td><td><code>rel="noreferrer"</code></td><td>No envia informacion del sitio de origen</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--danger">
+    <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Siempre escapes el contenido del usuario</div>
+      <p class="callout__text">Nunca insertes texto del usuario directamente en HTML con <code>innerHTML</code>. Usa <code>textContent</code> o librerias de escape como DOMPurify para prevenir ataques XSS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCION 15: WEB STORAGE -->
+
 <!-- SECCION 12: WEB STORAGE -->
 <section class="section" id="web-storage">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-database"></i> Seccion 12</span>
+    <span class="section__number"><i class="fas fa-database"></i> Seccion 15</span>
     <h2 class="section__title"><i class="fas fa-database"></i> Web Storage API</h2>
   </div>
   <h3>localStorage vs sessionStorage</h3>
@@ -787,7 +1064,7 @@ localStorage.<span class="function">clear</span>(); <span class="comment">// Bor
 <section class="section" id="geolocation">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-map-marker-alt"></i> Seccion 13</span>
+    <span class="section__number"><i class="fas fa-map-marker-alt"></i> Seccion 16</span>
     <h2 class="section__title"><i class="fas fa-map-marker-alt"></i> API de Geolocalización</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -821,7 +1098,7 @@ localStorage.<span class="function">clear</span>(); <span class="comment">// Bor
 <section class="section" id="canvas">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-palette"></i> Seccion 14</span>
+    <span class="section__number"><i class="fas fa-palette"></i> Seccion 17</span>
     <h2 class="section__title"><i class="fas fa-palette"></i> Canvas API</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML + <i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -879,7 +1156,7 @@ ctx.<span class="function">fillText</span>(<span class="string">'Hola Canvas!'</
 <section class="section" id="drag-drop">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-arrows-alt"></i> Seccion 15</span>
+    <span class="section__number"><i class="fas fa-arrows-alt"></i> Seccion 18</span>
     <h2 class="section__title"><i class="fas fa-arrows-alt"></i> Drag and Drop</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -924,7 +1201,7 @@ dropzone.<span class="function">addEventListener</span>(<span class="string">'dr
 <section class="section" id="svg">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-shapes"></i> Seccion 16</span>
+    <span class="section__number"><i class="fas fa-shapes"></i> Seccion 19</span>
     <h2 class="section__title"><i class="fas fa-shapes"></i> SVG</h2>
   </div>
   <p>SVG (Scalable Vector Graphics) permite crear graficos vectoriales directamente en HTML. A diferencia de Canvas, SVG es independiente de la resolución y se puede manipular con CSS y JavaScript.</p>
@@ -974,7 +1251,7 @@ dropzone.<span class="function">addEventListener</span>(<span class="string">'dr
 <section class="section" id="web-workers">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-server"></i> Seccion 17</span>
+    <span class="section__number"><i class="fas fa-server"></i> Seccion 20</span>
     <h2 class="section__title"><i class="fas fa-server"></i> Web Workers y Fetch API</h2>
   </div>
   <h3>Fetch API</h3>
@@ -1019,7 +1296,7 @@ worker.<span class="function">onmessage</span> = (e) =&gt; console.<span class="
 <section class="section" id="websockets">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-plug"></i> Seccion 18</span>
+    <span class="section__number"><i class="fas fa-plug"></i> Seccion 21</span>
     <h2 class="section__title"><i class="fas fa-plug"></i> WebSockets</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -1033,11 +1310,452 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
 });</code></pre>
 </section>
 
+<!-- SECCION 22: CLIPBOARD API -->
+<section class="section" id="clipboard-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-clipboard"></i> Seccion 22</span>
+    <h2 class="section__title"><i class="fas fa-clipboard"></i> Clipboard API</h2>
+    <p class="section__subtitle">Copiar y pegar texto de forma moderna y segura</p>
+  </div>
+  <p>La Clipboard API reemplaza al obsoleto <code>document.execCommand('copy')</code> con una interfaz basada en Promesas que funciona en安全 modo seguro bajo HTTPS.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Copiar texto al portapapeles</span>
+<span class="keyword">async function</span> <span class="function">copiarTexto</span>(texto) {
+  <span class="keyword">try</span> {
+    <span class="keyword">await</span> navigator.clipboard.<span class="function">writeText</span>(texto);
+    console.<span class="function">log</span>(<span class="string">'Texto copiado exitosamente'</span>);
+  } <span class="keyword">catch</span> (err) {
+    console.<span class="function">error</span>(<span class="string">'Error al copiar:'</span>, err);
+  }
+}
+
+<span class="comment">// Leer texto del portapapeles</span>
+<span class="keyword">async function</span> <span class="function">pegarTexto</span>() {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> texto = <span class="keyword">await</span> navigator.clipboard.<span class="function">readText</span>();
+    console.<span class="function">log</span>(<span class="string">'Texto pegado:'</span>, texto);
+  } <span class="keyword">catch</span> (err) {
+    console.<span class="function">error</span>(<span class="string">'Error al pegar:'</span>, err);
+  }
+}
+
+<span class="comment">// Copiar con feedback visual</span>
+<span class="keyword">async function</span> <span class="function">copiarConFeedback</span>(btn, texto) {
+  <span class="keyword">await</span> navigator.clipboard.<span class="function">writeText</span>(texto);
+  <span class="keyword">const</span> original = btn.textContent;
+  btn.textContent = <span class="string">'¡Copiado!'</span>;
+  btn.style.background = <span class="string">'#22c55e'</span>;
+  <span class="function">setTimeout</span>(() =&gt; {
+    btn.textContent = original;
+    btn.style.background = <span class="string">''</span>;
+  }, <span class="number">2000</span>);
+}</code></pre>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Requisitos de seguridad</div>
+      <p class="callout__text">La Clipboard API solo funciona en contextos seguros (HTTPS o localhost) y requiere que el usuario interactue con la pagina (click, keypress) para autorizar el acceso.</p>
+    </div>
+  </div>
+
+  <h3>Demo: Copiar al Portapapeles</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Clipboard API</div>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:500px">
+      <input id="clipInput" type="text" value="Texto de ejemplo para copiar" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;width:100%;box-sizing:border-box">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button onclick="demoCopy()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-copy"></i> Copiar texto</button>
+        <button onclick="demoPaste()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-weight:600"><i class="fas fa-paste"></i> Pegar texto</button>
+      </div>
+      <div id="clipResult" style="padding:10px;border-radius:6px;font-size:.85rem;display:none"></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 23: WEB SHARE API -->
+<section class="section" id="web-share">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-share-alt"></i> Seccion 23</span>
+    <h2 class="section__title"><i class="fas fa-share-alt"></i> Web Share API</h2>
+    <p class="section__subtitle">Comparte contenido usando el dialogo nativo del sistema</p>
+  </div>
+  <p>La Web Share API abre el dialogo de compartir nativo del sistema operativo (Android, iOS, Windows) permitiendo compartir texto, URLs y archivos con cualquier app instalada.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Compartir texto simple</span>
+<span class="keyword">async function</span> <span class="function">compartir</span>() {
+  <span class="keyword">if</span> (<span class="string">'share'</span> <span class="keyword">in</span> navigator) {
+    <span class="keyword">try</span> {
+      <span class="keyword">await</span> navigator.<span class="function">share</span>({
+        title: <span class="string">'Guia HTML5'</span>,
+        text: <span class="string">'Mira esta guia completa de HTML5'</span>,
+        url: <span class="string">'https://ejemplo.com/html5'</span>
+      });
+    } <span class="keyword">catch</span> (err) {
+      <span class="keyword">if</span> (err.name !== <span class="string">'AbortError'</span>) {
+        console.<span class="function">error</span>(<span class="string">'Error al compartir:'</span>, err);
+      }
+    }
+  } <span class="keyword">else</span> {
+    <span class="comment">// Fallback: copiar URL al portapapeles</span>
+    <span class="keyword">await</span> navigator.clipboard.<span class="function">writeText</span>(<span class="string">'https://ejemplo.com/html5'</span>);
+  }
+}
+
+<span class="comment">// Compartir archivos</span>
+<span class="keyword">async function</span> <span class="function">compartirArchivo</span>(archivo) {
+  <span class="keyword">if</span> (<span class="string">'share'</span> <span class="keyword">in</span> navigator && <span class="string">'canShare'</span> <span class="keyword">in</span> navigator) {
+    <span class="keyword">const</span> datos = {
+      title: <span class="string">'Mi archivo'</span>,
+      files: [archivo]
+    };
+    <span class="keyword">if</span> (navigator.<span class="function">canShare</span>(datos)) {
+      <span class="keyword">await</span> navigator.<span class="function">share</span>(datos);
+    }
+  }
+}</code></pre>
+
+  <h3>Demo: Compartir</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Web Share API (funciona en movil)</div>
+    <button id="shareBtn" onclick="demoShare()" style="padding:10px 20px;border:none;border-radius:8px;background:linear-gradient(135deg,var(--color-primary),#8b5cf6);color:white;cursor:pointer;font-weight:600;font-size:.95rem"><i class="fas fa-share-alt"></i> Compartir esta pagina</button>
+    <p style="margin-top:8px;font-size:.8rem;color:var(--text-muted)" id="shareStatus"></p>
+  </div>
+</section>
+
+
+
+<!-- SECCION 24: NOTIFICATION API -->
+<section class="section" id="notification-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-bell"></i> Seccion 24</span>
+    <h2 class="section__title"><i class="fas fa-bell"></i> Notification API</h2>
+    <p class="section__subtitle">Muestra notificaciones del navegador al usuario</p>
+  </div>
+  <p>La Notification API permite mostrar mensajes al usuario incluso cuando la pestaña no esta activa, ideal para alertas, actualizaciones o mensajes importantes.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Solicitar permiso y mostrar notificacion</span>
+<span class="keyword">async function</span> <span class="function">notificar</span>(titulo, opciones) {
+  <span class="comment">// Verificar soporte</span>
+  <span class="keyword">if</span> (!<span class="string">'Notification'</span> <span class="keyword">in</span> window) {
+    console.<span class="function">log</span>(<span class="string">'Notificaciones no soportadas'</span>);
+    <span class="keyword">return</span>;
+  }
+
+  <span class="comment">// Solicitar permiso si no fue concedido</span>
+  <span class="keyword">if</span> (Notification.permission === <span class="string">'default'</span>) {
+    <span class="keyword">await</span> Notification.<span class="function">requestPermission</span>();
+  }
+
+  <span class="keyword">if</span> (Notification.permission === <span class="string">'granted'</span>) {
+    <span class="keyword">new</span> <span class="function">Notification</span>(titulo, {
+      body: <span class="string">'Este es el cuerpo de la notificacion'</span>,
+      icon: <span class="string">'/icono.png'</span>,
+      badge: <span class="string">'/badge.png'</span>,
+      vibrate: [<span class="number">200</span>, <span class="number">100</span>, <span class="number">200</span>],
+      tag: <span class="string">'mi-notificacion'</span>,
+      requireInteraction: <span class="keyword">false</span>
+    });
+  }
+}
+
+<span class="comment">// Manejar clic en la notificacion</span>
+<span class="keyword">const</span> notif = <span class="keyword">new</span> <span class="function">Notification</span>(<span class="string">'Hola'</span>, { body: <span class="string">'Mensaje nuevo'</span> });
+notif.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
+  window.<span class="function">focus</span>();
+  notif.<span class="function">close</span>();
+});</code></pre>
+
+  <h3>Demo: Notificaciones</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Notification API</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <button onclick="demoNotify()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-bell"></i> Enviar notificacion</button>
+      <span id="notifStatus" style="font-size:.85rem;color:var(--text-muted)">Permiso: no verificado</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- SECCION 25: FULLSCREEN API -->
+<section class="section" id="fullscreen-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-expand-arrows-alt"></i> Seccion 25</span>
+    <h2 class="section__title"><i class="fas fa-expand-arrows-alt"></i> Fullscreen API</h2>
+    <p class="section__subtitle">Pantalla completa para cualquier elemento</p>
+  </div>
+  <p>La Fullscreen API permite expandir cualquier elemento HTML a pantalla completa, util para videos, juegos, presentaciones y visualizaciones inmersivas.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Activar pantalla completa en un elemento</span>
+<span class="keyword">function</span> <span class="function">pantallaCompleta</span>(elemento) {
+  <span class="keyword">if</span> (elemento.requestFullscreen) {
+    elemento.<span class="function">requestFullscreen</span>();
+  } <span class="keyword">else if</span> (elemento.webkitRequestFullscreen) {
+    elemento.<span class="function">webkitRequestFullscreen</span>(); <span class="comment">// Safari</span>
+  }
+}
+
+<span class="comment">// Salir de pantalla completa</span>
+<span class="keyword">function</span> <span class="function">salirPantallaCompleta</span>() {
+  <span class="keyword">if</span> (document.exitFullscreen) {
+    document.<span class="function">exitFullscreen</span>();
+  }
+}
+
+<span class="comment">// Detectar cambios de estado</span>
+document.<span class="function">addEventListener</span>(<span class="string">'fullscreenchange'</span>, () =&gt; {
+  <span class="keyword">if</span> (document.fullscreenElement) {
+    console.<span class="function">log</span>(<span class="string">'En pantalla completa'</span>);
+  } <span class="keyword">else</span> {
+    console.<span class="function">log</span>(<span class="string">'Salio de pantalla completa'</span>);
+  }
+});
+
+<span class="comment">// Verificar si esta en pantalla completa</span>
+<span class="keyword">const</span> enFullscreen = !!document.fullscreenElement;</code></pre>
+
+  <h3>Demo: Pantalla Completa</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Fullscreen API</div>
+    <div id="fullscreenBox" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;padding:40px;border-radius:12px;text-align:center">
+      <p style="font-size:1.2rem;font-weight:700;margin-bottom:4px">Contenido para pantalla completa</p>
+      <p style="opacity:.8;font-size:.9rem">Haz clic en el boton para expandir este elemento</p>
+    </div>
+    <button onclick="demoFullscreen()" style="margin-top:12px;padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-expand"></i> Activar pantalla completa</button>
+  </div>
+</section>
+
+
+
+<!-- SECCION 26: SCREEN WAKE LOCK API -->
+<section class="section" id="wake-lock">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-mobile-alt"></i> Seccion 26</span>
+    <h2 class="section__title"><i class="fas fa-mobile-alt"></i> Screen Wake Lock API</h2>
+    <p class="section__subtitle">Evita que la pantalla se apague</p>
+  </div>
+  <p>La Screen Wake Lock API mantiene la pantalla encendida mientras el usuario esta interactuando con tu app, ideal para recetas, lectura, videollamadas o presentaciones.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">let</span> wakeLock = <span class="keyword">null</span>;
+
+<span class="comment">// Activar wake lock</span>
+<span class="keyword">async function</span> <span class="function">activarWakeLock</span>() {
+  <span class="keyword">if</span> (<span class="string">'wakeLock'</span> <span class="keyword">in</span> navigator) {
+    <span class="keyword">try</span> {
+      wakeLock = <span class="keyword">await</span> navigator.wakeLock.<span class="function">request</span>(<span class="string">'screen'</span>);
+      console.<span class="function">log</span>(<span class="string">'Wake Lock activado'</span>);
+
+      <span class="comment">// Se libera automaticamente al cambiar de pestana</span>
+      wakeLock.<span class="function">addEventListener</span>(<span class="string">'release'</span>, () =&gt; {
+        console.<span class="function">log</span>(<span class="string">'Wake Lock liberado'</span>);
+      });
+    } <span class="keyword">catch</span> (err) {
+      console.<span class="function">error</span>(<span class="string">'Error:'</span>, err.message);
+    }
+  }
+}
+
+<span class="comment">// Liberar manualmente</span>
+<span class="keyword">function</span> <span class="function">liberarWakeLock</span>() {
+  <span class="keyword">if</span> (wakeLock) {
+    wakeLock.<span class="function">release</span>();
+    wakeLock = <span class="keyword">null</span>;
+  }
+}
+
+<span class="comment">// Reactivar al volver a la pestana</span>
+document.<span class="function">addEventListener</span>(<span class="string">'visibilitychange'</span>, <span class="keyword">async</span> () =&gt; {
+  <span class="keyword">if</span> (document.visibilityState === <span class="string">'visible'</span>) {
+    <span class="keyword">await</span> <span class="function">activarWakeLock</span>();
+  }
+});</code></pre>
+
+  <h3>Demo: Wake Lock</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Screen Wake Lock API</div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <button id="wakeBtn" onclick="demoWakeLock()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-mobile-alt"></i> Activar Wake Lock</button>
+      <span id="wakeStatus" style="font-size:.85rem;color:var(--text-muted)">Estado: inactivo</span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 27: HISTORY API -->
+<section class="section" id="history-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-history"></i> Seccion 27</span>
+    <h2 class="section__title"><i class="fas fa-history"></i> History API</h2>
+    <p class="section__subtitle">Gestiona el historial de navegacion sin recargar</p>
+  </div>
+  <p>La History API permite manipular la barra de direcciones del navegador sin recargar la pagina, fundamental para Single Page Applications (SPAs).</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Agregar una nueva entrada al historial</span>
+history.<span class="function">pushState</span>(
+  { page: <span class="number">2</span> },         <span class="comment">// state: datos asociados a la entrada</span>
+  <span class="string">'Pagina 2'</span>,           <span class="comment">// title: titulo de la entrada (no usado por todos)</span>
+  <span class="string">'/pagina-2'</span>           <span class="comment">// url: nueva URL en la barra de direcciones</span>
+);
+
+<span class="comment">// Reemplazar la entrada actual (no agrega nueva)</span>
+history.<span class="function">replaceState</span>(
+  { page: <span class="number">1</span> },
+  <span class="string">'Pagina 1'</span>,
+  <span class="string">'/pagina-1'</span>
+);
+
+<span class="comment">// Navegar con los botones atras/adelante</span>
+window.<span class="function">addEventListener</span>(<span class="string">'popstate'</span>, (event) =&gt; {
+  <span class="keyword">if</span> (event.state) {
+    console.<span class="function">log</span>(<span class="string">'Navegando a:'</span>, event.state.page);
+    <span class="function">cargarPagina</span>(event.state.page);
+  }
+});
+
+<span class="comment">// Ejemplo practico: Router simple</span>
+<span class="keyword">function</span> <span class="function">navegarA</span>(url, datos) {
+  history.<span class="function">pushState</span>(datos, <span class="string">''</span>, url);
+  <span class="function">renderizarContenido</span>(url);
+}
+
+<span class="comment">// Manejar recarga de pagina</span>
+window.<span class="function">addEventListener</span>(<span class="string">'popstate'</span>, (e) =&gt; {
+  <span class="keyword">const</span> url = location.pathname;
+  <span class="function">renderizarContenido</span>(url);
+});</code></pre>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">pushState vs replaceState</div>
+      <p class="callout__text"><code>pushState</code> agrega una nueva entrada (el boton Atras funciona). <code>replaceState</code> reemplaza la actual (el boton Atras va a la anterior). El evento <code>popstate</code> se dispara al navegar con Atras/Adelante.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 28: INDEXEDDB -->
+<section class="section" id="indexeddb">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-database"></i> Seccion 28</span>
+    <h2 class="section__title"><i class="fas fa-database"></i> IndexedDB</h2>
+    <p class="section__subtitle">Base de datos del navegador para almacenamiento pesado</p>
+  </div>
+  <p>IndexedDB es una base de datos completa en el navegador que permite almacenar grandes cantidades de datos estructurados, archivos y objetos. A diferencia de localStorage (5MB, strings), IndexedDB almacena objetos JavaScript y puede guardar megabytes o gigabytes de datos.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Abrir o crear una base de datos</span>
+<span class="keyword">const</span> request = indexedDB.<span class="function">open</span>(<span class="string">'MiBaseDatos'</span>, <span class="number">1</span>);
+
+request.<span class="function">onupgradeneeded</span> = (event) =&gt; {
+  <span class="keyword">const</span> db = event.target.result;
+  <span class="comment">// Crear un almacén de objetos (como una tabla)</span>
+  <span class="keyword">const</span> store = db.<span class="function">createObjectStore</span>(<span class="string">'productos'</span>, { keyPath: <span class="string">'id'</span>, autoIncrement: <span class="keyword">true</span> });
+  store.<span class="function">createIndex</span>(<span class="string">'nombre'</span>, <span class="string">'nombre'</span>, { unique: <span class="keyword">false</span> });
+};
+
+request.<span class="function">onsuccess</span> = (event) =&gt; {
+  <span class="keyword">const</span> db = event.target.result;
+
+  <span class="comment">// Agregar datos</span>
+  <span class="keyword">const</span> tx = db.<span class="function">transaction</span>(<span class="string">'productos'</span>, <span class="string">'readwrite'</span>);
+  <span class="keyword">const</span> store = tx.<span class="function">objectStore</span>(<span class="string">'productos'</span>);
+  store.<span class="function">add</span>({ nombre: <span class="string">'Laptop'</span>, precio: <span class="number">999</span> });
+
+  <span class="comment">// Leer datos</span>
+  <span class="keyword">const</span> getReq = store.<span class="function">get</span>(<span class="number">1</span>);
+  getReq.onsuccess = () =&gt; console.<span class="function">log</span>(getReq.result);
+};</code></pre>
+
+  <h3>Comparacion de Almacenamiento</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>localStorage</th><th>IndexedDB</th></tr></thead>
+      <tbody>
+        <tr><td>Capacidad</td><td>~5-10 MB</td><td>~50% del disco (varia)</td></tr>
+        <tr><td>Tipo de datos</td><td>Solo strings</td><td>Objetos JavaScript, blobs, archivos</td></tr>
+        <tr><td>API</td><td>Sincrona</td><td>Asincrona (basada en eventos)</td></tr>
+        <tr><td>Busquedas</td><td>Solo por key</td><td>Por key, index, rango</td></tr>
+        <tr><td>Transacciones</td><td>No</td><td>Si (ACID)</td></tr>
+        <tr><td>Uso ideal</td><td>Preferencias simples</td><td>Cache, datos offline, apps pesadas</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- SECCION 29: RESIZE Y PERFORMANCE OBSERVER -->
+<section class="section" id="observers">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-eye"></i> Seccion 29</span>
+    <h2 class="section__title"><i class="fas fa-eye"></i> Resize y Performance Observer</h2>
+    <p class="section__subtitle">Observa cambios de tamaño y metricas de rendimiento</p>
+  </div>
+  <p>El <strong>ResizeObserver</strong> detecta cambios en el tamaño de elementos, y el <strong>PerformanceObserver</strong> monitorea metricas de rendimiento de la pagina como tiempos de carga y interacciones.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// ResizeObserver: detectar cambios de tamaño</span>
+<span class="keyword">const</span> resizeObserver = <span class="keyword">new</span> <span class="function">ResizeObserver</span>((entries) =&gt; {
+  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> entries) {
+    <span class="keyword">const</span> { width, height } = entry.contentRect;
+    console.<span class="function">log</span>(<span class="string">`Tamaño: ${width}x${height}px`</span>);
+  }
+});
+resizeObserver.<span class="function">observe</span>(document.<span class="function">querySelector</span>(<span class="string">'.mi-elemento'</span>));
+
+<span class="comment">// PerformanceObserver: monitorear metricas de carga</span>
+<span class="keyword">const</span> perfObserver = <span class="keyword">new</span> <span class="function">PerformanceObserver</span>((list) =&gt; {
+  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> list.<span class="function">getEntries</span>()) {
+    console.<span class="function">log</span>(<span class="string">`${entry.name}: ${entry.startTime.toFixed(0)}ms`</span>);
+  }
+});
+perfObserver.<span class="function">observe</span>({ entryTypes: [<span class="string">'largest-contentful-paint'</span>, <span class="string">'first-input'</span>] });
+
+<span class="comment">// Cleanup: dejar de observar</span>
+<span class="comment">// resizeObserver.disconnect();</span>
+<span class="comment">// perfObserver.disconnect();</span></code></pre>
+
+  <h3>Tipos de Metricas Disponibles</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>entryType</th><th>Que mide</th><th>Uso comun</th></tr></thead>
+      <tbody>
+        <tr><td><code>largest-contentful-paint</code></td><td>Elemento visual mas grande en pantalla</td><td>Metrica de carga principal (LCP)</td></tr>
+        <tr><td><code>first-input</code></td><td>Tiempo hasta la primera interaccion</td><td>Capacidad de respuesta (FID)</td></tr>
+        <tr><td><code>layout-shift</code></td><td>Cambios inesperados de layout</td><td>Estabilidad visual (CLS)</td></tr>
+        <tr><td><code>resource</code></td><td>Tiempo de carga de cada recurso</td><td>Optimizar assets lentos</td></tr>
+        <tr><td><code>navigation</code></td><td>Tiempos de navegacion de la pagina</td><td>TTFB, DNS, TCP</td></tr>
+        <tr><td><code>paint</code></td><td>First Paint y First Contentful Paint</td><td>Velocidad de renderizado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
 <!-- SECCION 19: ACCESIBILIDAD -->
 <section class="section" id="accesibilidad">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-universal-access"></i> Seccion 19</span>
+    <span class="section__number"><i class="fas fa-universal-access"></i> Seccion 30</span>
     <h2 class="section__title"><i class="fas fa-universal-access"></i> Accesibilidad y ARIA</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -1086,7 +1804,7 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
 <section class="section" id="microdatos">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-code"></i> Seccion 20</span>
+    <span class="section__number"><i class="fas fa-code"></i> Seccion 31</span>
     <h2 class="section__title"><i class="fas fa-code"></i> Microdatos</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -1101,7 +1819,7 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
 <section class="section" id="details-summary">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-chevron-circle-down"></i> Seccion 21</span>
+    <span class="section__number"><i class="fas fa-chevron-circle-down"></i> Seccion 32</span>
     <h2 class="section__title"><i class="fas fa-chevron-circle-down"></i> Details, Summary y Dialog</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -1124,7 +1842,7 @@ socket.<span class="function">addEventListener</span>(<span class="string">'mess
 <section class="section" id="intersection-observer">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-eye"></i> Seccion 22</span>
+    <span class="section__number"><i class="fas fa-eye"></i> Seccion 33</span>
     <h2 class="section__title"><i class="fas fa-eye"></i> Intersection Observer</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -1159,7 +1877,7 @@ document.<span class="function">querySelectorAll</span>(<span class="string">'.a
 <section class="section" id="web-components">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-cubes"></i> Seccion 23</span>
+    <span class="section__number"><i class="fas fa-cubes"></i> Seccion 34</span>
     <h2 class="section__title"><i class="fas fa-cubes"></i> Template y Web Components</h2>
   </div>
   <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
@@ -1192,7 +1910,7 @@ customElements.<span class="function">define</span>(<span class="string">'mi-bot
 <!-- SECCION 24: PWA -->
 <section class="section" id="pwa">
   <div class="section__header">
-    <span class="section__number">Seccion 24</span>
+    <span class="section__number">Seccion 35</span>
     <h2 class="section__title">Progressive Web Apps (PWA)</h2>
   </div>
   <p>Las PWA son aplicaciónes web que funcionan como apps nativas: offline, instalables, con acceso a APIs del dispositivo.</p>
@@ -1234,11 +1952,275 @@ self.<span class="function">addEventListener</span>(<span class="string">'fetch'
 });</code></pre>
 </section>
 
+<!-- SECCION 36: SERVICE WORKERS Y CACHE API -->
+<section class="section" id="service-workers">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-cogs"></i> Seccion 36</span>
+    <h2 class="section__title"><i class="fas fa-cogs"></i> Service Workers y Cache API</h2>
+    <p class="section__subtitle">Controla el trafico de red y habilita modo offline</p>
+  </div>
+  <p>Un Service Worker es un script que el navegador ejecuta en segundo plano, separado de la pagina web. Intercepta las peticiones de red y puede cachear, filtrar o modificar respuestas, habilitando experiencias offline.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Registrar Service Worker (en tu pagina principal)</span>
+<span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) {
+  navigator.serviceWorker.<span class="function">register</span>(<span class="string">'/sw.js'</span>)
+    .<span class="function">then</span>(reg =&gt; console.<span class="function">log</span>(<span class="string">'SW registrado:'</span>, reg.scope))
+    .<span class="function">catch</span>(err =&gt; console.<span class="function">error</span>(<span class="string">'Error SW:'</span>, err));
+}
+
+<span class="comment">// sw.js - Archivo del Service Worker</span>
+<span class="keyword">const</span> CACHE_NAME = <span class="string">'guia-html5-v1'</span>;
+<span class="keyword">const</span> urlsToCache = [<span class="string">'/'</span>, <span class="string">'/css/styles.css'</span>, <span class="string">'/js/app.js'</span>];
+
+<span class="comment">// Instalar: cachea archivos estaticos</span>
+self.<span class="function">addEventListener</span>(<span class="string">'install'</span>, (event) =&gt; {
+  event.<span class="function">waitUntil</span>(
+    caches.<span class="function">open</span>(CACHE_NAME).<span class="function">then</span>((cache) =&gt; cache.<span class="function">addAll</span>(urlsToCache))
+  );
+});
+
+<span class="comment">// Activar: limpia caches antiguos</span>
+self.<span class="function">addEventListener</span>(<span class="string">'activate'</span>, (event) =&gt; {
+  event.<span class="function">waitUntil</span>(
+    caches.<span class="function">keys</span>().<span class="function">then</span>((keys) =&gt;
+      Promise.<span class="function">all</span>(keys.<span class="function">filter</span>(k =&gt; k !== CACHE_NAME).<span class="function">map</span>(k =&gt; caches.<span class="function">delete</span>(k)))
+    )
+  );
+});
+
+<span class="comment">// Fetch: estrategia cache-first o network-first</span>
+self.<span class="function">addEventListener</span>(<span class="string">'fetch'</span>, (event) =&gt; {
+  event.<span class="function">respondWith</span>(
+    caches.<span class="function">match</span>(event.request).<span class="function">then</span>((cached) =&gt; {
+      <span class="keyword">return</span> cached || <span class="function">fetch</span>(event.request);
+    })
+  );
+});</code></pre>
+
+  <h3>Estrategias de Cache</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Estrategia</th><th>Comportamiento</th><th>Uso ideal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cache First</strong></td><td>Busca en cache, luego red</td><td>Assets estaticos (CSS, JS, imagenes)</td></tr>
+        <tr><td><strong>Network First</strong></td><td>Busca en red, luego cache</td><td>Contenido dinamico (APIs, noticias)</td></tr>
+        <tr><td><strong>Stale While Revalidate</strong></td><td>Muestra cache, actualiza en background</td><td>Contenido que puede estar ligeramente desactualizado</td></tr>
+        <tr><td><strong>Network Only</strong></td><td>Solo red, sin cache</td><td>Datos criticos que nunca deben estar obsoletos</td></tr>
+        <tr><td><strong>Cache Only</strong></td><td>Solo cache, sin red</td><td>Experiencia 100% offline</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Contexto seguro requerido</div>
+      <p class="callout__text">Los Service Workers solo funcionan en contextos seguros (HTTPS) o en localhost durante desarrollo.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 37: MULTIMEDIA AVANZADO -->
+<section class="section" id="multimedia-avanzado">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-closed-captioning"></i> Seccion 37</span>
+    <h2 class="section__title"><i class="fas fa-closed-captioning"></i> Multimedia Avanzado</h2>
+    <p class="section__subtitle">Subtitulos WebVTT, poster y atributos de video modernos</p>
+  </div>
+  <p>HTML5 soporta subtitulos y pistas de texto con <code>&lt;track&gt;</code>, control avanzado de video con atributos modernos, y formatos adaptables con <code>&lt;source&gt;</code>.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Video con subtitulos, poster y multiples formatos --&gt;</span>
+<span class="tag">&lt;video</span>
+  <span class="attr">controls</span>
+  <span class="attr">preload</span>=<span class="string">"metadata"</span>
+  <span class="attr">poster</span>=<span class="string">"miniatura.jpg"</span>
+  <span class="attr">width</span>=<span class="string">"720"</span>
+  <span class="attr">playsinline</span>
+  <span class="attr">muted</span>
+<span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Multiples formatos para compatibilidad --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span>
+
+  <span class="comment">&lt;!-- Subtitulos en espanol --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitulos-es.vtt"</span>
+    <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Espanol"</span> <span class="attr">default</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Subtitulos en ingles --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitulos-en.vtt"</span>
+    <span class="attr">srclang</span>=<span class="string">"en"</span> <span class="attr">label</span>=<span class="string">"English"</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Descripciones de audio (accesibilidad) --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"descriptions"</span> <span class="attr">src</span>=<span class="string">"desc-es.vtt"</span>
+    <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Descripcion ES"</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;p&gt;</span>Tu navegador no soporta video HTML5.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="comment">&lt;!-- Formato WebVTT basico --&gt;</span>
+<span class="comment">&lt;!-- archivo.vtt --&gt;</span>
+<span class="comment">&lt;!-- 1 --&gt;</span>
+<span class="comment">&lt;!-- 00:00:01.000 --> 00:00:04.000 --&gt;</span>
+<span class="comment">&lt;!-- Hola, esto es un subtitulo --&gt;</span></code></pre>
+
+  <h3>Atributos Avanzados de Video</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Atributo</th><th>Descripcion</th><th>Valores</th></tr></thead>
+      <tbody>
+        <tr><td><code>poster</code></td><td>Imagen mostrada antes de reproducir</td><td>URL de imagen</td></tr>
+        <tr><td><code>preload</code></td><td>Carga anticipada del video</td><td><code>none</code>, <code>metadata</code>, <code>auto</code></td></tr>
+        <tr><td><code>playsinline</code></td><td>Reproducir dentro de la pagina (iOS)</td><td>Atributo booleano</td></tr>
+        <tr><td><code>muted</code></td><td>Silenciado por defecto (necesario para autoplay)</td><td>Atributo booleano</td></tr>
+        <tr><td><code>loop</code></td><td>Repetir automaticamente</td><td>Atributo booleano</td></tr>
+        <tr><td><code>autoplay</code></td><td>Reproducir al cargar (requiere muted)</td><td>Atributo booleano</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Valores de kind en track</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>kind</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>subtitles</code></td><td>Texto traducido (requiere audio)</td></tr>
+        <tr><td><code>captions</code></td><td>Texto para sordos (incluye efectos de sonido)</td></tr>
+        <tr><td><code>descriptions</code></td><td>Descripcion de audio para ciegos</td></tr>
+        <tr><td><code>chapters</code></td><td>Capitulos de navegacion</td></tr>
+        <tr><td><code>metadata</code></td><td>Info para el navegador (no se muestra)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- SECCION 38: WEB FONTS -->
+<section class="section" id="web-fonts">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-font"></i> Seccion 38</span>
+    <h2 class="section__title"><i class="fas fa-font"></i> Web Fonts</h2>
+    <p class="section__subtitle">Carga fuentes personalizadas de forma optimizada</p>
+  </div>
+  <p>Las fuentes web permiten usar tipografias personalizadas en tus paginas. HTML5 ofrece varias formas de cargarlas de forma optimizada para no afectar el rendimiento.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Metodo 1: Google Fonts con preload (recomendado) --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.gstatic.com"</span> <span class="attr">crossorigin</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">as</span>=<span class="string">"style"</span>
+  <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>
+  <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Metodo 2: @font-face (fuentes propias) --&gt;</span>
+<span class="tag">&lt;style&gt;</span>
+  <span class="tag">@font-face</span> {
+    <span class="attr">font-family</span>: <span class="string">'MiFuente'</span>;
+    <span class="attr">src</span>: <span class="function">url</span>(<span class="string">'/fonts/mifuente.woff2'</span>) <span class="keyword">format</span>(<span class="string">'woff2'</span>),
+         <span class="function">url</span>(<span class="string">'/fonts/mifuente.woff'</span>) <span class="keyword">format</span>(<span class="string">'woff'</span>);
+    <span class="attr">font-weight</span>: <span class="number">400 700</span>;
+    <span class="attr">font-style</span>: normal;
+    <span class="attr">font-display</span>: swap; <span class="comment">&lt;!-- Muestra fallback hasta cargar --&gt;</span>
+    <span class="attr">unicode-range</span>: U+0000-00FF; <span class="comment">&lt;!-- Solo carga los caracteres que necesitas --&gt;</span>
+  }
+<span class="tag">&lt;/style&gt;</span></code></pre>
+
+  <h3>Valores de font-display</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Valor</th><th>Comportamiento</th><th>Uso recomendado</th></tr></thead>
+      <tbody>
+        <tr><td><code>auto</code></td><td>Decision del navegador</td><td>Cuando no hay preferencia</td></tr>
+        <tr><td><code>swap</code></td><td>Muestra fallback inmediatamente, cambia cuando carga</td><td>Texto importante (recomendado)</td></tr>
+        <tr><td><code>fallback</code></td><td> Espera ~100ms, luego fallback, reintenta corto</td><td>Fuentes secundarias</td></tr>
+        <tr><td><code>optional</code></td><td>Espera carga inicial, si no esta listo usa fallback</td><td>Experiencia optima de carga</td></tr>
+        <tr><td><code>block</code></td><td>Oculta texto hasta que la fuente cargue (~3s)</td><td>Solo branding/logo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-tachometer-alt"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Rendimiento de fuentes</div>
+      <p class="callout__text">Cada fuente extra agrega una peticion de red. Limita a 2-3 fuentes maximas. Usa <code>font-display: swap</code> para evitar el FOIT (Flash of Invisible Text) y <code>preconnect</code> para DNS prefetch.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 39: PERFORMANCE Y OPTIMIZACION -->
+<section class="section" id="performance">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-tachometer-alt"></i> Seccion 39</span>
+    <h2 class="section__title"><i class="fas fa-tachometer-alt"></i> Performance y Optimizacion</h2>
+    <p class="section__subtitle">Resource Hints, Lazy Loading y buenas practicas</p>
+  </div>
+  <p>Optimizar el rendimiento de carga es fundamental para la experiencia del usuario y el SEO. HTML5 ofrece atributos y herramientas nativas para lograrlo.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Lazy Loading: carga diferida de imagenes e iframes --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="attr">loading</span>=<span class="string">"lazy"</span> <span class="attr">decoding</span>=<span class="string">"async"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attr">src</span>=<span class="string">"video.html"</span> <span class="attr">loading</span>=<span class="string">"lazy"</span><span class="tag">&gt;&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- fetchpriority: priorizar carga de recursos criticos --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"hero.jpg"</span> <span class="attr">fetchpriority</span>=<span class="string">"high"</span> <span class="attr">alt</span>=<span class="string">"Hero"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"decoration.png"</span> <span class="attr">fetchpriority</span>=<span class="string">"low"</span> <span class="attr">alt</span>=<span class="string">""</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Resource Hints: adelantar conexiones y cargas --&gt;</span>
+<span class="comment">&lt;!-- Preconnect: resuelve DNS + TCP + TLS anticipadamente --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://cdn.ejemplo.com"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- DNS Prefetch: solo resuelve DNS --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Preload: carga critica que el navegador no puede descubrir solo --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">href</span>=<span class="string">"/fonts/inter.woff2"</span> <span class="attr">as</span>=<span class="string">"font"</span> <span class="attr">type</span>=<span class="string">"font/woff2"</span> <span class="attr">crossorigin</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">href</span>=<span class="string">"/styles.css"</span> <span class="attr">as</span>=<span class="string">"style"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Prefetch: precarga para la proxima navegacion --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"prefetch"</span> <span class="attr">href</span>=<span class="string">"/pagina-siguiente.html"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Module Preload: precarga modulos ES --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"modulepreload"</span> <span class="attr">href</span>=<span class="string">"/js/modulo.js"</span><span class="tag">&gt;</span></code></pre>
+
+  <h3>Resource Hints: Cuándo usar cada uno</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Hint</th><th>Cuando usarlo</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><code>preconnect</code></td><td>Sabes a que dominio iras (APIs, CDN)</td><td><code>fonts.googleapis.com</code></td></tr>
+        <tr><td><code>dns-prefetch</code></td><td>Dominio secundario, menos urgente</td><td>Analytics, tracking</td></tr>
+        <tr><td><code>preload</code></td><td>Recurso critico que el browser no descubre pronto</td><td>Font principal, hero image</td></tr>
+        <tr><td><code>prefetch</code></td><td>Probable que el usuario navegue ahi</td><td>Pagina siguiente</td></tr>
+        <tr><td><code>modulepreload</code></td><td>Modulos ES que se importaran pronto</td><td>App modules</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--success">
+    <span class="callout__icon"><i class="fas fa-check-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Metricas Core Web Vitals</div>
+      <p class="callout__text"><strong>LCP</strong> (&lt;2.5s): Mayor elemento visible. <strong>FID</strong> (&lt;100ms): Primera interaccion. <strong>CLS</strong> (&lt;0.1): Estabilidad visual. Estas metricas determinan tu ranking en Google.</p>
+    </div>
+  </div>
+</section>
+
+
 <!-- SECCION 25: CSS3 -->
 <section class="section" id="css3">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fab fa-css3-alt"></i> Seccion 25</span>
+    <span class="section__number"><i class="fab fa-css3-alt"></i> Seccion 40</span>
     <h2 class="section__title"><i class="fab fa-css3-alt"></i> CSS3</h2>
   </div>
   <h3>Selectores modernos</h3>
@@ -1312,7 +2294,7 @@ self.<span class="function">addEventListener</span>(<span class="string">'fetch'
 <section class="section" id="javascript-basico">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fab fa-js-square"></i> Seccion 26</span>
+    <span class="section__number"><i class="fab fa-js-square"></i> Seccion 41</span>
     <h2 class="section__title"><i class="fab fa-js-square"></i> JavaScript Basico</h2>
   </div>
   <h3>Variables</h3>
@@ -1371,11 +2353,246 @@ elemento.style.color = <span class="string">'red'</span>; <span class="comment">
 elemento.innerHTML = <span class="string">'&lt;strong&gt;Nuevo&lt;/strong&gt;'</span>; <span class="comment">// Reemplaza el contenido HTML interno</span></code></pre>
 </section>
 
+<!-- SECCION 42: HTML LIVING STANDARD -->
+<section class="section" id="html-living">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-scroll"></i> Seccion 42</span>
+    <h2 class="section__title"><i class="fas fa-scroll"></i> HTML Living Standard</h2>
+    <p class="section__subtitle">Que cambio desde HTML4 y que esta deprecado</p>
+  </div>
+  <p>HTML ya no se versiona como "HTML5". Desde 2019, el estandar se llama <strong>HTML Living Standard</strong>, mantenido por WHATWG. Esto significa que se actualiza continuamente con nuevas caracteristicas.</p>
+
+  <h3>Etiquetas deprecadas (no usar)</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Que hacia</th><th>Reemplazo moderno</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;font&gt;</code></td><td>Cambiar color/tamaño de texto</td><td>CSS con <code>color</code>, <code>font-size</code></td></tr>
+        <tr><td><code>&lt;center&gt;</code></td><td>Centrar contenido</td><td>CSS con <code>text-align: center</code></td></tr>
+        <tr><td><code>&lt;marquee&gt;</code></td><td>Texto desplazante</td><td>CSS animation / JS</td></tr>
+        <tr><td><code>&lt;blink&gt;</code></td><td>Parpadeo de texto</td><td>CSS animation</td></tr>
+        <tr><td><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code></td><td>Frames multipagina</td><td><code>&lt;iframe&gt;</code></td></tr>
+        <tr><td><code>&lt;acronym&gt;</code></td><td>Abreviaturas</td><td><code>&lt;abbr&gt;</code></td></tr>
+        <tr><td><code>&lt;big&gt;</code></td><td>Texto grande</td><td>CSS <code>font-size</code></td></tr>
+        <tr><td><code>&lt;strike&gt;</code></td><td>Texto tachado</td><td><code>&lt;del&gt;</code> o CSS <code>text-decoration</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Nuevas capacidades del Living Standard</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>Estado</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;dialog&gt;</code></td><td>Soportado</td><td>Modales nativos sin JS</td></tr>
+        <tr><td><code>popover</code></td><td>Soportado 2024</td><td>Popovers nativos con <code>popovertarget</code></td></tr>
+        <tr><td><code>&lt;search&gt;</code></td><td>Soportado</td><td>Etiqueta semantica para formularios de busqueda</td></tr>
+        <tr><td><code>&lt;slot&gt;</code></td><td>Soportado</td><td>Inyeccion de contenido en Web Components</td></tr>
+        <tr><td><code>inert</code></td><td>Soportado</td><td>Hace un subtree no interactuable</td></tr>
+        <tr><td><code>delegatedFocus</code></td><td>En borrador</td><td>Gestion de foco delegada</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: Popover nativo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Popover nativo (HTML Living Standard)</div>
+    <button popovertarget="mi-popover" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-comment"></i> Abrir popover</button>
+    <div id="mi-popover" popover style="padding:16px 20px;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-surface);color:var(--text-primary);box-shadow:0 8px 32px rgba(0,0,0,.15);max-width:300px">
+      <p style="font-weight:600;margin-bottom:4px">Popover nativo</p>
+      <p style="font-size:.9rem;color:var(--text-secondary)">Este popover usa el atributo <code>popover</code> nativo de HTML. No necesita JavaScript para abrir/cerrar.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 43: POINTER EVENTS Y TOUCH -->
+<section class="section" id="touch-events">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-hand-pointer"></i> Seccion 43</span>
+    <h2 class="section__title"><i class="fas fa-hand-pointer"></i> Pointer Events y Touch</h2>
+    <p class="section__subtitle">Maneja interacciones tactiles, mouse y stylus</p>
+  </div>
+  <p>Los <strong>Pointer Events</strong> son la API moderna que unifica mouse, tactil, stylus e incluso láser en una sola interfaz. Reemplazan a los Touch Events que solo funcionan en dispositivos móviles.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Pointer Events: funciona con mouse, tactil y stylus</span>
+<span class="keyword">const</span> elem = document.<span class="function">querySelector</span>(<span class="string">'#zona'</span>);
+
+elem.<span class="function">addEventListener</span>(<span class="string">'pointerdown'</span>, (e) =&gt; {
+  console.<span class="function">log</span>(<span class="string">'Tipo de input:'</span>, e.pointerType); <span class="comment">// 'mouse', 'touch', 'pen'</span>
+  console.<span class="function">log</span>(<span class="string">'Posicion:'</span>, e.clientX, e.clientY);
+  elem.<span class="function">setPointerCapture</span>(e.pointerId); <span class="comment">// Captura el pointer</span>
+});
+
+elem.<span class="function">addEventListener</span>(<span class="string">'pointermove'</span>, (e) =&gt; {
+  <span class="keyword">if</span> (e.buttons === <span class="number">0</span>) <span class="keyword">return</span>; <span class="comment">// Solo procesar si hay boton presionado</span>
+  elem.style.transform = <span class="string">`translate(${e.offsetX}px, ${e.offsetY}px)`</span>;
+});
+
+elem.<span class="function">addEventListener</span>(<span class="string">'pointerup'</span>, (e) =&gt; {
+  elem.<span class="function">releasePointerCapture</span>(e.pointerId);
+});
+
+<span class="comment">// Eventos tactiles especificos (solo si necesitas gestos)</span>
+elem.<span class="function">addEventListener</span>(<span class="string">'touchstart'</span>, (e) =&gt; {
+  e.<span class="function">preventDefault</span>(); <span class="comment">// Prevenir scroll mientras interactuas</span>
+  <span class="keyword">const</span> touch = e.touches[<span class="number">0</span>];
+  console.<span class="function">log</span>(<span class="string">'Toque en:'</span>, touch.clientX, touch.clientY);
+}, { passive: <span class="keyword">false</span> });</code></pre>
+
+  <h3>Eventos de Pointer</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Evento</th><th>Cuando se dispara</th></tr></thead>
+      <tbody>
+        <tr><td><code>pointerdown</code></td><td>Boton presionado sobre el elemento</td></tr>
+        <tr><td><code>pointerup</code></td><td>Boton liberado</td></tr>
+        <tr><td><code>pointermove</code></td><td>Movimiento del puntero sobre el elemento</td></tr>
+        <tr><td><code>pointerover</code></td><td>Puntero entra en el elemento</td></tr>
+        <tr><td><code>pointerout</code></td><td>Puntero sale del elemento</td></tr>
+        <tr><td><code>pointerenter</code></td><td>Puntero entra (no burbujea)</td></tr>
+        <tr><td><code>pointerleave</code></td><td>Puntero sale (no burbujea)</td></tr>
+        <tr><td><code>pointercancel</code></td><td>El navegador cancela el tracking</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Pointer Events vs Touch Events</div>
+      <p class="callout__text"><code>Pointer Events</code> es la API recomendada. Unifica mouse, tactil y stylus. <code>Touch Events</code> es antigua y solo funciona en pantallas tactiles. Usa <code>{ passive: true }</code> para mejorar rendimiento si no necesitas <code>preventDefault</code>.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- SECCION 44: HTML EN MOVILES -->
+<section class="section" id="html-mobile">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-mobile-alt"></i> Seccion 44</span>
+    <h2 class="section__title"><i class="fas fa-mobile-alt"></i> HTML en Moviles</h2>
+    <p class="section__subtitle">Meta tags, manifest y optimizaciones para dispositivos moviles</p>
+  </div>
+  <p>Desarrollar para moviles requiere meta tags especificos, configuracion del manifest de la PWA y optimizaciones de rendimiento para conexiones lentas y pantallas pequeñas.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Meta tags esenciales para movil --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=5.0"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#6366f1"</span> <span class="attr">media</span>=<span class="string">"(prefers-color-scheme: light)"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#1e1b4b"</span> <span class="attr">media</span>=<span class="string">"(prefers-color-scheme: dark)"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black-translucent"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Touch icons para iOS --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">href</span>=<span class="string">"/icon-180.png"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Manifest PWA --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"manifest"</span> <span class="attr">href</span>=<span class="string">"/manifest.json"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Prevenir llamadas telefonicas accidentales --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"tel:+59112345678"</span><span class="tag">&gt;</span>Llamar<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Prevenir zoom en inputs (iOS) --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">inputmode</span>=<span class="string">"numeric"</span> <span class="attr">style</span>=<span class="string">"font-size:16px"</span><span class="tag">&gt;</span>
+<span class="comment">&lt;!-- font-size &gt;= 16px previene autozoom en iOS --&gt;</span></code></pre>
+
+  <h3>Contenido de manifest.json</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JSON</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code>{
+  <span class="string">"name"</span>: <span class="string">"Guia HTML5"</span>,
+  <span class="string">"short_name"</span>: <span class="string">"HTML5"</span>,
+  <span class="string">"start_url"</span>: <span class="string">"/"</span>,
+  <span class="string">"display"</span>: <span class="string">"standalone"</span>,
+  <span class="string">"background_color"</span>: <span class="string">"#ffffff"</span>,
+  <span class="string">"theme_color"</span>: <span class="string">"#6366f1"</span>,
+  <span class="string">"icons"</span>: [
+    { <span class="string">"src"</span>: <span class="string">"/icon-192.png"</span>, <span class="string">"sizes"</span>: <span class="string">"192x192"</span>, <span class="string">"type"</span>: <span class="string">"image/png"</span> },
+    { <span class="string">"src"</span>: <span class="string">"/icon-512.png"</span>, <span class="string">"sizes"</span>: <span class="string">"512x512"</span>, <span class="string">"type"</span>: <span class="string">"image/png"</span> }
+  ]
+}</code></pre>
+
+  <h3>inputmode: teclados virtuales optimizados</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Valor</th><th>Teclado</th><th>Uso ideal</th></tr></thead>
+      <tbody>
+        <tr><td><code>numeric</code></td><td>Numerico</td><td>Telefonos, edades, codigos</td></tr>
+        <tr><td><code>decimal</code></td><td>Numerico con punto</td><td>Precios, mediciones</td></tr>
+        <tr><td><code>email</code></td><td>Con @ y .</td><td>Campos de email</td></tr>
+        <tr><td><code>url</code></td><td>Con / y .</td><td>Campos de URL</td></tr>
+        <tr><td><code>tel</code></td><td>Telefonico</td><td>Numeros de telefono</td></tr>
+        <tr><td><code>search</code></td><td>Con boton Buscar</td><td>Campos de busqueda</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- SECCION 45: HERRAMIENTAS DE DESARROLLO -->
+<section class="section" id="devtools">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-tools"></i> Seccion 45</span>
+    <h2 class="section__title"><i class="fas fa-tools"></i> Herramientas de Desarrollo</h2>
+    <p class="section__subtitle">DevTools, validadores y Lighthouse</p>
+  </div>
+  <p>Las herramientas de desarrollo son indispensables para inspeccionar, depurar y optimizar tu HTML. Aqui las mas importantes que todo desarrollador debe conocer.</p>
+
+  <h3>DevTools del Navegador</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Herramienta</th><th>Que hace</th><th>Atajo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Elements/Inspector</strong></td><td>Ver y editar el HTML y CSS en tiempo real</td><td><code>F12</code></td></tr>
+        <tr><td><strong>Console</strong></td><td>Ejecutar JavaScript y ver errores</td><td><code>Ctrl+Shift+J</code></td></tr>
+        <tr><td><strong>Network</strong></td><td>Monitorear peticiones HTTP y tiempos</td><td><code>Ctrl+Shift+E</code></td></tr>
+        <tr><td><strong>Lighthouse</strong></td><td>Auditoria de rendimiento, SEO, accesibilidad</td><td>Pestaña en DevTools</td></tr>
+        <tr><td><strong>Application</strong></td><td>Ver Service Worker, Cache, IndexedDB</td><td>Pestaña en DevTools</td></tr>
+        <tr><td><strong>Performance</strong></td><td>Grabar y analizar frames por segundo</td><td><code>Ctrl+Shift+E</code></td></tr>
+        <tr><td><strong>3D View</strong></td><td>Visualizar el DOM como un arbol 3D</td><td>Menu DevTools</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Validadores y Herramientas Externas</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Herramienta</th><th>Url</th><th>Que valida</th></tr></thead>
+      <tbody>
+        <tr><td><strong>W3C Validator</strong></td><td><code>validator.w3.org</code></td><td>HTML valido segun estandar</td></tr>
+        <tr><td><strong>Lighthouse</strong></td><td>DevTools / Chrome extension</td><td>Rendimiento, SEO, accesibilidad, PWAs</td></tr>
+        <tr><td><strong>axe DevTools</strong></td><td>Extension de Chrome/Firefox</td><td>Accesibilidad (WCAG 2.1)</td></tr>
+        <tr><td><strong>Wave</strong></td><td><code>wave.webaim.org</code></td><td>Errores de accesibilidad visuales</td></tr>
+        <tr><td><strong>PageSpeed Insights</strong></td><td><code>pagespeed.web.dev</code></td><td>Rendimiento real de usuarios (CrUX)</td></tr>
+        <tr><td><strong>Can I Use</strong></td><td><code>caniuse.com</code></td><td>Compatibilidad de features con navegadores</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--success">
+    <span class="callout__icon"><i class="fas fa-lightbulb"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Comandos rapidos de DevTools</div>
+      <p class="callout__text"><code>Ctrl+Shift+P</code> abre la paleta de comandos. Desde ahi puedes acceder a cualquier herramienta escribiendo su nombre. Tambien puedes inspeccionar cualquier elemento con <code>Ctrl+Shift+C</code>.</p>
+    </div>
+  </div>
+</section>
+
+
 <!-- SECCION 27: RECURSOS -->
 <section class="section" id="recursos">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-book"></i> Recursos</span>
+    <span class="section__number"><i class="fas fa-book"></i> Seccion 46</span>
     <h2 class="section__title"><i class="fas fa-book"></i> Recursos Web para Desarrolladores</h2>
     <p class="section__subtitle">63 recursos organizados en 8 categorias</p>
   </div>
@@ -1492,7 +2709,7 @@ elemento.innerHTML = <span class="string">'&lt;strong&gt;Nuevo&lt;/strong&gt;'</
 <section class="section" id="glosario">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-clipboard-list"></i> Glosario</span>
+    <span class="section__number"><i class="fas fa-clipboard-list"></i> Seccion 47</span>
     <h2 class="section__title"><i class="fas fa-clipboard-list"></i> Glosario de Terminos</h2>
   </div>
   <div class="table-wrapper">
@@ -1533,7 +2750,7 @@ elemento.innerHTML = <span class="string">'&lt;strong&gt;Nuevo&lt;/strong&gt;'</
 <section class="section" id="quiz">
   <div class="section__header">
     <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
-    <span class="section__number"><i class="fas fa-question-circle"></i> Interactivo</span>
+    <span class="section__number"><i class="fas fa-question-circle"></i> Seccion 48</span>
     <h2 class="section__title"><i class="fas fa-question-circle"></i> Quiz de HTML5</h2>
     <p class="section__subtitle">Pon a prueba tus conocimientos</p>
   </div>

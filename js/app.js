@@ -756,3 +756,171 @@ class MiBoton extends HTMLElement {
   }
 }
 customElements.define('mi-boton', MiBoton);
+
+/* --- Clipboard API Demo --- */
+function demoCopy() {
+  var text = document.getElementById('clipInput').value;
+  var result = document.getElementById('clipResult');
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function() {
+      result.style.display = 'block';
+      result.style.background = 'var(--color-success,#22c55e)';
+      result.style.color = 'white';
+      result.textContent = 'Texto copiado: ' + text;
+    }).catch(function() {
+      result.style.display = 'block';
+      result.style.background = 'var(--color-danger,#ef4444)';
+      result.style.color = 'white';
+      result.textContent = 'Error al copiar. Verifica permisos.';
+    });
+  } else {
+    result.style.display = 'block';
+    result.style.background = '#f59e0b';
+    result.style.color = 'white';
+    result.textContent = 'Clipboard API no soportada en este contexto.';
+  }
+}
+function demoPaste() {
+  var result = document.getElementById('clipResult');
+  if (navigator.clipboard) {
+    navigator.clipboard.readText().then(function(text) {
+      document.getElementById('clipInput').value = text;
+      result.style.display = 'block';
+      result.style.background = 'var(--color-primary,#6366f1)';
+      result.style.color = 'white';
+      result.textContent = 'Texto pegado: ' + text;
+    }).catch(function() {
+      result.style.display = 'block';
+      result.style.background = 'var(--color-danger,#ef4444)';
+      result.style.color = 'white';
+      result.textContent = 'Permiso denegado para leer portapapeles.';
+    });
+  }
+}
+
+/* --- Web Share API Demo --- */
+function demoShare() {
+  var status = document.getElementById('shareStatus');
+  if (navigator.share) {
+    navigator.share({
+      title: 'Guia Completa de HTML5',
+      text: 'Aprende HTML5 desde cero con esta guia completa y moderna.',
+      url: window.location.href
+    }).then(function() {
+      status.textContent = 'Compartido exitosamente!';
+      status.style.color = 'var(--color-success,#22c55e)';
+    }).catch(function(err) {
+      if (err.name !== 'AbortError') {
+        status.textContent = 'Error: ' + err.message;
+        status.style.color = 'var(--color-danger,#ef4444)';
+      }
+    });
+  } else {
+    status.textContent = 'Web Share API no soportada. Copiando URL...';
+    status.style.color = '#f59e0b';
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(window.location.href);
+    }
+  }
+}
+
+/* --- Notification API Demo --- */
+function demoNotify() {
+  var status = document.getElementById('notifStatus');
+  if (!('Notification' in window)) {
+    status.textContent = 'Notificaciones no soportadas';
+    status.style.color = 'var(--color-danger,#ef4444)';
+    return;
+  }
+  if (Notification.permission === 'granted') {
+    new Notification('Notificacion de prueba', {
+      body: 'Esta es una notificacion de la Guia HTML5',
+      icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔔</text></svg>'
+    });
+    status.textContent = 'Notificacion enviada!';
+    status.style.color = 'var(--color-success,#22c55e)';
+  } else if (Notification.permission === 'default') {
+    Notification.requestPermission().then(function(perm) {
+      status.textContent = 'Permiso: ' + perm;
+      status.style.color = perm === 'granted' ? 'var(--color-success,#22c55e)' : 'var(--color-danger,#ef4444)';
+    });
+  } else {
+    status.textContent = 'Permiso denegado. Activalo en configuracion del navegador.';
+    status.style.color = 'var(--color-danger,#ef4444)';
+  }
+}
+(function() {
+  if ('Notification' in window) {
+    var s = document.getElementById('notifStatus');
+    if (s) s.textContent = 'Permiso: ' + Notification.permission;
+  }
+})();
+
+/* --- Fullscreen API Demo --- */
+function demoFullscreen() {
+  var box = document.getElementById('fullscreenBox');
+  if (box.requestFullscreen) {
+    box.requestFullscreen();
+  } else if (box.webkitRequestFullscreen) {
+    box.webkitRequestFullscreen();
+  }
+}
+
+/* --- Wake Lock API Demo --- */
+var _wakeLock = null;
+function demoWakeLock() {
+  var btn = document.getElementById('wakeBtn');
+  var status = document.getElementById('wakeStatus');
+  if (!('wakeLock' in navigator)) {
+    status.textContent = 'Wake Lock no soportado en este navegador';
+    status.style.color = 'var(--color-danger,#ef4444)';
+    return;
+  }
+  if (_wakeLock) {
+    _wakeLock.release();
+    _wakeLock = null;
+    btn.innerHTML = '<i class="fas fa-mobile-alt"></i> Activar Wake Lock';
+    btn.style.background = 'var(--color-primary)';
+    status.textContent = 'Estado: inactivo';
+    status.style.color = 'var(--text-muted)';
+  } else {
+    navigator.wakeLock.request('screen').then(function(lock) {
+      _wakeLock = lock;
+      btn.innerHTML = '<i class="fas fa-lock"></i> Desactivar Wake Lock';
+      btn.style.background = '#22c55e';
+      status.textContent = 'Estado: pantalla encendida';
+      status.style.color = '#22c55e';
+      lock.addEventListener('release', function() {
+        _wakeLock = null;
+        btn.innerHTML = '<i class="fas fa-mobile-alt"></i> Activar Wake Lock';
+        btn.style.background = 'var(--color-primary)';
+        status.textContent = 'Estado: liberado';
+        status.style.color = 'var(--text-muted)';
+      });
+    }).catch(function(err) {
+      status.textContent = 'Error: ' + err.message;
+      status.style.color = 'var(--color-danger,#ef4444)';
+    });
+  }
+}
+
+/* --- Formularios Avanzados Demo --- */
+(function() {
+  var form = document.getElementById('demoForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var result = document.getElementById('formResult');
+    if (form.checkValidity()) {
+      var data = new FormData(form);
+      var entries = [];
+      data.forEach(function(val, key) { entries.push(key + ': ' + val); });
+      result.style.display = 'block';
+      result.style.background = 'var(--color-success,#22c55e)';
+      result.style.color = 'white';
+      result.innerHTML = '<strong>Valido!</strong><br>' + entries.join('<br>');
+    } else {
+      form.reportValidity();
+    }
+  });
+})();
