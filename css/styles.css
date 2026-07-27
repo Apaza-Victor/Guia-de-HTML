@@ -530,6 +530,9 @@ img {
   color: white;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero::before {
@@ -1682,7 +1685,7 @@ blockquote p:last-child {
 
 /* Tablet adjustments */
 @media (max-width: 1024px) {
-  .hero { padding: 48px 24px; }
+  .hero { padding: 48px 24px; min-height: auto; align-items: flex-start; }
   .hero__title { font-size: 2.2rem; }
   .content { padding: 32px 20px; }
   .section { padding: 28px; }
