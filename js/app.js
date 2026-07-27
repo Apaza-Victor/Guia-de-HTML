@@ -17,7 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initScrollAnimations();
   initSectionReveal();
+  initCurrentYear();
 });
+
+/* --- Current Year --- */
+function initCurrentYear() {
+  const year = new Date().getFullYear();
+  document.querySelectorAll('.current-year').forEach(el => {
+    el.textContent = year;
+  });
+}
 
 /* --- Theme Toggle --- */
 function initTheme() {
