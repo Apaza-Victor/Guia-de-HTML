@@ -1,0 +1,64 @@
+<!-- SECCION 14: SEGURIDAD HTML -->
+<section class="section" id="seguridad">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-shield-alt"></i> Seccion 14</span>
+    <h2 class="section__title"><i class="fas fa-shield-alt"></i> Seguridad HTML</h2>
+    <p class="section__subtitle">Protege tu sitio con atributos y meta tags de seguridad</p>
+  </div>
+  <p>HTML5 ofrece varios atributos y configuraciones para proteger tu sitio web contra ataques comunes como XSS (Cross-Site Scripting), clickjacking y inyección de código malicioso.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Content Security Policy (CSP) via meta tag --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Security-Policy"</span>
+  <span class="attr">content</span>=<span class="string">"default-src 'self'; script-src 'self' https://cdn.ejemplo.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:;"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Iframe sandbox: restringe funcionalidades --&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attr">src</span>=<span class="string">"externo.html"</span>
+  <span class="attr">sandbox</span>=<span class="string">"allow-forms allow-scripts"</span>
+<span class="tag">&gt;&lt;/iframe&gt;</span>
+<span class="comment">&lt;!-- Sin sandbox: todo permitido | allow-scripts: permite JS | allow-same-origin: mantiene origen --&gt;</span>
+
+<span class="comment">&lt;!-- Links externos seguros --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com"</span>
+  <span class="attr">target</span>=<span class="string">"_blank"</span>
+  <span class="attr">rel</span>=<span class="string">"noopener noreferrer"</span><span class="tag">&gt;</span>Enlace externo<span class="tag">&lt;/a&gt;</span>
+<span class="comment">&lt;!-- noopener: impide que la pagina abierta acceda a window.opener --&gt;</span>
+<span class="comment">&lt;!-- noreferrer: no envia informacion del referer --&gt;</span>
+
+<span class="comment">&lt;!-- Subresource Integrity (SRI) --&gt;</span>
+<span class="tag">&lt;script</span>
+  <span class="attr">src</span>=<span class="string">"https://cdn.ejemplo.com/libreria.js"</span>
+  <span class="attr">integrity</span>=<span class="string">"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC"</span>
+  <span class="attr">crossorigin</span>=<span class="string">"anonymous"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="comment">&lt;!-- Verifica que el archivo no fue modificado en el CDN --&gt;</span>
+
+<span class="comment">&lt;!-- Meta tag: prevenir sniffing de tipos --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-Content-Type-Options"</span> <span class="attr">content</span>=<span class="string">"nosniff"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Prevenir framing (clickjacking) --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-Frame-Options"</span> <span class="attr">content</span>=<span class="string">"DENY"</span><span class="tag">&gt;</span></code></pre>
+
+  <h3>Vulnerabilidades y Protecciones</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Amenaza</th><th>Proteccion HTML</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><strong>XSS</strong></td><td>CSP + escape de contenido</td><td>Evita inyeccion de scripts maliciosos</td></tr>
+        <tr><td><strong>Clickjacking</strong></td><td>X-Frame-Options</td><td>Impide que tu sitio sea embebido en iframes maliciosos</td></tr>
+        <tr><td><strong>Tabnabbing</strong></td><td><code>rel="noopener"</code></td><td>Impide que links en target=_blank manipulen la pagina original</td></tr>
+        <tr><td><strong>Tampering CDN</strong></td><td>SRI (integrity)</td><td>Verifica que archivos externos no fueron modificados</td></tr>
+        <tr><td><strong>MIME sniffing</strong></td><td>X-Content-Type-Options</td><td>Impide que el navegador interprete archivos como otro tipo</td></tr>
+        <tr><td><strong>Data leakage</strong></td><td><code>rel="noreferrer"</code></td><td>No envia informacion del sitio de origen</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--danger">
+    <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Siempre escapes el contenido del usuario</div>
+      <p class="callout__text">Nunca insertes texto del usuario directamente en HTML con <code>innerHTML</code>. Usa <code>textContent</code> o librerias de escape como DOMPurify para prevenir ataques XSS.</p>
+    </div>
+  </div>
+</section>

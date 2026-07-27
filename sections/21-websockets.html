@@ -1,0 +1,17 @@
+<!-- SECCION 18: WEBSOCKETS -->
+<section class="section" id="websockets">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-plug"></i> Seccion 21</span>
+    <h2 class="section__title"><i class="fas fa-plug"></i> WebSockets</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> socket = <span class="keyword">new</span> <span class="function">WebSocket</span>(<span class="string">'wss://ejemplo.com/chat'</span>); <span class="comment">// Abre conexión WebSocket segura</span>
+socket.<span class="function">addEventListener</span>(<span class="string">'open'</span>, () =&gt; { <span class="comment">// Escucha cuando se establece la conexión</span>
+  socket.<span class="function">send</span>(JSON.<span class="function">stringify</span>({ <span class="property">type</span>: <span class="string">'message'</span>, <span class="property">content</span>: <span class="string">'Hola!'</span> })); <span class="comment">// Envia un mensaje al servidor</span>
+});
+socket.<span class="function">addEventListener</span>(<span class="string">'message'</span>, (event) =&gt; { <span class="comment">// Escucha mensajes entrantes del servidor</span>
+  <span class="keyword">const</span> data = JSON.<span class="function">parse</span>(event.data); <span class="comment">// Convierte el JSON recibido a objeto</span>
+  console.<span class="function">log</span>(<span class="string">'Recibido:'</span>, data); <span class="comment">// Muestra los datos recibidos</span>
+});</code></pre>
+</section>

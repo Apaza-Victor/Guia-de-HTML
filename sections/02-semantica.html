@@ -1,0 +1,64 @@
+<!-- SECCION 02: SEMANTICA -->
+<section class="section" id="semantica">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-tags"></i> Seccion 02</span>
+    <h2 class="section__title"><i class="fas fa-tags"></i> HTML Semantico</h2>
+  </div>
+  <p>HTML5 introdujo elementos semánticos que describen el significado del contenido que contienen, en lugar de solo definir su apariencia. Esto mejora la accesibilidad, el SEO y la mantenibilidad del codigo.</p>
+  <h3>Etiquetas semánticas principales</h3>
+  <div class="grid grid-2">
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;header&gt;</div><p>Contenido introductorio o de navegación.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-thumbtack"></i></span> &lt;nav&gt;</div><p>Enlaces de navegación principales.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;main&gt;</div><p>Contenido principal. Solo uno por página.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;article&gt;</div><p>Contenido independiente y autocontenido.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;section&gt;</div><p>Agrupa contenido tematico.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-file-code"></i></span> &lt;aside&gt;</div><p>Contenido complementario (sidebar).</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-pen-fancy"></i></span> &lt;footer&gt;</div><p>Pie de página.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-clock"></i></span> &lt;time&gt;</div><p>Fecha o hora especifica.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-image"></i></span> &lt;figure&gt;/&lt;figcaption&gt;</div><p>Contenido ilustrativo con leyenda.</p></div>
+    <div class="card"><div class="card__title"><span class="card__icon"><i class="fas fa-list-alt"></i></span> &lt;details&gt;/&lt;summary&gt;</div><p>Contenido colapsable.</p></div>
+  </div>
+
+  <h3>Estructura semántica completa</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;body&gt;</span> <span class="comment">&lt;!-- Contenedor principal del contenido visible --&gt;</span>
+  <span class="tag">&lt;header&gt;</span> <span class="comment">&lt;!-- Encabezado global del sitio --&gt;</span>
+    <span class="tag">&lt;nav&gt;</span> <span class="comment">&lt;!-- Barra de navegación principal --&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/"</span><span class="tag">&gt;</span>Inicio<span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/blog"</span><span class="tag">&gt;</span>Blog<span class="tag">&lt;/a&gt;</span>
+      <span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"/contacto"</span><span class="tag">&gt;</span>Contacto<span class="tag">&lt;/a&gt;</span>
+    <span class="tag">&lt;/nav&gt;</span>
+  <span class="tag">&lt;/header&gt;</span>
+  <span class="tag">&lt;main&gt;</span> <span class="comment">&lt;!-- Contenido principal (solo uno por página) --&gt;</span>
+    <span class="tag">&lt;article&gt;</span> <span class="comment">&lt;!-- Contenido independiente y autocontenido --&gt;</span>
+      <span class="tag">&lt;header&gt;</span> <span class="comment">&lt;!-- Encabezado del articulo --&gt;</span>
+        <span class="tag">&lt;h1&gt;</span>Titulo del articulo<span class="tag">&lt;/h1&gt;</span>
+        <span class="tag">&lt;time</span> <span class="attr">datetime</span>=<span class="string">"2024-01-15"</span><span class="tag">&gt;</span>15 de enero, 2024<span class="tag">&lt;/time&gt;</span> <span class="comment">&lt;!-- datetime: formato ISO para buscadores --&gt;</span>
+      <span class="tag">&lt;/header&gt;</span>
+      <span class="tag">&lt;section&gt;</span> <span class="comment">&lt;!-- Seccion tematica dentro del articulo --&gt;</span>
+        <span class="tag">&lt;h2&gt;</span>Introduccion<span class="tag">&lt;/h2&gt;</span>
+        <span class="tag">&lt;p&gt;</span>Contenido del articulo...<span class="tag">&lt;/p&gt;</span>
+      <span class="tag">&lt;/section&gt;</span>
+      <span class="tag">&lt;figure&gt;</span> <span class="comment">&lt;!-- Contenido ilustrativo con leyenda --&gt;</span>
+        <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"diagrama.png"</span> <span class="attr">alt</span>=<span class="string">"Diagrama"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;figcaption&gt;</span>Diagrama de arquitectura<span class="tag">&lt;/figcaption&gt;</span> <span class="comment">&lt;!-- Leyenda de la imagen --&gt;</span>
+      <span class="tag">&lt;/figure&gt;</span>
+      <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>Autor: Juan Perez<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span> <span class="comment">&lt;!-- Pie del articulo --&gt;</span>
+    <span class="tag">&lt;/article&gt;</span>
+    <span class="tag">&lt;aside&gt;</span> <span class="comment">&lt;!-- Contenido complementario (barra lateral) --&gt;</span>
+      <span class="tag">&lt;h3&gt;</span>Articulos relacionados<span class="tag">&lt;/h3&gt;</span>
+      <span class="tag">&lt;ul&gt;</span><span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"#"</span><span class="tag">&gt;</span>Otro articulo<span class="tag">&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</span>
+    <span class="tag">&lt;/aside&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;footer&gt;</span><span class="tag">&lt;p&gt;</span>&amp;copy; 2024 Mi Sitio<span class="tag">&lt;/p&gt;&lt;/footer&gt;</span> <span class="comment">&lt;!-- Pie de página global --&gt;</span>
+<span class="tag">&lt;/body&gt;</span></code></pre>
+
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">No abuses de las etiquetas semánticas</div>
+      <p class="callout__text">Cada etiqueta tiene un proposito especifico. Usa <code>&lt;section&gt;</code> para contenido tematico, no como sustituto de <code>&lt;div&gt;</code>.</p>
+    </div>
+  </div>
+</section>

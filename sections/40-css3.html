@@ -1,0 +1,73 @@
+<!-- SECCION 25: CSS3 -->
+<section class="section" id="css3">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fab fa-css3-alt"></i> Seccion 40</span>
+    <h2 class="section__title"><i class="fab fa-css3-alt"></i> CSS3</h2>
+  </div>
+  <h3>Selectores modernos</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">/* Hijo directo */</span>
+<span class="tag">.padre</span> &gt; <span class="tag">.hijo</span> { <span class="property">color</span>: <span class="value">red</span>; } <span class="comment">/* Selecciona hijos directos de .padre */</span>
+
+<span class="comment">/* Hermano siguiente */</span>
+<span class="tag">.a</span> + <span class="tag">.b</span> { <span class="property">margin-left</span>: <span class="value">10px</span>; } <span class="comment">/* Selecciona .b solo si va justo despues de .a */</span>
+
+<span class="comment">/* Attribute selectors */</span>
+<span class="tag">a</span>[<span class="attr">href</span>^=<span class="string">"https"</span>] { <span class="property">color</span>: <span class="value">green</span>; } <span class="comment">/* Enlaces que inician con https */</span>
+<span class="tag">input</span>[<span class="attr">type</span>$=<span class="string">"email"</span>] { <span class="property">border</span>: <span class="value">2px solid blue</span>; } <span class="comment">/* Inputs cuyo tipo termina en email */</span>
+
+<span class="comment">/* nth-child */</span>
+<span class="tag">li</span>:<span class="function">nth-child</span>(<span class="value">odd</span>) { <span class="property">background</span>: <span class="value">#f0f0f0</span>; } <span class="comment">/* Alterna color en filas impares */</span>
+
+<span class="comment">/* :not */</span>
+<span class="tag">p</span>:<span class="function">not</span>(.excluido) { <span class="property">font-size</span>: <span class="value">16px</span>; } <span class="comment">/* Aplica estilos excepto a .excluido */</span></code></pre>
+
+  <h3>Flexbox</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">.container</span> {
+  <span class="property">display</span>: <span class="value">flex</span>; <span class="comment">/* Activa Flexbox en el contenedor */</span>
+  <span class="property">justify-content</span>: <span class="value">space-between</span>; <span class="comment">/* Distribuye items con espacio entre ellos */</span>
+  <span class="property">align-items</span>: <span class="value">center</span>; <span class="comment">/* Centra items verticalmente */</span>
+  <span class="property">flex-wrap</span>: <span class="value">wrap</span>; <span class="comment">/* Permite que los items salten de linea */</span>
+  <span class="property">gap</span>: <span class="value">16px</span>; <span class="comment">/* Espacio entre items */</span>
+}
+<span class="tag">.item</span> {
+  <span class="property">flex</span>: <span class="value">1 1 300px</span>; <span class="comment">/* Crece, encoge, ancho minimo de 300px */</span>
+}</code></pre>
+
+  <h3>CSS Grid</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">.grid</span> {
+  <span class="property">display</span>: <span class="value">grid</span>; <span class="comment">/* Activa CSS Grid en el contenedor */</span>
+  <span class="property">grid-template-columns</span>: <span class="value">repeat(auto-fit, minmax(300px, 1fr))</span>; <span class="comment">/* Columnas responsivas automaticas */</span>
+  <span class="property">gap</span>: <span class="value">20px</span>; <span class="comment">/* Espacio entre celdas del grid */</span>
+}
+<span class="tag">.grid-item</span>:<span class="function">nth-child</span>(<span class="value">1</span>) {
+  <span class="property">grid-column</span>: <span class="value">span 2</span>; <span class="comment">/* El primer item ocupa 2 columnas */</span>
+}</code></pre>
+
+  <h3>Animaciones</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">@keyframes</span> <span class="function">fadeInUp</span> { <span class="comment">/* Define la animacion fadeInUp */</span>
+  <span class="tag">from</span> { <span class="property">opacity</span>: <span class="value">0</span>; <span class="property">transform</span>: <span class="value">translateY(20px)</span>; } <span class="comment">/* Estado inicial: invisible y abajo */</span>
+  <span class="tag">to</span> { <span class="property">opacity</span>: <span class="value">1</span>; <span class="property">transform</span>: <span class="value">translateY(0)</span>; } <span class="comment">/* Estado final: visible y en posición */</span>
+}
+<span class="tag">.animate</span> {
+  <span class="property">animation</span>: <span class="value">fadeInUp 0.5s ease forwards</span>; <span class="comment">/* Aplica la animacion de 0.5 segundos */</span>
+  <span class="property">transition</span>: <span class="value">all 0.3s ease</span>; <span class="comment">/* Transicion suave para cambios de estado */</span>
+}</code></pre>
+
+  <h3>Custom Properties (Variables CSS)</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-css3-alt"></i> CSS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">:root</span> { <span class="comment">/* Define variables CSS globales */</span>
+  <span class="property">--color-primary</span>: <span class="value">#6366f1</span>; <span class="comment">/* Color principal morado */</span>
+  <span class="property">--radius</span>: <span class="value">12px</span>; <span class="comment">/* Radio de borde redondeado */</span>
+  <span class="property">--shadow</span>: <span class="value">0 4px 6px rgba(0,0,0,0.1)</span>; <span class="comment">/* Sombra suave */</span>
+}
+<span class="tag">.card</span> {
+  <span class="property">background</span>: <span class="value">var(--color-primary)</span>; <span class="comment">/* Usa la variable de color */</span>
+  <span class="property">border-radius</span>: <span class="value">var(--radius)</span>; <span class="comment">/* Usa la variable de radio */</span>
+  <span class="property">box-shadow</span>: <span class="value">var(--shadow)</span>; <span class="comment">/* Usa la variable de sombra */</span>
+}</code></pre>
+</section>

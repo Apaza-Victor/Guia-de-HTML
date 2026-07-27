@@ -1,0 +1,83 @@
+<!-- SECCION 06: IFRAMES Y EMBED -->
+<section class="section" id="iframes">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-window-maximize"></i> Seccion 06</span>
+    <h2 class="section__title"><i class="fas fa-window-maximize"></i> Iframes, Embed y Object</h2>
+    <p class="section__subtitle">Incorpora contenido externo en tus paginas</p>
+  </div>
+  <p>Las etiquetas <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code> y <code>&lt;object&gt;</code> permiten incrustar contenido de otras fuentes directamente en tu pagina web, como videos, mapas, PDFs o paginas externas.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Iframe basico: embebe otra pagina web --&gt;</span>
+<span class="tag">&lt;iframe</span>
+  <span class="attr">src</span>=<span class="string">"https://www.ejemplo.com"</span>
+  <span class="attr">width</span>=<span class="string">"800"</span>
+  <span class="attr">height</span>=<span class="string">"450"</span>
+  <span class="attr">title</span>=<span class="string">"Descripcion del contenido embebido"</span>
+  <span class="attr">loading</span>=<span class="string">"lazy"</span>
+  <span class="attr">sandbox</span>=<span class="string">"allow-scripts allow-same-origin"</span>
+  <span class="attr">referrerpolicy</span>=<span class="string">"no-referrer"</span>
+<span class="tag">&gt;&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- Iframe responsivo con contenedor --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">style</span>=<span class="string">"position:relative;padding-bottom:56.25%;height:0;overflow:hidden"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;iframe</span>
+    <span class="attr">src</span>=<span class="string">"https://www.youtube.com/embed/VIDEO_ID"</span>
+    <span class="attr">style</span>=<span class="string">"position:absolute;top:0;left:0;width:100%;height:100%;border:0"</span>
+    <span class="attr">allowfullscreen</span>
+    <span class="attr">loading</span>=<span class="string">"lazy"</span>
+    <span class="attr">title</span>=<span class="string">"Video de YouTube"</span>
+  <span class="tag">&gt;&lt;/iframe&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">&lt;!-- Embed: contenido embebido (PDF, plugin) --&gt;</span>
+<span class="tag">&lt;embed</span>
+  <span class="attr">src</span>=<span class="string">"documento.pdf"</span>
+  <span class="attr">type</span>=<span class="string">"application/pdf"</span>
+  <span class="attr">width</span>=<span class="string">"100%"</span>
+  <span class="attr">height</span>=<span class="string">"600px"</span>
+<span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Object: contenido alternativo con fallback --&gt;</span>
+<span class="tag">&lt;object</span>
+  <span class="attr">data</span>=<span class="string">"animacion.svg"</span>
+  <span class="attr">type</span>=<span class="string">"image/svg+xml"</span>
+  <span class="attr">width</span>=<span class="string">"400"</span>
+  <span class="attr">height</span>=<span class="string">"300"</span>
+<span class="tag">&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"fallback.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="tag">/&gt;</span>
+<span class="tag">&lt;/object&gt;</span></code></pre>
+
+  <h3>Atributos importantes de iframe</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Atributo</th><th>Descripcion</th><th>Valor recomendado</th></tr></thead>
+      <tbody>
+        <tr><td><code>src</code></td><td>URL del contenido a embeber</td><td>URL completa</td></tr>
+        <tr><td><code>title</code></td><td>Descripcion accesible del contenido (obligatorio)</td><td>Texto descriptivo</td></tr>
+        <tr><td><code>loading</code></td><td>Carga diferida del iframe</td><td><code>lazy</code></td></tr>
+        <tr><td><code>sandbox</code></td><td>Restringe funcionalidades por seguridad</td><td><code>allow-scripts</code></td></tr>
+        <tr><td><code>allow</code></td><td>Permite features especificas (cámara, micrófono)</td><td><code>camera; microphone</code></td></tr>
+        <tr><td><code>referrerpolicy</code></td><td>Controla la información enviada al servidor</td><td><code>no-referrer</code></td></tr>
+        <tr><td><code>allowfullscreen</code></td><td>Permite pantalla completa</td><td>Atributo booleano</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-shield-alt"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Seguridad en Iframes</div>
+      <p class="callout__text">Siempre usa el atributo <code>sandbox</code> para restringir lo que el contenido embebido puede hacer. Sin <code>sandbox</code>, un iframe malicioso puede ejecutar scripts, acceder a cookies y redirigir al usuario.</p>
+    </div>
+  </div>
+
+  <h3>Demo: Iframe Responsivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Video de YouTube responsivo (ratio 16:9)</div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;border:1px solid var(--border-color)">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allowfullscreen loading="lazy" title="Video de ejemplo en YouTube"></iframe>
+    </div>
+  </div>
+</section>

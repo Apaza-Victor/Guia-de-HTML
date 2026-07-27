@@ -1,0 +1,44 @@
+<!-- SECCION 24: PWA -->
+<section class="section" id="pwa">
+  <div class="section__header">
+    <span class="section__number">Seccion 35</span>
+    <h2 class="section__title">Progressive Web Apps (PWA)</h2>
+  </div>
+  <p>Las PWA son aplicaciónes web que funcionan como apps nativas: offline, instalables, con acceso a APIs del dispositivo.</p>
+  <h3>Elementos esenciales de una PWA</h3>
+  <ul>
+    <li><strong>manifest.json</strong>: Metadatos de la app (nombre, iconos, colores)</li>
+    <li><strong>Service Worker</strong>: Script que intercepta peticiones y cachea recursos</li>
+    <li><strong>HTTPS</strong>: Obligatorio para Service Workers</li>
+    <li><strong>Iconos</strong>: Para la pantalla de inicio</li>
+  </ul>
+  <div class="code-header"><span class="code-header__lang">manifest.json</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code>{
+  <span class="property">"name"</span>: <span class="string">"Mi Guia HTML5"</span>, <span class="comment">// Nombre completo de la aplicación</span>
+  <span class="property">"short_name"</span>: <span class="string">"GuiaHTML5"</span>, <span class="comment">// Nombre corto para el icono de inicio</span>
+  <span class="property">"start_url"</span>: <span class="string">"/"</span>, <span class="comment">// URL que se abre al iniciar la PWA</span>
+  <span class="property">"display"</span>: <span class="string">"standalone"</span>, <span class="comment">// Se ejecuta como app nativa sin barra del navegador</span>
+  <span class="property">"background_color"</span>: <span class="string">"#6366f1"</span>, <span class="comment">// Color de fondo al cargar la app</span>
+  <span class="property">"theme_color"</span>: <span class="string">"#6366f1"</span>, <span class="comment">// Color de la barra de estado en moviles</span>
+  <span class="property">"icons"</span>: [ <span class="comment">// Iconos para diferentes tamanos de pantalla</span>
+    { <span class="property">"src"</span>: <span class="string">"icon-192.png"</span>, <span class="property">"sizes"</span>: <span class="string">"192x192"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> }, <span class="comment">// Icono para moviles</span>
+    { <span class="property">"src"</span>: <span class="string">"icon-512.png"</span>, <span class="property">"sizes"</span>: <span class="string">"512x512"</span>, <span class="property">"type"</span>: <span class="string">"image/png"</span> } <span class="comment">// Icono para pantallas grandes</span>
+  ]
+}</code></pre>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript (Service Worker)</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// sw.js</span>
+<span class="keyword">const</span> CACHE = <span class="string">'guia-html5-v1'</span>; <span class="comment">// Nombre de la cache para almacenar recursos</span>
+<span class="keyword">const</span> ASSETS = [<span class="string">'/'</span>, <span class="string">'/css/styles.css'</span>, <span class="string">'/js/app.js'</span>]; <span class="comment">// Recursos a cachear</span>
+
+self.<span class="function">addEventListener</span>(<span class="string">'install'</span>, (e) =&gt; { <span class="comment">// Se ejecuta al instalar el service worker</span>
+  e.<span class="function">waitUntil</span>( <span class="comment">// Espera a que termine la cache antes de continuar</span>
+    caches.<span class="function">open</span>(CACHE).<span class="function">then</span>(cache =&gt; cache.<span class="function">addAll</span>(ASSETS)) <span class="comment">// Abre la cache y guarda todos los assets</span>
+  );
+});
+
+self.<span class="function">addEventListener</span>(<span class="string">'fetch'</span>, (e) =&gt; { <span class="comment">// Intercepta cada peticion de red</span>
+  e.<span class="function">respondWith</span>( <span class="comment">// Responde con el resultado de la cache o la red</span>
+    caches.<span class="function">match</span>(e.request).<span class="function">then</span>(r =&gt; r || <span class="function">fetch</span>(e.request)) <span class="comment">// Si esta en cache la usa, si no fetch</span>
+  );
+});</code></pre>
+</section>

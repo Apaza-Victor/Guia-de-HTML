@@ -1,5 +1,5 @@
 /* ============================================
-   Guia HTML5 - Interactive JavaScript v2
+   Guia HTML5 - Interactive JavaScript v3
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,16 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initSidebar();
   initDropdowns();
-  initSearch();
-  initCopyButtons();
   initBackToTop();
-  initFavorites();
-  initTabs();
-  initQuiz();
-  initScrollSpy();
-  initScrollAnimations();
-  initSectionReveal();
   initCurrentYear();
+
+  document.addEventListener('sectionsLoaded', () => {
+    initSearch();
+    initCopyButtons();
+    initFavorites();
+    initTabs();
+    initQuiz();
+    initScrollSpy();
+    initScrollAnimations();
+    initSectionReveal();
+  });
 });
 
 /* --- Current Year --- */

@@ -1,0 +1,51 @@
+<!-- SECCION 23: WEB SHARE API -->
+<section class="section" id="web-share">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-share-alt"></i> Seccion 23</span>
+    <h2 class="section__title"><i class="fas fa-share-alt"></i> Web Share API</h2>
+    <p class="section__subtitle">Comparte contenido usando el dialogo nativo del sistema</p>
+  </div>
+  <p>La Web Share API abre el dialogo de compartir nativo del sistema operativo (Android, iOS, Windows) permitiendo compartir texto, URLs y archivos con cualquier app instalada.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Compartir texto simple</span>
+<span class="keyword">async function</span> <span class="function">compartir</span>() {
+  <span class="keyword">if</span> (<span class="string">'share'</span> <span class="keyword">in</span> navigator) {
+    <span class="keyword">try</span> {
+      <span class="keyword">await</span> navigator.<span class="function">share</span>({
+        title: <span class="string">'Guia HTML5'</span>,
+        text: <span class="string">'Mira esta guia completa de HTML5'</span>,
+        url: <span class="string">'https://ejemplo.com/html5'</span>
+      });
+    } <span class="keyword">catch</span> (err) {
+      <span class="keyword">if</span> (err.name !== <span class="string">'AbortError'</span>) {
+        console.<span class="function">error</span>(<span class="string">'Error al compartir:'</span>, err);
+      }
+    }
+  } <span class="keyword">else</span> {
+    <span class="comment">// Fallback: copiar URL al portapapeles</span>
+    <span class="keyword">await</span> navigator.clipboard.<span class="function">writeText</span>(<span class="string">'https://ejemplo.com/html5'</span>);
+  }
+}
+
+<span class="comment">// Compartir archivos</span>
+<span class="keyword">async function</span> <span class="function">compartirArchivo</span>(archivo) {
+  <span class="keyword">if</span> (<span class="string">'share'</span> <span class="keyword">in</span> navigator && <span class="string">'canShare'</span> <span class="keyword">in</span> navigator) {
+    <span class="keyword">const</span> datos = {
+      title: <span class="string">'Mi archivo'</span>,
+      files: [archivo]
+    };
+    <span class="keyword">if</span> (navigator.<span class="function">canShare</span>(datos)) {
+      <span class="keyword">await</span> navigator.<span class="function">share</span>(datos);
+    }
+  }
+}</code></pre>
+
+  <h3>Demo: Compartir</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Web Share API (funciona en movil)</div>
+    <button id="shareBtn" onclick="demoShare()" style="padding:10px 20px;border:none;border-radius:8px;background:linear-gradient(135deg,var(--color-primary),#8b5cf6);color:white;cursor:pointer;font-weight:600;font-size:.95rem"><i class="fas fa-share-alt"></i> Compartir esta pagina</button>
+    <p style="margin-top:8px;font-size:.8rem;color:var(--text-muted)" id="shareStatus"></p>
+  </div>
+</section>

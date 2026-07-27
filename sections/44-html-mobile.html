@@ -1,0 +1,62 @@
+<!-- SECCION 44: HTML EN MOVILES -->
+<section class="section" id="html-mobile">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-mobile-alt"></i> Seccion 44</span>
+    <h2 class="section__title"><i class="fas fa-mobile-alt"></i> HTML en Moviles</h2>
+    <p class="section__subtitle">Meta tags, manifest y optimizaciones para dispositivos moviles</p>
+  </div>
+  <p>Desarrollar para moviles requiere meta tags especificos, configuracion del manifest de la PWA y optimizaciones de rendimiento para conexiones lentas y pantallas pequeñas.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Meta tags esenciales para movil --&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0, maximum-scale=5.0"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#6366f1"</span> <span class="attr">media</span>=<span class="string">"(prefers-color-scheme: light)"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"#1e1b4b"</span> <span class="attr">media</span>=<span class="string">"(prefers-color-scheme: dark)"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> <span class="attr">content</span>=<span class="string">"black-translucent"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"mobile-web-app-capable"</span> <span class="attr">content</span>=<span class="string">"yes"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Touch icons para iOS --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"apple-touch-icon"</span> <span class="attr">href</span>=<span class="string">"/icon-180.png"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Manifest PWA --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"manifest"</span> <span class="attr">href</span>=<span class="string">"/manifest.json"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Prevenir llamadas telefonicas accidentales --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"tel:+59112345678"</span><span class="tag">&gt;</span>Llamar<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Prevenir zoom en inputs (iOS) --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">inputmode</span>=<span class="string">"numeric"</span> <span class="attr">style</span>=<span class="string">"font-size:16px"</span><span class="tag">&gt;</span>
+<span class="comment">&lt;!-- font-size &gt;= 16px previene autozoom en iOS --&gt;</span></code></pre>
+
+  <h3>Contenido de manifest.json</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JSON</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code>{
+  <span class="string">"name"</span>: <span class="string">"Guia HTML5"</span>,
+  <span class="string">"short_name"</span>: <span class="string">"HTML5"</span>,
+  <span class="string">"start_url"</span>: <span class="string">"/"</span>,
+  <span class="string">"display"</span>: <span class="string">"standalone"</span>,
+  <span class="string">"background_color"</span>: <span class="string">"#ffffff"</span>,
+  <span class="string">"theme_color"</span>: <span class="string">"#6366f1"</span>,
+  <span class="string">"icons"</span>: [
+    { <span class="string">"src"</span>: <span class="string">"/icon-192.png"</span>, <span class="string">"sizes"</span>: <span class="string">"192x192"</span>, <span class="string">"type"</span>: <span class="string">"image/png"</span> },
+    { <span class="string">"src"</span>: <span class="string">"/icon-512.png"</span>, <span class="string">"sizes"</span>: <span class="string">"512x512"</span>, <span class="string">"type"</span>: <span class="string">"image/png"</span> }
+  ]
+}</code></pre>
+
+  <h3>inputmode: teclados virtuales optimizados</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Valor</th><th>Teclado</th><th>Uso ideal</th></tr></thead>
+      <tbody>
+        <tr><td><code>numeric</code></td><td>Numerico</td><td>Telefonos, edades, codigos</td></tr>
+        <tr><td><code>decimal</code></td><td>Numerico con punto</td><td>Precios, mediciones</td></tr>
+        <tr><td><code>email</code></td><td>Con @ y .</td><td>Campos de email</td></tr>
+        <tr><td><code>url</code></td><td>Con / y .</td><td>Campos de URL</td></tr>
+        <tr><td><code>tel</code></td><td>Telefonico</td><td>Numeros de telefono</td></tr>
+        <tr><td><code>search</code></td><td>Con boton Buscar</td><td>Campos de busqueda</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>

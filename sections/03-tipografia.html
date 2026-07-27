@@ -1,0 +1,61 @@
+<!-- SECCION 03: TIPOGRAFIA -->
+<section class="section" id="tipografia">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-font"></i> Seccion 03</span>
+    <h2 class="section__title"><i class="fas fa-font"></i> Tipografia y Entidades HTML</h2>
+  </div>
+  <h3>Etiquetas de texto</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Proposito</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;h1&gt; a &lt;h6&gt;</code></td><td>Encabezados</td></tr>
+        <tr><td><code>&lt;p&gt;</code></td><td>Parrafo</td></tr>
+        <tr><td><code>&lt;strong&gt;</code></td><td>Importancia fuerte (negrita semántica)</td></tr>
+        <tr><td><code>&lt;em&gt;</code></td><td>Enfasis (cursiva semántica)</td></tr>
+        <tr><td><code>&lt;mark&gt;</code></td><td>Texto resaltado</td></tr>
+        <tr><td><code>&lt;small&gt;</code></td><td>Texto secundario</td></tr>
+        <tr><td><code>&lt;del&gt;</code></td><td>Texto eliminado</td></tr>
+        <tr><td><code>&lt;ins&gt;</code></td><td>Texto insertado</td></tr>
+        <tr><td><code>&lt;sub&gt;</code></td><td>Subindice</td></tr>
+        <tr><td><code>&lt;sup&gt;</code></td><td>Superindice</td></tr>
+        <tr><td><code>&lt;code&gt;</code></td><td>Codigo en linea</td></tr>
+        <tr><td><code>&lt;pre&gt;</code></td><td>Texto preformateado</td></tr>
+        <tr><td><code>&lt;blockquote&gt;</code></td><td>Cita en bloque</td></tr>
+        <tr><td><code>&lt;q&gt;</code></td><td>Cita en linea</td></tr>
+        <tr><td><code>&lt;abbr&gt;</code></td><td>Abreviatura</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Entidades HTML</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Codigo</th><th>Resultado</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>&amp;lt;</code></td><td>&lt;</td><td>Menor que</td></tr>
+        <tr><td><code>&amp;gt;</code></td><td>&gt;</td><td>Mayor que</td></tr>
+        <tr><td><code>&amp;amp;</code></td><td>&amp;</td><td>Ampersand</td></tr>
+        <tr><td><code>&amp;quot;</code></td><td>"</td><td>Comillas dobles</td></tr>
+        <tr><td><code>&amp;nbsp;</code></td><td>&nbsp;</td><td>Espacio no rompible</td></tr>
+        <tr><td><code>&amp;copy;</code></td><td>&copy;</td><td>Copyright</td></tr>
+        <tr><td><code>&amp;deg;</code></td><td>&deg;</td><td>Grado</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: Editor Tipografico</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Selecciona texto y pulsa un boton para formatearlo</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+      <button onclick="wrapTypo('strong')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><strong>B</strong> strong</button>
+      <button onclick="wrapTypo('em')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><em>I</em> em</button>
+      <button onclick="wrapTypo('mark')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem">M mark</button>
+      <button onclick="wrapTypo('del')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><del>D</del> del</button>
+      <button onclick="wrapTypo('code')" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem"><code>c</code> code</button>
+      <button onclick="clearTypo()" style="padding:6px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);cursor:pointer;font-size:.85rem">Limpiar</button>
+    </div>
+    <div id="typoEditor" contenteditable="true" style="min-height:60px;border:1px dashed var(--color-primary);border-radius:8px;padding:12px;font-size:.9rem;color:var(--text-primary);outline:none;line-height:1.8">Selecciona este texto y pulsa un boton para formatearlo</div>
+  </div>
+</section>

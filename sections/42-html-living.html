@@ -1,0 +1,52 @@
+<!-- SECCION 42: HTML LIVING STANDARD -->
+<section class="section" id="html-living">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-scroll"></i> Seccion 42</span>
+    <h2 class="section__title"><i class="fas fa-scroll"></i> HTML Living Standard</h2>
+    <p class="section__subtitle">Que cambio desde HTML4 y que esta deprecado</p>
+  </div>
+  <p>HTML ya no se versiona como "HTML5". Desde 2019, el estandar se llama <strong>HTML Living Standard</strong>, mantenido por WHATWG. Esto significa que se actualiza continuamente con nuevas caracteristicas.</p>
+
+  <h3>Etiquetas deprecadas (no usar)</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Que hacia</th><th>Reemplazo moderno</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;font&gt;</code></td><td>Cambiar color/tamaño de texto</td><td>CSS con <code>color</code>, <code>font-size</code></td></tr>
+        <tr><td><code>&lt;center&gt;</code></td><td>Centrar contenido</td><td>CSS con <code>text-align: center</code></td></tr>
+        <tr><td><code>&lt;marquee&gt;</code></td><td>Texto desplazante</td><td>CSS animation / JS</td></tr>
+        <tr><td><code>&lt;blink&gt;</code></td><td>Parpadeo de texto</td><td>CSS animation</td></tr>
+        <tr><td><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code></td><td>Frames multipagina</td><td><code>&lt;iframe&gt;</code></td></tr>
+        <tr><td><code>&lt;acronym&gt;</code></td><td>Abreviaturas</td><td><code>&lt;abbr&gt;</code></td></tr>
+        <tr><td><code>&lt;big&gt;</code></td><td>Texto grande</td><td>CSS <code>font-size</code></td></tr>
+        <tr><td><code>&lt;strike&gt;</code></td><td>Texto tachado</td><td><code>&lt;del&gt;</code> o CSS <code>text-decoration</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Nuevas capacidades del Living Standard</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>Estado</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;dialog&gt;</code></td><td>Soportado</td><td>Modales nativos sin JS</td></tr>
+        <tr><td><code>popover</code></td><td>Soportado 2024</td><td>Popovers nativos con <code>popovertarget</code></td></tr>
+        <tr><td><code>&lt;search&gt;</code></td><td>Soportado</td><td>Etiqueta semantica para formularios de busqueda</td></tr>
+        <tr><td><code>&lt;slot&gt;</code></td><td>Soportado</td><td>Inyeccion de contenido en Web Components</td></tr>
+        <tr><td><code>inert</code></td><td>Soportado</td><td>Hace un subtree no interactuable</td></tr>
+        <tr><td><code>delegatedFocus</code></td><td>En borrador</td><td>Gestion de foco delegada</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: Popover nativo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Popover nativo (HTML Living Standard)</div>
+    <button popovertarget="mi-popover" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-comment"></i> Abrir popover</button>
+    <div id="mi-popover" popover style="padding:16px 20px;border:1px solid var(--border-color);border-radius:10px;background:var(--bg-surface);color:var(--text-primary);box-shadow:0 8px 32px rgba(0,0,0,.15);max-width:300px">
+      <p style="font-weight:600;margin-bottom:4px">Popover nativo</p>
+      <p style="font-size:.9rem;color:var(--text-secondary)">Este popover usa el atributo <code>popover</code> nativo de HTML. No necesita JavaScript para abrir/cerrar.</p>
+    </div>
+  </div>
+</section>

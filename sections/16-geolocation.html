@@ -1,0 +1,33 @@
+<!-- SECCION 13: GEOLOCALIZACION -->
+<section class="section" id="geolocation">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-map-marker-alt"></i> Seccion 16</span>
+    <h2 class="section__title"><i class="fas fa-map-marker-alt"></i> API de Geolocalización</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">if</span> (<span class="string">'geolocation'</span> <span class="keyword">in</span> navigator) { <span class="comment">// Verifica si el navegador soporta geolocalización</span>
+  navigator.geolocation.<span class="function">getCurrentPosition</span>( <span class="comment">// Solicita la posición actual del usuario</span>
+    (position) =&gt; { <span class="comment">// Callback de exito con la posición</span>
+      <span class="keyword">const</span> { latitude, longitude } = position.coords; <span class="comment">// Extrae latitud y longitud</span>
+      console.<span class="function">log</span>(<span class="string">`Lat: ${latitude}, Lng: ${longitude}`</span>); <span class="comment">// Muestra las coordenadas</span>
+    },
+    (error) =&gt; { <span class="comment">// Callback de error si falla la geolocalización</span>
+      console.<span class="function">error</span>(<span class="string">'Error:'</span>, error.message); <span class="comment">// Muestra el mensaje de error</span>
+    },
+    { <span class="property">enableHighAccuracy</span>: <span class="keyword">true</span>, <span class="property">timeout</span>: <span class="number">10000</span> } <span class="comment">// Opciones: alta precision, timeout de 10s</span>
+  );
+}</code></pre>
+
+  <h3>Demo: Obtener Ubicacion Real</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Geolocalización en tiempo real</div>
+    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">El navegador pedira tu permiso. Solo se usa para esta demo.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button onclick="getGeoLocation()" id="geoBtn" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem"><i class="fas fa-location-crosshairs"></i> Obtener mis coordenadas</button>
+      <button onclick="clearGeo()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Limpiar</button>
+    </div>
+    <div id="geo-output" style="margin-top:12px;font-family:var(--font-code);font-size:.8rem;color:var(--color-success);background:var(--bg-code);padding:12px;border-radius:6px;white-space:pre;min-height:40px">// Haz clic para obtener tu ubicacion</div>
+    <a id="geoMapsLink" href="#" target="_blank" rel="noopener" style="display:none;margin-top:12px;color:var(--color-primary);font-size:.85rem;font-weight:600">Ver en Google Maps</a>
+  </div>
+</section>

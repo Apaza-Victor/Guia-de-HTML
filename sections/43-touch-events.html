@@ -1,0 +1,61 @@
+<!-- SECCION 43: POINTER EVENTS Y TOUCH -->
+<section class="section" id="touch-events">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-hand-pointer"></i> Seccion 43</span>
+    <h2 class="section__title"><i class="fas fa-hand-pointer"></i> Pointer Events y Touch</h2>
+    <p class="section__subtitle">Maneja interacciones tactiles, mouse y stylus</p>
+  </div>
+  <p>Los <strong>Pointer Events</strong> son la API moderna que unifica mouse, tactil, stylus e incluso láser en una sola interfaz. Reemplazan a los Touch Events que solo funcionan en dispositivos móviles.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Pointer Events: funciona con mouse, tactil y stylus</span>
+<span class="keyword">const</span> elem = document.<span class="function">querySelector</span>(<span class="string">'#zona'</span>);
+
+elem.<span class="function">addEventListener</span>(<span class="string">'pointerdown'</span>, (e) =&gt; {
+  console.<span class="function">log</span>(<span class="string">'Tipo de input:'</span>, e.pointerType); <span class="comment">// 'mouse', 'touch', 'pen'</span>
+  console.<span class="function">log</span>(<span class="string">'Posicion:'</span>, e.clientX, e.clientY);
+  elem.<span class="function">setPointerCapture</span>(e.pointerId); <span class="comment">// Captura el pointer</span>
+});
+
+elem.<span class="function">addEventListener</span>(<span class="string">'pointermove'</span>, (e) =&gt; {
+  <span class="keyword">if</span> (e.buttons === <span class="number">0</span>) <span class="keyword">return</span>; <span class="comment">// Solo procesar si hay boton presionado</span>
+  elem.style.transform = <span class="string">`translate(${e.offsetX}px, ${e.offsetY}px)`</span>;
+});
+
+elem.<span class="function">addEventListener</span>(<span class="string">'pointerup'</span>, (e) =&gt; {
+  elem.<span class="function">releasePointerCapture</span>(e.pointerId);
+});
+
+<span class="comment">// Eventos tactiles especificos (solo si necesitas gestos)</span>
+elem.<span class="function">addEventListener</span>(<span class="string">'touchstart'</span>, (e) =&gt; {
+  e.<span class="function">preventDefault</span>(); <span class="comment">// Prevenir scroll mientras interactuas</span>
+  <span class="keyword">const</span> touch = e.touches[<span class="number">0</span>];
+  console.<span class="function">log</span>(<span class="string">'Toque en:'</span>, touch.clientX, touch.clientY);
+}, { passive: <span class="keyword">false</span> });</code></pre>
+
+  <h3>Eventos de Pointer</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Evento</th><th>Cuando se dispara</th></tr></thead>
+      <tbody>
+        <tr><td><code>pointerdown</code></td><td>Boton presionado sobre el elemento</td></tr>
+        <tr><td><code>pointerup</code></td><td>Boton liberado</td></tr>
+        <tr><td><code>pointermove</code></td><td>Movimiento del puntero sobre el elemento</td></tr>
+        <tr><td><code>pointerover</code></td><td>Puntero entra en el elemento</td></tr>
+        <tr><td><code>pointerout</code></td><td>Puntero sale del elemento</td></tr>
+        <tr><td><code>pointerenter</code></td><td>Puntero entra (no burbujea)</td></tr>
+        <tr><td><code>pointerleave</code></td><td>Puntero sale (no burbujea)</td></tr>
+        <tr><td><code>pointercancel</code></td><td>El navegador cancela el tracking</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Pointer Events vs Touch Events</div>
+      <p class="callout__text"><code>Pointer Events</code> es la API recomendada. Unifica mouse, tactil y stylus. <code>Touch Events</code> es antigua y solo funciona en pantallas tactiles. Usa <code>{ passive: true }</code> para mejorar rendimiento si no necesitas <code>preventDefault</code>.</p>
+    </div>
+  </div>
+</section>

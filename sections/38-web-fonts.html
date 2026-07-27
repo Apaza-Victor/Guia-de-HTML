@@ -1,0 +1,54 @@
+<!-- SECCION 38: WEB FONTS -->
+<section class="section" id="web-fonts">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-font"></i> Seccion 38</span>
+    <h2 class="section__title"><i class="fas fa-font"></i> Web Fonts</h2>
+    <p class="section__subtitle">Carga fuentes personalizadas de forma optimizada</p>
+  </div>
+  <p>Las fuentes web permiten usar tipografias personalizadas en tus paginas. HTML5 ofrece varias formas de cargarlas de forma optimizada para no afectar el rendimiento.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Metodo 1: Google Fonts con preload (recomendado) --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://fonts.gstatic.com"</span> <span class="attr">crossorigin</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">as</span>=<span class="string">"style"</span>
+  <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>
+  <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Metodo 2: @font-face (fuentes propias) --&gt;</span>
+<span class="tag">&lt;style&gt;</span>
+  <span class="tag">@font-face</span> {
+    <span class="attr">font-family</span>: <span class="string">'MiFuente'</span>;
+    <span class="attr">src</span>: <span class="function">url</span>(<span class="string">'/fonts/mifuente.woff2'</span>) <span class="keyword">format</span>(<span class="string">'woff2'</span>),
+         <span class="function">url</span>(<span class="string">'/fonts/mifuente.woff'</span>) <span class="keyword">format</span>(<span class="string">'woff'</span>);
+    <span class="attr">font-weight</span>: <span class="number">400 700</span>;
+    <span class="attr">font-style</span>: normal;
+    <span class="attr">font-display</span>: swap; <span class="comment">&lt;!-- Muestra fallback hasta cargar --&gt;</span>
+    <span class="attr">unicode-range</span>: U+0000-00FF; <span class="comment">&lt;!-- Solo carga los caracteres que necesitas --&gt;</span>
+  }
+<span class="tag">&lt;/style&gt;</span></code></pre>
+
+  <h3>Valores de font-display</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Valor</th><th>Comportamiento</th><th>Uso recomendado</th></tr></thead>
+      <tbody>
+        <tr><td><code>auto</code></td><td>Decision del navegador</td><td>Cuando no hay preferencia</td></tr>
+        <tr><td><code>swap</code></td><td>Muestra fallback inmediatamente, cambia cuando carga</td><td>Texto importante (recomendado)</td></tr>
+        <tr><td><code>fallback</code></td><td> Espera ~100ms, luego fallback, reintenta corto</td><td>Fuentes secundarias</td></tr>
+        <tr><td><code>optional</code></td><td>Espera carga inicial, si no esta listo usa fallback</td><td>Experiencia optima de carga</td></tr>
+        <tr><td><code>block</code></td><td>Oculta texto hasta que la fuente cargue (~3s)</td><td>Solo branding/logo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-tachometer-alt"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Rendimiento de fuentes</div>
+      <p class="callout__text">Cada fuente extra agrega una peticion de red. Limita a 2-3 fuentes maximas. Usa <code>font-display: swap</code> para evitar el FOIT (Flash of Invisible Text) y <code>preconnect</code> para DNS prefetch.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+<!-- SECCION 23: WEB COMPONENTS -->
+<section class="section" id="web-components">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-cubes"></i> Seccion 34</span>
+    <h2 class="section__title"><i class="fas fa-cubes"></i> Template y Web Components</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">class</span> <span class="function">MiBoton</span> <span class="keyword">extends</span> HTMLElement { <span class="comment">// Define un Web Component heredando de HTMLElement</span>
+  <span class="function">constructor</span>() {
+    <span class="keyword">super</span>(); <span class="comment">// Llama al constructor del elemento padre</span>
+    <span class="keyword">const</span> shadow = <span class="keyword">this</span>.<span class="function">attachShadow</span>({ <span class="property">mode</span>: <span class="string">'open'</span> }); <span class="comment">// Crea un Shadow DOM encapsulado</span>
+    shadow.innerHTML = <span class="string">`
+      &lt;style&gt;
+        button { padding: 8px 16px; background: #6366f1;
+                 color: white; border: none; border-radius: 6px; cursor: pointer; }
+        button:hover { background: #4f46e5; }
+      &lt;/style&gt;
+      &lt;button&gt;&lt;slot&gt;Click&lt;/slot&gt;&lt;/button&gt;
+    `</span>; <span class="comment">// Estilos y HTML encapsulados dentro del Shadow DOM</span>
+  }
+}
+customElements.<span class="function">define</span>(<span class="string">'mi-boton'</span>, MiBoton); <span class="comment">// Registra el custom element en el navegador</span></code></pre>
+  <p>Uso: <code>&lt;mi-boton&gt;Mi Texto&lt;/mi-boton&gt;</code></p>
+
+  <h3>Demo: Web Component en Vivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Custom Element con Shadow DOM</div>
+    <mi-boton>Click me!</mi-boton>
+    <mi-boton style="--btn-color:#10b981">Verde</mi-boton>
+    <mi-boton style="--btn-color:#f59e0b">Amarillo</mi-boton>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+<!-- SECCION 01: ESTRUCTURA BASICA -->
+<section class="section" id="estructura-basica">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-sitemap"></i> Seccion 01</span>
+    <h2 class="section__title"><i class="fas fa-sitemap"></i> Estructura Basica de HTML</h2>
+  </div>
+  <p>Toda página HTML sigue una estructura básica que incluye una declaración de tipo de documento, la raiz del documento, la seccion de encabezado y el cuerpo con el contenido visible.</p>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span> <span class="comment">&lt;!-- Declara que el documento es HTML5 --&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"es"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Raiz del documento, lang define el idioma --&gt;</span>
+<span class="tag">&lt;head&gt;</span> <span class="comment">&lt;!-- Contiene metadatos, no se muestra en la página --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Codificacion de caracteres (acentos, eñes) --&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Responsivo en movil --&gt;</span>
+  <span class="tag">&lt;title&gt;</span>Mi primera página<span class="tag">&lt;/title&gt;</span> <span class="comment">&lt;!-- Titulo que aparece en la pestana del navegador --&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span> <span class="comment">&lt;!-- Todo el contenido visible va aqui --&gt;</span>
+  <span class="tag">&lt;h1&gt;</span>Hola, mundo<span class="tag">&lt;/h1&gt;</span> <span class="comment">&lt;!-- Titulo principal (solo uno por página) --&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Mi primera página web<span class="tag">&lt;/p&gt;</span> <span class="comment">&lt;!-- Parrafo de texto --&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></code></pre>
+
+  <h3>Explicacion de cada parte</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Etiqueta</th><th>Descripcion</th><th>Obligatoria</th></tr></thead>
+      <tbody>
+        <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Declara el tipo de documento (HTML5)</td><td>Si</td></tr>
+        <tr><td><code>&lt;html lang="es"&gt;</code></td><td>Raiz del documento con idioma</td><td>Si</td></tr>
+        <tr><td><code>&lt;head&gt;</code></td><td>Metadatos, titulos, enlaces a CSS</td><td>Si</td></tr>
+        <tr><td><code>&lt;meta charset&gt;</code></td><td>Codificacion de caracteres</td><td>Si</td></tr>
+        <tr><td><code>&lt;meta viewport&gt;</code></td><td>Escalado en dispositivos moviles</td><td>Recomendado</td></tr>
+        <tr><td><code>&lt;title&gt;</code></td><td>Titulo de la página (pestana)</td><td>Si</td></tr>
+        <tr><td><code>&lt;body&gt;</code></td><td>Todo el contenido visible</td><td>Si</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Atributos en HTML</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Atributo de valor --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href</span>=<span class="string">"https://ejemplo.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span><span class="tag">&gt;</span>Enlace<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Atributo booleano --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">disabled</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Datos personalizados --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">data-user-id</span>=<span class="string">"12345"</span> <span class="attr">data-role</span>=<span class="string">"admin"</span><span class="tag">&gt;</span>Usuario<span class="tag">&lt;/div&gt;</span></code></pre>
+</section>

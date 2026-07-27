@@ -1,0 +1,34 @@
+<!-- SECCION 22: INTERSECTION OBSERVER -->
+<section class="section" id="intersection-observer">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-eye"></i> Seccion 33</span>
+    <h2 class="section__title"><i class="fas fa-eye"></i> Intersection Observer</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="function">IntersectionObserver</span>((entries) =&gt; { <span class="comment">// Crea un observador de interseccion</span>
+  entries.<span class="function">forEach</span>(entry =&gt; { <span class="comment">// Recorre cada elemento observado</span>
+    <span class="keyword">if</span> (entry.isIntersecting) { <span class="comment">// Verifica si el elemento es visible</span>
+      entry.target.classList.<span class="function">add</span>(<span class="string">'visible'</span>); <span class="comment">// Agrega la clase visible al elemento</span>
+      observer.<span class="function">unobserve</span>(entry.target); <span class="comment">// Deja de observar ese elemento</span>
+    }
+  });
+}, { <span class="property">threshold</span>: <span class="number">0.1</span>, <span class="property">rootMargin</span>: <span class="string">'0px 0px -50px 0px'</span> }); <span class="comment">// 10% visible, margen inferior negativo</span>
+
+document.<span class="function">querySelectorAll</span>(<span class="string">'.animate-on-scroll'</span>).<span class="function">forEach</span>(el =&gt; {
+  observer.<span class="function">observe</span>(el); <span class="comment">// Observa cada elemento con la clase animate-on-scroll</span>
+});</code></pre>
+
+  <h3>Demo: Scroll Detection</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Desplazate dentro del recuadro</div>
+    <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:12px">Cada tarjeta se ilumina cuando entra en el viewport.</p>
+    <div id="scrollDemoContainer" style="height:200px;overflow-y:auto;border:1px solid var(--border-color);border-radius:8px;padding:12px">
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 1 - HTML5</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 2 - CSS3</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 3 - JavaScript</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 4 - Canvas</div>
+      <div class="scroll-demo-item" style="padding:16px;margin-bottom:12px;background:var(--bg-surface);border:2px solid var(--border-color);border-radius:8px;transition:all .3s;text-align:center;font-weight:600">Elemento 5 - Web APIs</div>
+    </div>
+  </div>
+</section>

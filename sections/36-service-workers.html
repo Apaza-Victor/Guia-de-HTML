@@ -1,0 +1,69 @@
+<!-- SECCION 36: SERVICE WORKERS Y CACHE API -->
+<section class="section" id="service-workers">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-cogs"></i> Seccion 36</span>
+    <h2 class="section__title"><i class="fas fa-cogs"></i> Service Workers y Cache API</h2>
+    <p class="section__subtitle">Controla el trafico de red y habilita modo offline</p>
+  </div>
+  <p>Un Service Worker es un script que el navegador ejecuta en segundo plano, separado de la pagina web. Intercepta las peticiones de red y puede cachear, filtrar o modificar respuestas, habilitando experiencias offline.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Registrar Service Worker (en tu pagina principal)</span>
+<span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) {
+  navigator.serviceWorker.<span class="function">register</span>(<span class="string">'/sw.js'</span>)
+    .<span class="function">then</span>(reg =&gt; console.<span class="function">log</span>(<span class="string">'SW registrado:'</span>, reg.scope))
+    .<span class="function">catch</span>(err =&gt; console.<span class="function">error</span>(<span class="string">'Error SW:'</span>, err));
+}
+
+<span class="comment">// sw.js - Archivo del Service Worker</span>
+<span class="keyword">const</span> CACHE_NAME = <span class="string">'guia-html5-v1'</span>;
+<span class="keyword">const</span> urlsToCache = [<span class="string">'/'</span>, <span class="string">'/css/styles.css'</span>, <span class="string">'/js/app.js'</span>];
+
+<span class="comment">// Instalar: cachea archivos estaticos</span>
+self.<span class="function">addEventListener</span>(<span class="string">'install'</span>, (event) =&gt; {
+  event.<span class="function">waitUntil</span>(
+    caches.<span class="function">open</span>(CACHE_NAME).<span class="function">then</span>((cache) =&gt; cache.<span class="function">addAll</span>(urlsToCache))
+  );
+});
+
+<span class="comment">// Activar: limpia caches antiguos</span>
+self.<span class="function">addEventListener</span>(<span class="string">'activate'</span>, (event) =&gt; {
+  event.<span class="function">waitUntil</span>(
+    caches.<span class="function">keys</span>().<span class="function">then</span>((keys) =&gt;
+      Promise.<span class="function">all</span>(keys.<span class="function">filter</span>(k =&gt; k !== CACHE_NAME).<span class="function">map</span>(k =&gt; caches.<span class="function">delete</span>(k)))
+    )
+  );
+});
+
+<span class="comment">// Fetch: estrategia cache-first o network-first</span>
+self.<span class="function">addEventListener</span>(<span class="string">'fetch'</span>, (event) =&gt; {
+  event.<span class="function">respondWith</span>(
+    caches.<span class="function">match</span>(event.request).<span class="function">then</span>((cached) =&gt; {
+      <span class="keyword">return</span> cached || <span class="function">fetch</span>(event.request);
+    })
+  );
+});</code></pre>
+
+  <h3>Estrategias de Cache</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Estrategia</th><th>Comportamiento</th><th>Uso ideal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cache First</strong></td><td>Busca en cache, luego red</td><td>Assets estaticos (CSS, JS, imagenes)</td></tr>
+        <tr><td><strong>Network First</strong></td><td>Busca en red, luego cache</td><td>Contenido dinamico (APIs, noticias)</td></tr>
+        <tr><td><strong>Stale While Revalidate</strong></td><td>Muestra cache, actualiza en background</td><td>Contenido que puede estar ligeramente desactualizado</td></tr>
+        <tr><td><strong>Network Only</strong></td><td>Solo red, sin cache</td><td>Datos criticos que nunca deben estar obsoletos</td></tr>
+        <tr><td><strong>Cache Only</strong></td><td>Solo cache, sin red</td><td>Experiencia 100% offline</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Contexto seguro requerido</div>
+      <p class="callout__text">Los Service Workers solo funcionan en contextos seguros (HTTPS) o en localhost durante desarrollo.</p>
+    </div>
+  </div>
+</section>

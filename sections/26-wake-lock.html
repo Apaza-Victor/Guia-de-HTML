@@ -1,0 +1,54 @@
+<!-- SECCION 26: SCREEN WAKE LOCK API -->
+<section class="section" id="wake-lock">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-mobile-alt"></i> Seccion 26</span>
+    <h2 class="section__title"><i class="fas fa-mobile-alt"></i> Screen Wake Lock API</h2>
+    <p class="section__subtitle">Evita que la pantalla se apague</p>
+  </div>
+  <p>La Screen Wake Lock API mantiene la pantalla encendida mientras el usuario esta interactuando con tu app, ideal para recetas, lectura, videollamadas o presentaciones.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">let</span> wakeLock = <span class="keyword">null</span>;
+
+<span class="comment">// Activar wake lock</span>
+<span class="keyword">async function</span> <span class="function">activarWakeLock</span>() {
+  <span class="keyword">if</span> (<span class="string">'wakeLock'</span> <span class="keyword">in</span> navigator) {
+    <span class="keyword">try</span> {
+      wakeLock = <span class="keyword">await</span> navigator.wakeLock.<span class="function">request</span>(<span class="string">'screen'</span>);
+      console.<span class="function">log</span>(<span class="string">'Wake Lock activado'</span>);
+
+      <span class="comment">// Se libera automaticamente al cambiar de pestana</span>
+      wakeLock.<span class="function">addEventListener</span>(<span class="string">'release'</span>, () =&gt; {
+        console.<span class="function">log</span>(<span class="string">'Wake Lock liberado'</span>);
+      });
+    } <span class="keyword">catch</span> (err) {
+      console.<span class="function">error</span>(<span class="string">'Error:'</span>, err.message);
+    }
+  }
+}
+
+<span class="comment">// Liberar manualmente</span>
+<span class="keyword">function</span> <span class="function">liberarWakeLock</span>() {
+  <span class="keyword">if</span> (wakeLock) {
+    wakeLock.<span class="function">release</span>();
+    wakeLock = <span class="keyword">null</span>;
+  }
+}
+
+<span class="comment">// Reactivar al volver a la pestana</span>
+document.<span class="function">addEventListener</span>(<span class="string">'visibilitychange'</span>, <span class="keyword">async</span> () =&gt; {
+  <span class="keyword">if</span> (document.visibilityState === <span class="string">'visible'</span>) {
+    <span class="keyword">await</span> <span class="function">activarWakeLock</span>();
+  }
+});</code></pre>
+
+  <h3>Demo: Wake Lock</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Screen Wake Lock API</div>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <button id="wakeBtn" onclick="demoWakeLock()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-mobile-alt"></i> Activar Wake Lock</button>
+      <span id="wakeStatus" style="font-size:.85rem;color:var(--text-muted)">Estado: inactivo</span>
+    </div>
+  </div>
+</section>

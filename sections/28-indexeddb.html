@@ -1,0 +1,49 @@
+<!-- SECCION 28: INDEXEDDB -->
+<section class="section" id="indexeddb">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-database"></i> Seccion 28</span>
+    <h2 class="section__title"><i class="fas fa-database"></i> IndexedDB</h2>
+    <p class="section__subtitle">Base de datos del navegador para almacenamiento pesado</p>
+  </div>
+  <p>IndexedDB es una base de datos completa en el navegador que permite almacenar grandes cantidades de datos estructurados, archivos y objetos. A diferencia de localStorage (5MB, strings), IndexedDB almacena objetos JavaScript y puede guardar megabytes o gigabytes de datos.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Abrir o crear una base de datos</span>
+<span class="keyword">const</span> request = indexedDB.<span class="function">open</span>(<span class="string">'MiBaseDatos'</span>, <span class="number">1</span>);
+
+request.<span class="function">onupgradeneeded</span> = (event) =&gt; {
+  <span class="keyword">const</span> db = event.target.result;
+  <span class="comment">// Crear un almacén de objetos (como una tabla)</span>
+  <span class="keyword">const</span> store = db.<span class="function">createObjectStore</span>(<span class="string">'productos'</span>, { keyPath: <span class="string">'id'</span>, autoIncrement: <span class="keyword">true</span> });
+  store.<span class="function">createIndex</span>(<span class="string">'nombre'</span>, <span class="string">'nombre'</span>, { unique: <span class="keyword">false</span> });
+};
+
+request.<span class="function">onsuccess</span> = (event) =&gt; {
+  <span class="keyword">const</span> db = event.target.result;
+
+  <span class="comment">// Agregar datos</span>
+  <span class="keyword">const</span> tx = db.<span class="function">transaction</span>(<span class="string">'productos'</span>, <span class="string">'readwrite'</span>);
+  <span class="keyword">const</span> store = tx.<span class="function">objectStore</span>(<span class="string">'productos'</span>);
+  store.<span class="function">add</span>({ nombre: <span class="string">'Laptop'</span>, precio: <span class="number">999</span> });
+
+  <span class="comment">// Leer datos</span>
+  <span class="keyword">const</span> getReq = store.<span class="function">get</span>(<span class="number">1</span>);
+  getReq.onsuccess = () =&gt; console.<span class="function">log</span>(getReq.result);
+};</code></pre>
+
+  <h3>Comparacion de Almacenamiento</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>localStorage</th><th>IndexedDB</th></tr></thead>
+      <tbody>
+        <tr><td>Capacidad</td><td>~5-10 MB</td><td>~50% del disco (varia)</td></tr>
+        <tr><td>Tipo de datos</td><td>Solo strings</td><td>Objetos JavaScript, blobs, archivos</td></tr>
+        <tr><td>API</td><td>Sincrona</td><td>Asincrona (basada en eventos)</td></tr>
+        <tr><td>Busquedas</td><td>Solo por key</td><td>Por key, index, rango</td></tr>
+        <tr><td>Transacciones</td><td>No</td><td>Si (ACID)</td></tr>
+        <tr><td>Uso ideal</td><td>Preferencias simples</td><td>Cache, datos offline, apps pesadas</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>

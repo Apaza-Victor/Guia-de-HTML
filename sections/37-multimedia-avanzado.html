@@ -1,0 +1,72 @@
+<!-- SECCION 37: MULTIMEDIA AVANZADO -->
+<section class="section" id="multimedia-avanzado">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-closed-captioning"></i> Seccion 37</span>
+    <h2 class="section__title"><i class="fas fa-closed-captioning"></i> Multimedia Avanzado</h2>
+    <p class="section__subtitle">Subtitulos WebVTT, poster y atributos de video modernos</p>
+  </div>
+  <p>HTML5 soporta subtitulos y pistas de texto con <code>&lt;track&gt;</code>, control avanzado de video con atributos modernos, y formatos adaptables con <code>&lt;source&gt;</code>.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Video con subtitulos, poster y multiples formatos --&gt;</span>
+<span class="tag">&lt;video</span>
+  <span class="attr">controls</span>
+  <span class="attr">preload</span>=<span class="string">"metadata"</span>
+  <span class="attr">poster</span>=<span class="string">"miniatura.jpg"</span>
+  <span class="attr">width</span>=<span class="string">"720"</span>
+  <span class="attr">playsinline</span>
+  <span class="attr">muted</span>
+<span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Multiples formatos para compatibilidad --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span>
+
+  <span class="comment">&lt;!-- Subtitulos en espanol --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitulos-es.vtt"</span>
+    <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Espanol"</span> <span class="attr">default</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Subtitulos en ingles --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subtitulos-en.vtt"</span>
+    <span class="attr">srclang</span>=<span class="string">"en"</span> <span class="attr">label</span>=<span class="string">"English"</span><span class="tag">&gt;</span>
+  <span class="comment">&lt;!-- Descripciones de audio (accesibilidad) --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"descriptions"</span> <span class="attr">src</span>=<span class="string">"desc-es.vtt"</span>
+    <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Descripcion ES"</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;p&gt;</span>Tu navegador no soporta video HTML5.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="comment">&lt;!-- Formato WebVTT basico --&gt;</span>
+<span class="comment">&lt;!-- archivo.vtt --&gt;</span>
+<span class="comment">&lt;!-- 1 --&gt;</span>
+<span class="comment">&lt;!-- 00:00:01.000 --> 00:00:04.000 --&gt;</span>
+<span class="comment">&lt;!-- Hola, esto es un subtitulo --&gt;</span></code></pre>
+
+  <h3>Atributos Avanzados de Video</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Atributo</th><th>Descripcion</th><th>Valores</th></tr></thead>
+      <tbody>
+        <tr><td><code>poster</code></td><td>Imagen mostrada antes de reproducir</td><td>URL de imagen</td></tr>
+        <tr><td><code>preload</code></td><td>Carga anticipada del video</td><td><code>none</code>, <code>metadata</code>, <code>auto</code></td></tr>
+        <tr><td><code>playsinline</code></td><td>Reproducir dentro de la pagina (iOS)</td><td>Atributo booleano</td></tr>
+        <tr><td><code>muted</code></td><td>Silenciado por defecto (necesario para autoplay)</td><td>Atributo booleano</td></tr>
+        <tr><td><code>loop</code></td><td>Repetir automaticamente</td><td>Atributo booleano</td></tr>
+        <tr><td><code>autoplay</code></td><td>Reproducir al cargar (requiere muted)</td><td>Atributo booleano</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Valores de kind en track</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>kind</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>subtitles</code></td><td>Texto traducido (requiere audio)</td></tr>
+        <tr><td><code>captions</code></td><td>Texto para sordos (incluye efectos de sonido)</td></tr>
+        <tr><td><code>descriptions</code></td><td>Descripcion de audio para ciegos</td></tr>
+        <tr><td><code>chapters</code></td><td>Capitulos de navegacion</td></tr>
+        <tr><td><code>metadata</code></td><td>Info para el navegador (no se muestra)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>

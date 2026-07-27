@@ -1,0 +1,48 @@
+<!-- SECCION 19: ACCESIBILIDAD -->
+<section class="section" id="accesibilidad">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-universal-access"></i> Seccion 30</span>
+    <h2 class="section__title"><i class="fas fa-universal-access"></i> Accesibilidad y ARIA</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- aria-label --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">aria-label</span>=<span class="string">"Cerrar menu"</span><span class="tag">&gt;</span>&amp;times;<span class="tag">&lt;/button&gt;</span> <span class="comment">&lt;!-- Label accesible para lectores de pantalla --&gt;</span>
+
+<span class="comment">&lt;!-- aria-labelledby --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">aria-labelledby</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Vincula el div a un titulo existente --&gt;</span>
+  <span class="tag">&lt;h2</span> <span class="attr">id</span>=<span class="string">"titulo"</span><span class="tag">&gt;</span>Seccion<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;/div&gt;</span> <span class="comment">&lt;!-- Fin del div con aria-labelledby --&gt;</span>
+
+<span class="comment">&lt;!-- aria-live --&gt;</span>
+<spanspan class="tag">&lt;div</span> <span class="attr">aria-live</span>=<span class="string">"polite"</span><span class="tag">&gt;</span>Contenido dinamico<span class="tag">&lt;/div&gt;</span> <span class="comment">&lt;!-- Anuncia cambios a lectores de pantalla --&gt;</span>
+
+<span class="comment">&lt;!-- tabindex --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">tabindex</span>=<span class="string">"0"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Permite navegación por teclado con Tab --&gt;</span></code></pre>
+
+  <h3>Demo: ARIA en Vivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Navegacion con teclado y ARIA</div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">Boton con aria-label descriptivo:</p>
+        <button onclick="alert('Foco y ARIA funcionando!')" aria-label="Reproducir video: Introduccion a HTML5, duracion 2:35 minutos" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer"><i class="fas fa-play-circle"></i> Reproducir video</button>
+      </div>
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">Panel expandible con aria-expanded:</p>
+        <button id="ariaExpandBtn" aria-expanded="false" aria-controls="ariaPanel" onclick="toggleAriaPanel()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer">Descripcion de ARIA</button>
+        <div id="ariaPanel" hidden style="margin-top:8px;padding:12px;background:var(--bg-surface-hover);border-radius:8px;font-size:.9rem;color:var(--text-secondary)">ARIA es un conjunto de atributos que añadan semántica accesible al HTML cuando los elementos nativos no son suficientes. Permite a los lectores de pantalla comunicar el estado e interactividad de la interfaz.</div>
+      </div>
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">Zona aria-live (anuncia cambios automaticamente):</p>
+        <div aria-live="polite" aria-atomic="true" id="ariaLiveZone" style="min-height:36px;padding:8px 12px;background:var(--bg-surface-hover);border-radius:8px;font-size:.9rem;color:var(--text-secondary);border:1px dashed var(--border-color)">El lector de pantalla anunciara los cambios aqui</div>
+        <button onclick="triggerLiveRegion()" style="margin-top:8px;padding:6px 14px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-size:.85rem">Activar demo aria-live</button>
+      </div>
+      <div>
+        <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:6px">role="alert" (anuncio inmediato):</p>
+        <button onclick="triggerAlertDemo()" style="padding:8px 16px;border:none;border-radius:6px;background:#ef4444;color:white;cursor:pointer">Probar role="alert"</button>
+        <div role="alert" id="ariaAlertZone" aria-live="assertive" style="margin-top:8px;min-height:20px;font-size:.9rem;color:var(--color-danger);font-weight:600"></div>
+      </div>
+    </div>
+  </div>
+</section>

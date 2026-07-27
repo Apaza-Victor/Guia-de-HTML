@@ -1,0 +1,46 @@
+<!-- SECCION 05: MULTIMEDIA -->
+<section class="section" id="multimedia">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-photo-video"></i> Seccion 05</span>
+    <h2 class="section__title"><i class="fas fa-photo-video"></i> Multimedia</h2>
+  </div>
+  <h3>Imagenes</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Imagen básica: src=ruta, alt=texto alternativo, dimensiones --&gt;</span>
+
+<span class="comment">&lt;!-- Imagen responsiva con multiples resoluciónes --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span>
+     <span class="attr">srcset</span>=<span class="string">"foto-480.jpg 480w, foto-800.jpg 800w, foto-1200.jpg 1200w"</span> <span class="comment">&lt;!-- Opciones de imagen por ancho --&gt;</span>
+     <span class="attr">sizes</span>=<span class="string">"(max-width: 600px) 480px, (max-width: 1000px) 800px, 1200px"</span> <span class="comment">&lt;!-- Tamano segun viewport --&gt;</span>
+     <span class="attr">loading</span>=<span class="string">"lazy"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Carga diferida (mejora rendimiento) --&gt;</span></code></pre>
+
+  <h3>Picture para imagenes adaptables</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;picture&gt;</span> <span class="comment">&lt;!-- Contenedor para imagenes adaptables por formato --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.webp"</span> <span class="attr">type</span>=<span class="string">"image/webp"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Preferido: formato WebP (mas ligero) --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">srcset</span>=<span class="string">"imagen.jpg"</span> <span class="attr">type</span>=<span class="string">"image/jpeg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Fallback: formato JPEG --&gt;</span>
+  <span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"imagen.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Imagen por defecto si no soporta picture --&gt;</span>
+<span class="tag">&lt;/picture&gt;</span></code></pre>
+
+  <h3>Video</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;video</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">controls</span> <span class="attr">width</span>=<span class="string">"640"</span> <span class="attr">height</span>=<span class="string">"360"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Video con controles del navegador --&gt;</span>
+  <span class="tag">&lt;track</span> <span class="attr">kind</span>=<span class="string">"subtitles"</span> <span class="attr">src</span>=<span class="string">"subs.vtt"</span> <span class="attr">srclang</span>=<span class="string">"es"</span> <span class="attr">label</span>=<span class="string">"Espanol"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Subtitulos en espanol --&gt;</span>
+  Tu navegador no soporta video HTML5. <span class="comment">&lt;!-- Mensaje de fallback --&gt;</span>
+<span class="tag">&lt;/video&gt;</span>
+
+<span class="comment">&lt;!-- Video con multiples fuentes y autoplay --&gt;</span>
+<span class="tag">&lt;video</span> <span class="attr">autoplay</span> <span class="attr">muted</span> <span class="attr">loop</span> <span class="attr">playsinline</span> <span class="attr">poster</span>=<span class="string">"poster.jpg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- autoplay=reproducir, muted=sin sonido (requerido), loop=bucle, playsinline=en linea --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formato preferido: WebM --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"video.mp4"</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Fallback: MP4 --&gt;</span>
+<span class="tag">&lt;/video&gt;</span></code></pre>
+
+  <h3>Audio</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Reproductor de audio con controles --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formato MP3 (mayor compatibilidad) --&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="string">"audio.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Formato OGG (alternativa libre) --&gt;</span>
+  Tu navegador no soporta audio HTML5. <span class="comment">&lt;!-- Mensaje de fallback --&gt;</span>
+<span class="tag">&lt;/audio&gt;</span></code></pre>
+</section>

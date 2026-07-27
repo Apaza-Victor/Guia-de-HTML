@@ -1,0 +1,49 @@
+<!-- SECCION 25: FULLSCREEN API -->
+<section class="section" id="fullscreen-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-expand-arrows-alt"></i> Seccion 25</span>
+    <h2 class="section__title"><i class="fas fa-expand-arrows-alt"></i> Fullscreen API</h2>
+    <p class="section__subtitle">Pantalla completa para cualquier elemento</p>
+  </div>
+  <p>La Fullscreen API permite expandir cualquier elemento HTML a pantalla completa, util para videos, juegos, presentaciones y visualizaciones inmersivas.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Activar pantalla completa en un elemento</span>
+<span class="keyword">function</span> <span class="function">pantallaCompleta</span>(elemento) {
+  <span class="keyword">if</span> (elemento.requestFullscreen) {
+    elemento.<span class="function">requestFullscreen</span>();
+  } <span class="keyword">else if</span> (elemento.webkitRequestFullscreen) {
+    elemento.<span class="function">webkitRequestFullscreen</span>(); <span class="comment">// Safari</span>
+  }
+}
+
+<span class="comment">// Salir de pantalla completa</span>
+<span class="keyword">function</span> <span class="function">salirPantallaCompleta</span>() {
+  <span class="keyword">if</span> (document.exitFullscreen) {
+    document.<span class="function">exitFullscreen</span>();
+  }
+}
+
+<span class="comment">// Detectar cambios de estado</span>
+document.<span class="function">addEventListener</span>(<span class="string">'fullscreenchange'</span>, () =&gt; {
+  <span class="keyword">if</span> (document.fullscreenElement) {
+    console.<span class="function">log</span>(<span class="string">'En pantalla completa'</span>);
+  } <span class="keyword">else</span> {
+    console.<span class="function">log</span>(<span class="string">'Salio de pantalla completa'</span>);
+  }
+});
+
+<span class="comment">// Verificar si esta en pantalla completa</span>
+<span class="keyword">const</span> enFullscreen = !!document.fullscreenElement;</code></pre>
+
+  <h3>Demo: Pantalla Completa</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Fullscreen API</div>
+    <div id="fullscreenBox" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;padding:40px;border-radius:12px;text-align:center">
+      <p style="font-size:1.2rem;font-weight:700;margin-bottom:4px">Contenido para pantalla completa</p>
+      <p style="opacity:.8;font-size:.9rem">Haz clic en el boton para expandir este elemento</p>
+    </div>
+    <button onclick="demoFullscreen()" style="margin-top:12px;padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-expand"></i> Activar pantalla completa</button>
+  </div>
+</section>

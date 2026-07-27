@@ -1,0 +1,58 @@
+<!-- SECCION 39: PERFORMANCE Y OPTIMIZACION -->
+<section class="section" id="performance">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-tachometer-alt"></i> Seccion 39</span>
+    <h2 class="section__title"><i class="fas fa-tachometer-alt"></i> Performance y Optimizacion</h2>
+    <p class="section__subtitle">Resource Hints, Lazy Loading y buenas practicas</p>
+  </div>
+  <p>Optimizar el rendimiento de carga es fundamental para la experiencia del usuario y el SEO. HTML5 ofrece atributos y herramientas nativas para lograrlo.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Lazy Loading: carga diferida de imagenes e iframes --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"foto.jpg"</span> <span class="attr">alt</span>=<span class="string">"Descripcion"</span> <span class="attr">loading</span>=<span class="string">"lazy"</span> <span class="attr">decoding</span>=<span class="string">"async"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;iframe</span> <span class="attr">src</span>=<span class="string">"video.html"</span> <span class="attr">loading</span>=<span class="string">"lazy"</span><span class="tag">&gt;&lt;/iframe&gt;</span>
+
+<span class="comment">&lt;!-- fetchpriority: priorizar carga de recursos criticos --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"hero.jpg"</span> <span class="attr">fetchpriority</span>=<span class="string">"high"</span> <span class="attr">alt</span>=<span class="string">"Hero"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src</span>=<span class="string">"decoration.png"</span> <span class="attr">fetchpriority</span>=<span class="string">"low"</span> <span class="attr">alt</span>=<span class="string">""</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Resource Hints: adelantar conexiones y cargas --&gt;</span>
+<span class="comment">&lt;!-- Preconnect: resuelve DNS + TCP + TLS anticipadamente --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preconnect"</span> <span class="attr">href</span>=<span class="string">"https://cdn.ejemplo.com"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- DNS Prefetch: solo resuelve DNS --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"dns-prefetch"</span> <span class="attr">href</span>=<span class="string">"https://fonts.googleapis.com"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Preload: carga critica que el navegador no puede descubrir solo --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">href</span>=<span class="string">"/fonts/inter.woff2"</span> <span class="attr">as</span>=<span class="string">"font"</span> <span class="attr">type</span>=<span class="string">"font/woff2"</span> <span class="attr">crossorigin</span><span class="tag">&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"preload"</span> <span class="attr">href</span>=<span class="string">"/styles.css"</span> <span class="attr">as</span>=<span class="string">"style"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Prefetch: precarga para la proxima navegacion --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"prefetch"</span> <span class="attr">href</span>=<span class="string">"/pagina-siguiente.html"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Module Preload: precarga modulos ES --&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"modulepreload"</span> <span class="attr">href</span>=<span class="string">"/js/modulo.js"</span><span class="tag">&gt;</span></code></pre>
+
+  <h3>Resource Hints: Cuándo usar cada uno</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Hint</th><th>Cuando usarlo</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><code>preconnect</code></td><td>Sabes a que dominio iras (APIs, CDN)</td><td><code>fonts.googleapis.com</code></td></tr>
+        <tr><td><code>dns-prefetch</code></td><td>Dominio secundario, menos urgente</td><td>Analytics, tracking</td></tr>
+        <tr><td><code>preload</code></td><td>Recurso critico que el browser no descubre pronto</td><td>Font principal, hero image</td></tr>
+        <tr><td><code>prefetch</code></td><td>Probable que el usuario navegue ahi</td><td>Pagina siguiente</td></tr>
+        <tr><td><code>modulepreload</code></td><td>Modulos ES que se importaran pronto</td><td>App modules</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout callout--success">
+    <span class="callout__icon"><i class="fas fa-check-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Metricas Core Web Vitals</div>
+      <p class="callout__text"><strong>LCP</strong> (&lt;2.5s): Mayor elemento visible. <strong>FID</strong> (&lt;100ms): Primera interaccion. <strong>CLS</strong> (&lt;0.1): Estabilidad visual. Estas metricas determinan tu ranking en Google.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<!-- SECCION 14: CANVAS -->
+<section class="section" id="canvas">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-palette"></i> Seccion 17</span>
+    <h2 class="section__title"><i class="fas fa-palette"></i> Canvas API</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML + <i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;canvas</span> <span class="attr">id</span>=<span class="string">"miCanvas"</span> <span class="attr">width</span>=<span class="string">"800"</span> <span class="attr">height</span>=<span class="string">"600"</span><span class="tag">&gt;&lt;/canvas&gt;</span> <span class="comment">&lt;!-- Elemento canvas para dibujar --&gt;</span>
+
+<span class="tag">&lt;script&gt;</span>
+<span class="keyword">const</span> canvas = document.<span class="function">getElementById</span>(<span class="string">'miCanvas'</span>); <span class="comment">// Obtiene el elemento canvas del DOM</span>
+<span class="keyword">const</span> ctx = canvas.<span class="function">getContext</span>(<span class="string">'2d'</span>); <span class="comment">// Obtiene el contexto 2D para dibujar</span>
+
+<span class="comment">// Rectangulo</span>
+ctx.fillStyle = <span class="string">'#6366f1'</span>; <span class="comment">// Define el color de relleno</span>
+ctx.<span class="function">fillRect</span>(<span class="number">50</span>, <span class="number">50</span>, <span class="number">200</span>, <span class="number">100</span>); <span class="comment">// Dibuja un rectangulo (x, y, ancho, alto)</span>
+
+<span class="comment">// Circulo</span>
+ctx.beginPath(); <span class="comment">// Inicia un nuevo trazo</span>
+ctx.<span class="function">arc</span>(<span class="number">400</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>); <span class="comment">// Dibuja un arco circular completo</span>
+ctx.fillStyle = <span class="string">'#10b981'</span>; <span class="comment">// Cambia el color a verde</span>
+ctx.<span class="function">fill</span>(); <span class="comment">// Rellena la forma dibujada</span>
+
+<span class="comment">// Texto</span>
+ctx.font = <span class="string">'bold 24px Inter'</span>; <span class="comment">// Define la fuente del texto</span>
+ctx.fillStyle = <span class="string">'#0f172a'</span>; <span class="comment">// Color del texto</span>
+ctx.<span class="function">fillText</span>(<span class="string">'Hola Canvas!'</span>, <span class="number">50</span>, <span class="number">400</span>); <span class="comment">// Escribe texto en el canvas</span>
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+  <h3>Animacion con requestAnimationFrame</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">let</span> x = <span class="number">0</span>; <span class="comment">// Posicion inicial del circulo en el eje X</span>
+<span class="keyword">function</span> <span class="function">animar</span>() {
+  ctx.<span class="function">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height); <span class="comment">// Limpia todo el canvas</span>
+  ctx.beginPath(); <span class="comment">// Inicia un nuevo trazo para el circulo</span>
+  ctx.<span class="function">arc</span>(x, <span class="number">150</span>, <span class="number">30</span>, <span class="number">0</span>, Math.PI * <span class="number">2</span>); <span class="comment">// Dibuja circulo en la posición actual</span>
+  ctx.fillStyle = <span class="string">'#6366f1'</span>; <span class="comment">// Color morado para el circulo</span>
+  ctx.<span class="function">fill</span>(); <span class="comment">// Rellena el circulo</span>
+  x += <span class="number">2</span>; <span class="comment">// Mueve el circulo 2 pixeles a la derecha</span>
+  <span class="keyword">if</span> (x &gt; canvas.width) x = <span class="number">0</span>; <span class="comment">// Reinicia si sale del canvas</span>
+  <span class="function">requestAnimationFrame</span>(animar); <span class="comment">// Programa el siguiente frame de animacion</span>
+}
+<span class="function">animar</span>(); <span class="comment">// Inicia la animacion</span></code></pre>
+
+  <h3>Demo: Canvas Interactivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Canvas renderizado en tiempo real</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <button onclick="drawCanvas()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem">Redibujar</button>
+      <button onclick="animateCanvas()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Animar</button>
+      <button onclick="stopCanvasAnim()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Detener</button>
+      <button onclick="exportCanvas()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Descargar PNG</button>
+    </div>
+    <canvas id="myCanvas" width="500" height="200" style="width:100%;max-width:500px;border-radius:8px;background:#0b0f1a"></canvas>
+  </div>
+</section>

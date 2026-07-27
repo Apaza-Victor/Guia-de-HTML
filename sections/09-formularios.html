@@ -1,0 +1,109 @@
+<!-- SECCION 08: FORMULARIOS -->
+<section class="section" id="formularios">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-file-signature"></i> Seccion 09</span>
+    <h2 class="section__title"><i class="fas fa-file-signature"></i> Formularios</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;form</span> <span class="attr">action</span>=<span class="string">"/enviar"</span> <span class="attr">method</span>=<span class="string">"POST"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;label</span> <span class="attr">for</span>=<span class="string">"nombre"</span><span class="tag">&gt;</span>Nombre:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"nombre"</span> <span class="attr">name</span>=<span class="string">"nombre"</span> <span class="attr">required</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>Enviar<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></code></pre>
+
+  <h3>Tipos de input en HTML5</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Tipo</th><th>Descripcion</th></tr></thead>
+      <tbody>
+        <tr><td><code>text</code></td><td>Texto plano</td></tr>
+        <tr><td><code>email</code></td><td>Validacion de email</td></tr>
+        <tr><td><code>password</code></td><td>Contrasena</td></tr>
+        <tr><td><code>number</code></td><td>Solo numeros</td></tr>
+        <tr><td><code>tel</code></td><td>Telefono</td></tr>
+        <tr><td><code>url</code></td><td>URL valida</td></tr>
+        <tr><td><code>search</code></td><td>Busqueda</td></tr>
+        <tr><td><code>date</code></td><td>Selector de fecha</td></tr>
+        <tr><td><code>time</code></td><td>Selector de hora</td></tr>
+        <tr><td><code>datetime-local</code></td><td>Fecha y hora</td></tr>
+        <tr><td><code>range</code></td><td>Slider numerico</td></tr>
+        <tr><td><code>color</code></td><td>Selector de color</td></tr>
+        <tr><td><code>file</code></td><td>Subir archivos</td></tr>
+        <tr><td><code>checkbox</code></td><td>Casilla de verificacion</td></tr>
+        <tr><td><code>radio</code></td><td>Boton de opcion</td></tr>
+        <tr><td><code>hidden</code></td><td>Campo oculto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Validacion y elementos extra</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Required y Pattern --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"3"</span> <span class="attr">maxlength</span>=<span class="string">"50"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">pattern</span>=<span class="string">"[A-Za-z]{3,}"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Select --&gt;</span>
+<span class="tag">&lt;select</span> <span class="attr">name</span>=<span class="string">"pais"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"es"</span><span class="tag">&gt;</span>Espana<span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"mx"</span><span class="tag">&gt;</span>Mexico<span class="tag">&lt;/option&gt;</span>
+<span class="tag">&lt;/select&gt;</span>
+
+<span class="comment">&lt;!-- Textarea --&gt;</span>
+<span class="tag">&lt;textarea</span> <span class="attr">rows</span>=<span class="string">"5"</span> <span class="attr">cols</span>=<span class="string">"40"</span><span class="tag">&gt;&lt;/textarea&gt;</span>
+
+<span class="comment">&lt;!-- Datalist --&gt;</span>
+<span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">list</span>=<span class="string">"lenguajes"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;datalist</span> <span class="attr">id</span>=<span class="string">"lenguajes"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"HTML"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"CSS"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;option</span> <span class="attr">value</span>=<span class="string">"JavaScript"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/datalist&gt;</span>
+
+<span class="comment">&lt;!-- Progress y Meter --&gt;</span>
+<span class="tag">&lt;progress</span> <span class="attr">value</span>=<span class="string">"70"</span> <span class="attr">max</span>=<span class="string">"100"</span><span class="tag">&gt;</span>70%<span class="tag">&lt;/progress&gt;</span>
+<span class="tag">&lt;meter</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">value</span>=<span class="string">"65"</span><span class="tag">&gt;</span>65<span class="tag">&lt;/meter&gt;</span></code></pre>
+
+  <h3>Demo: Formulario con Validacion</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Formulario completo con validación</div>
+    <form id="demoForm" novalidate onsubmit="handleDemoForm(event)" style="text-align:left;max-width:520px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Nombre *</label>
+          <input type="text" id="df-nombre" placeholder="Ana Garcia" required minlength="3" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Email *</label>
+          <input type="email" id="df-email" placeholder="ana@ejemplo.com" required style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Edad (18-99)</label>
+          <input type="number" id="df-edad" min="18" max="99" placeholder="25" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Ciudad</label>
+          <input type="text" id="df-ciudad" list="listaCiudades" placeholder="Escribe una ciudad..." style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+          <datalist id="listaCiudades"><option value="Lima"><option value="Madrid"><option value="Ciudad de Mexico"><option value="Buenos Aires"><option value="Bogota"></datalist>
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Color favorito</label>
+          <div style="display:flex;align-items:center;gap:8px">
+            <input type="color" id="df-color" value="#6366f1" oninput="document.getElementById('df-color-val').textContent=this.value" style="width:40px;height:36px;border:none;cursor:pointer">
+            <span id="df-color-val" style="font-size:.85rem;color:var(--text-secondary)">#6366f1</span>
+          </div>
+        </div>
+        <div>
+          <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Experiencia: <span id="df-nivel-val">50</span>%</label>
+          <input type="range" id="df-nivel" min="0" max="100" value="50" oninput="document.getElementById('df-nivel-val').textContent=this.value" style="width:100%">
+        </div>
+      </div>
+      <div style="margin-top:12px">
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Mensaje * (min. 10 caracteres)</label>
+        <textarea id="df-mensaje" rows="3" placeholder="Escribe tu mensaje aqui..." minlength="10" required style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body);resize:vertical"></textarea>
+      </div>
+      <button type="submit" style="margin-top:12px;padding:10px 24px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-weight:600">Enviar formulario</button>
+      <div id="form-result" style="margin-top:12px;font-size:.9rem;display:none"></div>
+    </form>
+  </div>
+</section>

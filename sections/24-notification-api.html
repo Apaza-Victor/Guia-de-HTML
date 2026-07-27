@@ -1,0 +1,52 @@
+<!-- SECCION 24: NOTIFICATION API -->
+<section class="section" id="notification-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-bell"></i> Seccion 24</span>
+    <h2 class="section__title"><i class="fas fa-bell"></i> Notification API</h2>
+    <p class="section__subtitle">Muestra notificaciones del navegador al usuario</p>
+  </div>
+  <p>La Notification API permite mostrar mensajes al usuario incluso cuando la pestaña no esta activa, ideal para alertas, actualizaciones o mensajes importantes.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Solicitar permiso y mostrar notificacion</span>
+<span class="keyword">async function</span> <span class="function">notificar</span>(titulo, opciones) {
+  <span class="comment">// Verificar soporte</span>
+  <span class="keyword">if</span> (!<span class="string">'Notification'</span> <span class="keyword">in</span> window) {
+    console.<span class="function">log</span>(<span class="string">'Notificaciones no soportadas'</span>);
+    <span class="keyword">return</span>;
+  }
+
+  <span class="comment">// Solicitar permiso si no fue concedido</span>
+  <span class="keyword">if</span> (Notification.permission === <span class="string">'default'</span>) {
+    <span class="keyword">await</span> Notification.<span class="function">requestPermission</span>();
+  }
+
+  <span class="keyword">if</span> (Notification.permission === <span class="string">'granted'</span>) {
+    <span class="keyword">new</span> <span class="function">Notification</span>(titulo, {
+      body: <span class="string">'Este es el cuerpo de la notificacion'</span>,
+      icon: <span class="string">'/icono.png'</span>,
+      badge: <span class="string">'/badge.png'</span>,
+      vibrate: [<span class="number">200</span>, <span class="number">100</span>, <span class="number">200</span>],
+      tag: <span class="string">'mi-notificacion'</span>,
+      requireInteraction: <span class="keyword">false</span>
+    });
+  }
+}
+
+<span class="comment">// Manejar clic en la notificacion</span>
+<span class="keyword">const</span> notif = <span class="keyword">new</span> <span class="function">Notification</span>(<span class="string">'Hola'</span>, { body: <span class="string">'Mensaje nuevo'</span> });
+notif.<span class="function">addEventListener</span>(<span class="string">'click'</span>, () =&gt; {
+  window.<span class="function">focus</span>();
+  notif.<span class="function">close</span>();
+});</code></pre>
+
+  <h3>Demo: Notificaciones</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Notification API</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <button onclick="demoNotify()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-bell"></i> Enviar notificacion</button>
+      <span id="notifStatus" style="font-size:.85rem;color:var(--text-muted)">Permiso: no verificado</span>
+    </div>
+  </div>
+</section>

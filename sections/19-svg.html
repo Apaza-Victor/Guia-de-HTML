@@ -1,0 +1,49 @@
+<!-- SECCION 16: SVG -->
+<section class="section" id="svg">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-shapes"></i> Seccion 19</span>
+    <h2 class="section__title"><i class="fas fa-shapes"></i> SVG</h2>
+  </div>
+  <p>SVG (Scalable Vector Graphics) permite crear graficos vectoriales directamente en HTML. A diferencia de Canvas, SVG es independiente de la resolución y se puede manipular con CSS y JavaScript.</p>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="tag">&lt;svg</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"200"</span> <span class="attr">viewBox</span>=<span class="string">"0 0 200 200"</span><span class="tag">&gt;</span> <span class="comment">&lt;!-- Contenedor SVG con area de dibujo --&gt;</span>
+  <span class="tag">&lt;circle</span> <span class="attr">cx</span>=<span class="string">"100"</span> <span class="attr">cy</span>=<span class="string">"100"</span> <span class="attr">r</span>=<span class="string">"80"</span> <span class="attr">fill</span>=<span class="string">"#6366f1"</span><span class="tag">/&gt;</span> <span class="comment">&lt;!-- Circulo centrado de color morado --&gt;</span>
+  <span class="tag">&lt;rect</span> <span class="attr">x</span>=<span class="string">"20"</span> <span class="attr">y</span>=<span class="string">"150"</span> <span class="attr">width</span>=<span class="string">"160"</span> <span class="attr">height</span>=<span class="string">"30"</span> <span class="attr">rx</span>=<span class="string">"6"</span> <span class="attr">fill</span>=<span class="string">"#10b981"</span><span class="tag">/&gt;</span> <span class="comment">&lt;!-- Rectangulo redondeado verde --&gt;</span>
+  <span class="tag">&lt;text</span> <span class="attr">x</span>=<span class="string">"100"</span> <span class="attr">y</span>=<span class="string">"105"</span> <span class="attr">text-anchor</span>=<span class="string">"middle"</span> <span class="attr">fill</span>=<span class="string">"white"</span><span class="tag">&gt;</span>SVG<span class="tag">&lt;/text&gt;</span> <span class="comment">&lt;!-- Texto centrado en blanco --&gt;</span>
+<span class="tag">&lt;/svg&gt;</span></code></pre>
+  <h3>SVG vs Canvas</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>SVG</th><th>Canvas</th></tr></thead>
+      <tbody>
+        <tr><td>Formato</td><td>Vectorial (XML)</td><td>Pixeles</td></tr>
+        <tr><td>Escalado</td><td>Perfecto sin perder calidad</td><td>Se pixela</td></tr>
+        <tr><td>Interacción DOM</td><td>Si</td><td>No</td></tr>
+        <tr><td>Rendimiento</td><td>Menor con muchos elementos</td><td>Mayor para miles de elementos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: SVG Color Picker</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Cambia el color del SVG en tiempo real</div>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
+      <svg id="demoSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="140" height="140" style="filter:drop-shadow(0 4px 16px rgba(99,102,241,0.4));transition:filter .3s">
+        <path id="svgStar" d="M50 8 L63 35 L93 35 L68 57 L78 84 L50 68 L22 84 L32 57 L7 35 L37 35 Z" fill="#6366f1" stroke="#a78bfa" stroke-width="2" style="transition:fill .4s,stroke .4s"/>
+        <circle cx="50" cy="50" r="20" fill="rgba(255,255,255,0.92)"/>
+        <text x="50" y="55" text-anchor="middle" font-size="13" font-weight="800" fill="#6366f1" font-family="sans-serif">H5</text>
+      </svg>
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button onclick="setSvgColor('#6366f1','#a78bfa')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#6366f1;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#06b6d4','#67e8f9')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#06b6d4;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#f59e0b','#fcd34d')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#f59e0b;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#ef4444','#fca5a5')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#ef4444;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+          <button onclick="setSvgColor('#22c55e','#86efac')" style="width:36px;height:36px;border-radius:50%;border:2px solid white;cursor:pointer;background:#22c55e;box-shadow:0 2px 8px rgba(0,0,0,0.2)"></button>
+        </div>
+        <p style="font-size:.8rem;color:var(--text-muted);margin-top:8px">Cambia el atributo <code>fill</code> via JS:<br><code id="svgColorCode" style="font-size:.75rem;color:var(--color-primary)">setAttribute('fill', '#6366f1')</code></p>
+      </div>
+    </div>
+  </div>
+</section>

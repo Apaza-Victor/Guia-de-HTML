@@ -1,0 +1,47 @@
+<!-- SECCION 29: RESIZE Y PERFORMANCE OBSERVER -->
+<section class="section" id="observers">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-eye"></i> Seccion 29</span>
+    <h2 class="section__title"><i class="fas fa-eye"></i> Resize y Performance Observer</h2>
+    <p class="section__subtitle">Observa cambios de tamaño y metricas de rendimiento</p>
+  </div>
+  <p>El <strong>ResizeObserver</strong> detecta cambios en el tamaño de elementos, y el <strong>PerformanceObserver</strong> monitorea metricas de rendimiento de la pagina como tiempos de carga y interacciones.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// ResizeObserver: detectar cambios de tamaño</span>
+<span class="keyword">const</span> resizeObserver = <span class="keyword">new</span> <span class="function">ResizeObserver</span>((entries) =&gt; {
+  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> entries) {
+    <span class="keyword">const</span> { width, height } = entry.contentRect;
+    console.<span class="function">log</span>(<span class="string">`Tamaño: ${width}x${height}px`</span>);
+  }
+});
+resizeObserver.<span class="function">observe</span>(document.<span class="function">querySelector</span>(<span class="string">'.mi-elemento'</span>));
+
+<span class="comment">// PerformanceObserver: monitorear metricas de carga</span>
+<span class="keyword">const</span> perfObserver = <span class="keyword">new</span> <span class="function">PerformanceObserver</span>((list) =&gt; {
+  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> list.<span class="function">getEntries</span>()) {
+    console.<span class="function">log</span>(<span class="string">`${entry.name}: ${entry.startTime.toFixed(0)}ms`</span>);
+  }
+});
+perfObserver.<span class="function">observe</span>({ entryTypes: [<span class="string">'largest-contentful-paint'</span>, <span class="string">'first-input'</span>] });
+
+<span class="comment">// Cleanup: dejar de observar</span>
+<span class="comment">// resizeObserver.disconnect();</span>
+<span class="comment">// perfObserver.disconnect();</span></code></pre>
+
+  <h3>Tipos de Metricas Disponibles</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>entryType</th><th>Que mide</th><th>Uso comun</th></tr></thead>
+      <tbody>
+        <tr><td><code>largest-contentful-paint</code></td><td>Elemento visual mas grande en pantalla</td><td>Metrica de carga principal (LCP)</td></tr>
+        <tr><td><code>first-input</code></td><td>Tiempo hasta la primera interaccion</td><td>Capacidad de respuesta (FID)</td></tr>
+        <tr><td><code>layout-shift</code></td><td>Cambios inesperados de layout</td><td>Estabilidad visual (CLS)</td></tr>
+        <tr><td><code>resource</code></td><td>Tiempo de carga de cada recurso</td><td>Optimizar assets lentos</td></tr>
+        <tr><td><code>navigation</code></td><td>Tiempos de navegacion de la pagina</td><td>TTFB, DNS, TCP</td></tr>
+        <tr><td><code>paint</code></td><td>First Paint y First Contentful Paint</td><td>Velocidad de renderizado</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<!-- SECCION 27: HISTORY API -->
+<section class="section" id="history-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-history"></i> Seccion 27</span>
+    <h2 class="section__title"><i class="fas fa-history"></i> History API</h2>
+    <p class="section__subtitle">Gestiona el historial de navegacion sin recargar</p>
+  </div>
+  <p>La History API permite manipular la barra de direcciones del navegador sin recargar la pagina, fundamental para Single Page Applications (SPAs).</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Agregar una nueva entrada al historial</span>
+history.<span class="function">pushState</span>(
+  { page: <span class="number">2</span> },         <span class="comment">// state: datos asociados a la entrada</span>
+  <span class="string">'Pagina 2'</span>,           <span class="comment">// title: titulo de la entrada (no usado por todos)</span>
+  <span class="string">'/pagina-2'</span>           <span class="comment">// url: nueva URL en la barra de direcciones</span>
+);
+
+<span class="comment">// Reemplazar la entrada actual (no agrega nueva)</span>
+history.<span class="function">replaceState</span>(
+  { page: <span class="number">1</span> },
+  <span class="string">'Pagina 1'</span>,
+  <span class="string">'/pagina-1'</span>
+);
+
+<span class="comment">// Navegar con los botones atras/adelante</span>
+window.<span class="function">addEventListener</span>(<span class="string">'popstate'</span>, (event) =&gt; {
+  <span class="keyword">if</span> (event.state) {
+    console.<span class="function">log</span>(<span class="string">'Navegando a:'</span>, event.state.page);
+    <span class="function">cargarPagina</span>(event.state.page);
+  }
+});
+
+<span class="comment">// Ejemplo practico: Router simple</span>
+<span class="keyword">function</span> <span class="function">navegarA</span>(url, datos) {
+  history.<span class="function">pushState</span>(datos, <span class="string">''</span>, url);
+  <span class="function">renderizarContenido</span>(url);
+}
+
+<span class="comment">// Manejar recarga de pagina</span>
+window.<span class="function">addEventListener</span>(<span class="string">'popstate'</span>, (e) =&gt; {
+  <span class="keyword">const</span> url = location.pathname;
+  <span class="function">renderizarContenido</span>(url);
+});</code></pre>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">pushState vs replaceState</div>
+      <p class="callout__text"><code>pushState</code> agrega una nueva entrada (el boton Atras funciona). <code>replaceState</code> reemplaza la actual (el boton Atras va a la anterior). El evento <code>popstate</code> se dispara al navegar con Atras/Adelante.</p>
+    </div>
+  </div>
+</section>

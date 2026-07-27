@@ -1,0 +1,44 @@
+<!-- SECCION 15: DRAG AND DROP -->
+<section class="section" id="drag-drop">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-arrows-alt"></i> Seccion 18</span>
+    <h2 class="section__title"><i class="fas fa-arrows-alt"></i> Drag and Drop</h2>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="keyword">const</span> draggable = document.<span class="function">querySelector</span>(<span class="string">'.draggable'</span>); <span class="comment">// Selecciona el elemento arrastrable</span>
+draggable.<span class="function">addEventListener</span>(<span class="string">'dragstart'</span>, (e) =&gt; { <span class="comment">// Escucha el inicio del arrastre</span>
+  e.dataTransfer.<span class="function">setData</span>(<span class="string">'text/plain'</span>, e.target.id); <span class="comment">// Guarda el ID del elemento arrastrado</span>
+});
+
+<span class="keyword">const</span> dropzone = document.<span class="function">querySelector</span>(<span class="string">'.dropzone'</span>); <span class="comment">// Selecciona la zona de destino</span>
+dropzone.<span class="function">addEventListener</span>(<span class="string">'dragover'</span>, (e) =&gt; e.<span class="function">preventDefault</span>()); <span class="comment">// Permite soltar elementos</span>
+dropzone.<span class="function">addEventListener</span>(<span class="string">'drop'</span>, (e) =&gt; { <span class="comment">// Maneja el evento de soltar</span>
+  e.<span class="function">preventDefault</span>(); <span class="comment">// Evita el comportamiento por defecto</span>
+  <span class="keyword">const</span> id = e.dataTransfer.<span class="function">getData</span>(<span class="string">'text/plain'</span>); <span class="comment">// Recupera el ID del elemento</span>
+  dropzone.<span class="function">appendChild</span>(document.<span class="function">getElementById</span>(id)); <span class="comment">// Mueve el elemento a la zona destino</span>
+});</code></pre>
+
+  <h3>Demo: Drag and Drop Interactivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Arrastra las etiquetas entre zonas</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div>
+        <p style="font-size:.8rem;font-weight:700;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase">Zona Origen</p>
+        <div id="dropZone1" ondragover="ddAllowDrop(event)" ondrop="ddDrop(event)" style="min-height:120px;border:2px dashed var(--border-color);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;transition:border-color .2s">
+          <div class="drag-item" draggable="true" id="d1" ondragstart="ddDrag(event)" style="padding:8px 16px;background:var(--color-primary);color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">HTML5</div>
+          <div class="drag-item" draggable="true" id="d2" ondragstart="ddDrag(event)" style="padding:8px 16px;background:#8b5cf6;color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">CSS3</div>
+          <div class="drag-item" draggable="true" id="d3" ondragstart="ddDrag(event)" style="padding:8px 16px;background:#f59e0b;color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">JavaScript</div>
+          <div class="drag-item" draggable="true" id="d4" ondragstart="ddDrag(event)" style="padding:8px 16px;background:#06b6d4;color:white;border-radius:8px;cursor:grab;font-size:.85rem;font-weight:600">Canvas</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.8rem;font-weight:700;color:var(--text-muted);margin-bottom:8px;text-transform:uppercase">Zona Destino</p>
+        <div id="dropZone2" ondragover="ddAllowDrop(event)" ondrop="ddDrop(event)" style="min-height:120px;border:2px dashed var(--border-color);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;transition:border-color .2s">
+          <span style="font-size:.85rem;color:var(--text-muted);align-self:center;margin:auto">Suelta aqui</span>
+        </div>
+      </div>
+    </div>
+    <button onclick="resetDragDrop()" style="margin-top:12px;padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Reiniciar</button>
+  </div>
+</section>

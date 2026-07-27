@@ -1,0 +1,64 @@
+<!-- SECCION 22: CLIPBOARD API -->
+<section class="section" id="clipboard-api">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-clipboard"></i> Seccion 22</span>
+    <h2 class="section__title"><i class="fas fa-clipboard"></i> Clipboard API</h2>
+    <p class="section__subtitle">Copiar y pegar texto de forma moderna y segura</p>
+  </div>
+  <p>La Clipboard API reemplaza al obsoleto <code>document.execCommand('copy')</code> con una interfaz basada en Promesas que funciona en安全 modo seguro bajo HTTPS.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js-square"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Copiar texto al portapapeles</span>
+<span class="keyword">async function</span> <span class="function">copiarTexto</span>(texto) {
+  <span class="keyword">try</span> {
+    <span class="keyword">await</span> navigator.clipboard.<span class="function">writeText</span>(texto);
+    console.<span class="function">log</span>(<span class="string">'Texto copiado exitosamente'</span>);
+  } <span class="keyword">catch</span> (err) {
+    console.<span class="function">error</span>(<span class="string">'Error al copiar:'</span>, err);
+  }
+}
+
+<span class="comment">// Leer texto del portapapeles</span>
+<span class="keyword">async function</span> <span class="function">pegarTexto</span>() {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> texto = <span class="keyword">await</span> navigator.clipboard.<span class="function">readText</span>();
+    console.<span class="function">log</span>(<span class="string">'Texto pegado:'</span>, texto);
+  } <span class="keyword">catch</span> (err) {
+    console.<span class="function">error</span>(<span class="string">'Error al pegar:'</span>, err);
+  }
+}
+
+<span class="comment">// Copiar con feedback visual</span>
+<span class="keyword">async function</span> <span class="function">copiarConFeedback</span>(btn, texto) {
+  <span class="keyword">await</span> navigator.clipboard.<span class="function">writeText</span>(texto);
+  <span class="keyword">const</span> original = btn.textContent;
+  btn.textContent = <span class="string">'¡Copiado!'</span>;
+  btn.style.background = <span class="string">'#22c55e'</span>;
+  <span class="function">setTimeout</span>(() =&gt; {
+    btn.textContent = original;
+    btn.style.background = <span class="string">''</span>;
+  }, <span class="number">2000</span>);
+}</code></pre>
+
+  <div class="callout callout--info">
+    <span class="callout__icon"><i class="fas fa-info-circle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Requisitos de seguridad</div>
+      <p class="callout__text">La Clipboard API solo funciona en contextos seguros (HTTPS o localhost) y requiere que el usuario interactue con la pagina (click, keypress) para autorizar el acceso.</p>
+    </div>
+  </div>
+
+  <h3>Demo: Copiar al Portapapeles</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Clipboard API</div>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:500px">
+      <input id="clipInput" type="text" value="Texto de ejemplo para copiar" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;width:100%;box-sizing:border-box">
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button onclick="demoCopy()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600"><i class="fas fa-copy"></i> Copiar texto</button>
+        <button onclick="demoPaste()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-weight:600"><i class="fas fa-paste"></i> Pegar texto</button>
+      </div>
+      <div id="clipResult" style="padding:10px;border-radius:6px;font-size:.85rem;display:none"></div>
+    </div>
+  </div>
+</section>

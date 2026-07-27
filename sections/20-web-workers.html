@@ -1,0 +1,44 @@
+<!-- SECCION 17: WEB WORKERS Y FETCH -->
+<section class="section" id="web-workers">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-server"></i> Seccion 20</span>
+    <h2 class="section__title"><i class="fas fa-server"></i> Web Workers y Fetch API</h2>
+  </div>
+  <h3>Fetch API</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// GET basico</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/datos'</span>); <span class="comment">// Realiza peticion GET a la API</span>
+<span class="keyword">const</span> data = <span class="keyword">await</span> response.<span class="function">json</span>(); <span class="comment">// Convierte la respuesta a formato JSON</span>
+
+<span class="comment">// POST con opciones</span>
+<span class="keyword">const</span> res = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/usuarios'</span>, { <span class="comment">// Peticion POST con configuración</span>
+  <span class="property">method</span>: <span class="string">'POST'</span>, <span class="comment">// Metodo HTTP para crear datos</span>
+  <span class="property">headers</span>: { <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span> }, <span class="comment">// Indica que envia JSON</span>
+  <span class="property">body</span>: JSON.<span class="function">stringify</span>({ <span class="property">nombre</span>: <span class="string">'Ana'</span>, <span class="property">email</span>: <span class="string">'ana@ej.com'</span> }) <span class="comment">// Datos a enviar como JSON</span>
+});</code></pre>
+
+  <h3>Web Workers</h3>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// worker.js</span>
+self.<span class="function">onmessage</span> = (e) =&gt; { <span class="comment">// Escucha mensajes del hilo principal</span>
+  self.<span class="function">postMessage</span>(e.data * <span class="number">2</span>); <span class="comment">// Devuelve el resultado multiplicado por 2</span>
+};
+
+<span class="comment">// Principal</span>
+<span class="keyword">const</span> worker = <span class="keyword">new</span> <span class="function">Worker</span>(<span class="string">'worker.js'</span>); <span class="comment">// Crea un hilo de ejecución en segundo plano</span>
+worker.<span class="function">postMessage</span>(<span class="number">21</span>); <span class="comment">// Envía el valor 21 al worker</span>
+worker.<span class="function">onmessage</span> = (e) =&gt; console.<span class="function">log</span>(e.data); <span class="comment">// Recibe y muestra el resultado (42)</span></code></pre>
+
+  <h3>Demo: Fetch API en Vivo</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Peticion real a API publica (JSONPlaceholder)</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <button onclick="fetchUsers()" id="fetchBtn" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem"><i class="fas fa-users"></i> Cargar usuarios</button>
+      <button onclick="fetchPosts()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Cargar posts</button>
+      <button onclick="clearFetch()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Limpiar</button>
+    </div>
+    <div id="fetchStatus" style="font-size:.85rem;color:var(--text-muted);margin-bottom:8px"></div>
+    <div id="fetchResults" style="max-height:280px;overflow-y:auto"></div>
+  </div>
+</section>

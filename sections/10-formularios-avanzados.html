@@ -1,0 +1,87 @@
+<!-- SECCION 10: FORMULARIOS AVANZADOS -->
+<section class="section" id="formularios-avanzados">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-file-signature"></i> Seccion 10</span>
+    <h2 class="section__title"><i class="fas fa-file-signature"></i> Formularios Avanzados</h2>
+    <p class="section__subtitle">Validación nativa, FormData y Constraint Validation API</p>
+  </div>
+  <p>Más allá de los tipos de input básicos, HTML5 ofrece una API completa de validación nativa que elimina la necesidad de librerías externas para muchos casos comunes.</p>
+
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-html5"></i> HTML + JS</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">&lt;!-- Constraint Validation API --&gt;</span>
+<span class="tag">&lt;form</span> <span class="attr">id</span>=<span class="string">"miFormulario"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">required</span> <span class="attr">minlength</span>=<span class="string">"5"</span> <span class="attr">pattern</span>=<span class="string">"[a-z]+@[a-z]+\.[a-z]{2,}"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">required</span> <span class="attr">maxlength</span>=<span class="string">"50"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">type</span>=<span class="string">"submit"</span><span class="tag">&gt;</span>Enviar<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span>
+
+<span class="comment">&lt;!-- JavaScript: Validacion personalizada --&gt;</span>
+<span class="keyword">const</span> form = document.<span class="function">querySelector</span>(<span class="string">'#miFormulario'</span>);
+<span class="keyword">const</span> email = form.<span class="function">querySelector</span>(<span class="string">'input[type="email"]'</span>);
+
+<span class="comment">// Validar al enviar</span>
+form.<span class="function">addEventListener</span>(<span class="string">'submit'</span>, (e) =&gt; {
+  e.<span class="function">preventDefault</span>();
+  <span class="keyword">if</span> (!form.<span class="function">checkValidity</span>()) {
+    <span class="comment">// Muestra los mensajes de error nativos del navegador</span>
+    form.<span class="function">reportValidity</span>();
+    <span class="keyword">return</span>;
+  }
+  <span class="comment">// Crear FormData automaticamente desde el formulario</span>
+  <span class="keyword">const</span> datos = <span class="keyword">new</span> <span class="function">FormData</span>(form);
+  <span class="keyword">for</span> (<span class="keyword">const</span> [clave, valor] <span class="keyword">of</span> datos) {
+    console.<span class="function">log</span>(<span class="string">`${clave}: ${valor}`</span>);
+  }
+});
+
+<span class="comment">// Personalizar mensaje de error</span>
+email.<span class="function">addEventListener</span>(<span class="string">'input'</span>, () =&gt; {
+  <span class="keyword">if</span> (email.<span class="function">validity</span>.typeMismatch) {
+    email.<span class="function">setCustomValidity</span>(<span class="string">'Ingresa un email valido (ejemplo@dominio.com)'</span>);
+  } <span class="keyword">else</span> {
+    email.<span class="function">setCustomValidity</span>(<span class="string">''</span>); <span class="comment">// Limpiar error personalizado</span>
+  }
+});</code></pre>
+
+  <h3>Propiedades de Constraint Validation</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Propiedad</th><th>Descripcion</th><th>Retorna</th></tr></thead>
+      <tbody>
+        <tr><td><code>validity.valid</code></td><td>True si el campo cumple todas las validaciones</td><td>Boolean</td></tr>
+        <tr><td><code>validity.valueMissing</code></td><td>Campo requerido vacío</td><td>Boolean</td></tr>
+        <tr><td><code>validity.typeMismatch</code></td><td>El tipo no coincide (email, url, number)</td><td>Boolean</td></tr>
+        <tr><td><code>validity.patternMismatch</code></td><td>El valor no coincide con el pattern</td><td>Boolean</td></tr>
+        <tr><td><code>validity.tooShort</code></td><td>Mínimo de caracteres no alcanzado</td><td>Boolean</td></tr>
+        <tr><td><code>validity.tooLong</code></td><td>Máximo de caracteres excedido</td><td>Boolean</td></tr>
+        <tr><td><code>validity.rangeUnderflow</code></td><td>Valor menor que el mínimo</td><td>Boolean</td></tr>
+        <tr><td><code>validity.rangeOverflow</code></td><td>Valor mayor que el máximo</td><td>Boolean</td></tr>
+        <tr><td><code>checkValidity()</code></td><td>Valida y muestra errores nativos si falla</td><td>Boolean</td></tr>
+        <tr><td><code>reportValidity()</code></td><td>Valida y muestra popup de error al usuario</td><td>Boolean</td></tr>
+        <tr><td><code>setCustomValidity(msg)</code></td><td>Establece un mensaje de error personalizado</td><td>void</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: Validación en Tiempo Real</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Formulario con validación nativa</div>
+    <form id="demoForm" style="display:flex;flex-direction:column;gap:12px;max-width:400px">
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text-primary)">Email (requerido):</label>
+        <input type="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="ejemplo@correo.com" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;box-sizing:border-box">
+      </div>
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text-primary)">Nombre (3-30 caracteres):</label>
+        <input type="text" required minlength="3" maxlength="30" placeholder="Tu nombre" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;box-sizing:border-box">
+      </div>
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px;color:var(--text-primary)">Edad (18-120):</label>
+        <input type="number" required min="18" max="120" placeholder="25" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-size:.9rem;box-sizing:border-box">
+      </div>
+      <button type="submit" style="padding:10px 20px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-weight:600">Validar y Enviar</button>
+      <div id="formResult" style="padding:10px;border-radius:6px;font-size:.9rem;display:none"></div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<!-- SECCION 09: ATRIBUTOS GLOBALES -->
+<section class="section" id="atributos-globales">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-sliders-h"></i> Seccion 11</span>
+    <h2 class="section__title"><i class="fas fa-sliders-h"></i> Atributos Globales</h2>
+  </div>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Atributo</th><th>Descripcion</th><th>Ejemplo</th></tr></thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>Identificador unico</td><td><code>&lt;div id="main"&gt;</code></td></tr>
+        <tr><td><code>class</code></td><td>Clases CSS</td><td><code>&lt;p class="text bold"&gt;</code></td></tr>
+        <tr><td><code>style</code></td><td>CSS inline</td><td><code>&lt;div style="color:red"&gt;</code></td></tr>
+        <tr><td><code>title</code></td><td>Tooltip</td><td><code>&lt;abbr title="..."&gt;</code></td></tr>
+        <tr><td><code>hidden</code></td><td>Oculta el elemento</td><td><code>&lt;div hidden&gt;</code></td></tr>
+        <tr><td><code>tabindex</code></td><td>Orden de tabulacion</td><td><code>&lt;input tabindex="1"&gt;</code></td></tr>
+        <tr><td><code>contenteditable</code></td><td>Contenido editable</td><td><code>&lt;p contenteditable&gt;</code></td></tr>
+        <tr><td><code>draggable</code></td><td>Elemento arrastrable</td><td><code>&lt;div draggable&gt;</code></td></tr>
+        <tr><td><code>lang</code></td><td>Idioma</td><td><code>&lt;p lang="es"&gt;</code></td></tr>
+        <tr><td><code>data-*</code></td><td>Datos personalizados</td><td><code>&lt;div data-id="5"&gt;</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Demo: contenteditable</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo: Haz clic y edita este texto</div>
+    <p contenteditable="true" style="padding:12px;border:2px dashed var(--border-color);border-radius:8px;min-height:60px;outline:none;">Este texto es editable. Haz clic aqui y modificalo directamente en el navegador.</p>
+  </div>
+
+  <h3>Demo: Atributos data-*</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Producto con datos embebidos</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="background:var(--bg-surface);border:1px solid var(--border-color);border-radius:10px;padding:12px 16px">
+        <div style="font-weight:600;color:var(--text-primary);margin-bottom:4px">Auriculares Pro</div>
+        <div style="color:var(--color-primary);font-weight:700">$99.90</div>
+        <button onclick="showDataAttr(this)" data-product-id="42" data-price="99.90" data-category="electrónica" style="margin-top:8px;padding:6px 14px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-size:.85rem">Ver data-*</button>
+      </div>
+    </div>
+    <div id="dataAttrOutput" style="margin-top:12px;font-family:var(--font-code);font-size:.8rem;color:var(--color-success);background:var(--bg-code);padding:10px 14px;border-radius:6px;display:none;white-space:pre"></div>
+  </div>
+</section>

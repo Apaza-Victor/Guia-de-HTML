@@ -1,0 +1,61 @@
+<!-- SECCION 12: WEB STORAGE -->
+<section class="section" id="web-storage">
+  <div class="section__header">
+    <div class="section__bg-shape" style="width:200px;height:200px;top:-50px;right:-50px"></div>
+    <span class="section__number"><i class="fas fa-database"></i> Seccion 15</span>
+    <h2 class="section__title"><i class="fas fa-database"></i> Web Storage API</h2>
+  </div>
+  <h3>localStorage vs sessionStorage</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead><tr><th>Caracteristica</th><th>localStorage</th><th>sessionStorage</th></tr></thead>
+      <tbody>
+        <tr><td>Persistencia</td><td>Permanente hasta borrarlo</td><td>Se borra al cerrar pestana</td></tr>
+        <tr><td>Alcance</td><td>Mismo dominio</td><td>Mismo dominio + pestana</td></tr>
+        <tr><td>Capacidad</td><td>~5-10 MB</td><td>~5-10 MB</td></tr>
+        <tr><td>Compartido</td><td>Si (entre pestañas)</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="code-header"><span class="code-header__lang"><i class="fab fa-js"></i> JavaScript</span><button class="code-header__copy"><i class="fas fa-copy"></i> Copiar</button></div>
+  <pre><code><span class="comment">// Guardar datos</span>
+localStorage.<span class="function">setItem</span>(<span class="string">'nombre'</span>, <span class="string">'Juan'</span>); <span class="comment">// Guarda un valor simple con su clave</span>
+localStorage.<span class="function">setItem</span>(<span class="string">'usuario'</span>, JSON.<span class="function">stringify</span>({ <span class="property">id</span>: <span class="number">1</span> })); <span class="comment">// Convierte objeto a JSON para guardarlo</span>
+
+<span class="comment">// Leer datos</span>
+<span class="keyword">const</span> nombre = localStorage.<span class="function">getItem</span>(<span class="string">'nombre'</span>); <span class="comment">// Obtiene el valor por su clave</span>
+<span class="keyword">const</span> usuario = JSON.<span class="function">parse</span>(localStorage.<span class="function">getItem</span>(<span class="string">'usuario'</span>)); <span class="comment">// Convierte JSON de vuelta a objeto</span>
+
+<span class="comment">// Eliminar y limpiar</span>
+localStorage.<span class="function">removeItem</span>(<span class="string">'nombre'</span>); <span class="comment">// Elimina una clave especifica</span>
+localStorage.<span class="function">clear</span>(); <span class="comment">// Borra todos los datos almacenados</span></code></pre>
+  <div class="callout callout--warning">
+    <span class="callout__icon"><i class="fas fa-exclamation-triangle"></i></span>
+    <div class="callout__content">
+      <div class="callout__title">Seguridad</div>
+      <p class="callout__text">Nunca almacenes información sensible como contrasenas en localStorage. Los datos son accesibles por cualquier script en la página.</p>
+    </div>
+  </div>
+
+  <h3>Demo: Probador de localStorage</h3>
+  <div class="demo-area">
+    <div class="demo-area__title">Demo - Guarda, obtiene y elimina datos</div>
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:10px;margin-bottom:12px">
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Clave</label>
+        <input type="text" id="storage-key" value="nombre" placeholder="miClave" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+      </div>
+      <div>
+        <label style="display:block;font-size:.85rem;font-weight:600;margin-bottom:4px">Valor</label>
+        <input type="text" id="storage-value" value="HTML5 Master Guide" placeholder="miValor" style="width:100%;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);font-family:var(--font-body)">
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button onclick="storageSet()" style="padding:8px 16px;border:none;border-radius:6px;background:var(--color-primary);color:white;cursor:pointer;font-family:var(--font-body);font-size:.85rem">Guardar</button>
+      <button onclick="storageGet()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Obtener</button>
+      <button onclick="storageRemove()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Eliminar</button>
+      <button onclick="storageList()" style="padding:8px 16px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-surface);color:var(--text-primary);cursor:pointer;font-family:var(--font-body);font-size:.85rem">Listar todo</button>
+    </div>
+    <div id="storage-output" style="margin-top:12px;font-family:var(--font-code);font-size:.8rem;color:var(--color-success);background:var(--bg-code);padding:12px;border-radius:6px;white-space:pre;min-height:40px">// Resultado aparecera aqui</div>
+  </div>
+</section>
